@@ -1,0 +1,17 @@
+html, body {
+    background-color: #0a0a0a;
+    color: #fff;
+    line-height: 2rem;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+
+a {
+    color: #4193c6;
+}
+
+a:visited {
+    opacity: 0.8;
+}
