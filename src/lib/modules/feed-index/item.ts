@@ -1,5 +1,6 @@
 import { html } from "htm/preact"
 import styled from "styled-components"
+import { FeedItem, Feed } from "../../state/store";
 
 const ItemElm = styled.div`
     border: 1px solid #999;
@@ -35,13 +36,14 @@ const FeedHeader = styled.h2`
     margin: 0;
     padding: 0;
     padding-bottom: 0.5rem;
+    text-transform: capitalize;
 `;
 
-export const Item = (props) => {
-    const items = [...props.src.items].splice(0, 5).map(i => html`<${FeedListItem} src=${i.preview.image} />`)
+export const Item = ({ src }: { src: Feed }) => {
+    const items = [...src.items].splice(0, 5).map(i => html`<${FeedListItem} src=${i.preview.image} />`)
 
     return html`<${ItemElm}>
-        <${FeedHeader}>${props.src.name}</${FeedHeader}>
+        <${FeedHeader}><a href="/feed/${src.name}">${src.name}</a></${FeedHeader}>
         <${FeedList}>
             ${items}
             <${More}>More...</${More}>

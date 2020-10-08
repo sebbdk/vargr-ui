@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Item } from "./item";
 
 const FeedElm = styled.div`
-    background: rgba(255,255,255, 0.05)
+    background: rgba(255,255,255, 0.05);
 `;
 
 const FeedHeader = styled.h2`
@@ -14,11 +14,15 @@ const FeedHeader = styled.h2`
     margin: 0;
     padding: 0;
     padding-bottom: 0.5rem;
+    text-transform: capitalize;
 `;
 
 function mapStateToProps(state, props) {
     if (props.name) {
-        return { feed: state.feeds.find(f => props.name === f.name) };
+        const feed = state.feeds.find(f => props.name === f.name)
+        if(feed !== undefined) {
+            return { feed: state.feeds.find(f => props.name === f.name) };
+        }
     }
 
     const feed = state.feeds.reduce((acc, feed) => ({

@@ -23,6 +23,15 @@ const ShortLink =  styled.a`
     overflow: hidden;
 `;
 
+const Tag = styled.span`
+    background-color: #c318a1;
+    border-radius: 0.5rem;
+    display: inline-block;
+    line-height: 1rem;
+    font-size: 0.75rem;
+    padding: 0 0.5rem;
+`;
+
 export const Image = (props) => {
     return html`<${ImageItemElm}>
         <a href=${props.data.image} target="_blank">
@@ -31,6 +40,7 @@ export const Image = (props) => {
         <${ImageMeta}>
             Title: ${props.title}<br />
             Source: <${ShortLink} href=${props.source} target="_blank">${props.source}</${ShortLink}><br />
+            Tags: <${Tag}>Porn</${Tag}> <${Tag}>Cake</${Tag}> <${Tag}>Awesome panties</${Tag}>
         </${ImageMeta}>
     </${ImageItemElm}>`
 }

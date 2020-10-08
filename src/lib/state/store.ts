@@ -1,22 +1,40 @@
 import { createStore, combineReducers } from "redux";
 import defImg from "./fallback.jpg";
 
-export const createFeedItem = (sort, img, preview, ) => {
+export interface FeedItem {
+    type: string,
+    title: string,
+    source: string
+    data: {
+        image: string
+    },
+    preview: {
+        image: string
+    },
+    sort: number
+}
+
+export interface Feed {
+    name: string,
+    items: FeedItem[]
+}
+
+export function createFeedItem(sort = 0, img = defImg, preview = defImg): FeedItem {
     return {
         type: 'image',
         title: 'nice bum',
         source: 'https://www.reddit.com/r/rule34/comments/iz56nd/bowsette_is_ready_for_some_naughty_fun_tonight/',
         data: {
-            image: img || defImg
+            image: img
         },
         preview: {
-            image: preview || defImg
+            image: preview
         },
         sort: sort || 0
     }
 } 
 
-const placeholderFeeds = [
+const placeholderFeeds: Feed[] = [
     {
         name: "reddit",
         items: [
