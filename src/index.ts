@@ -6,9 +6,12 @@ import { RedditFeedPage } from './lib/pages/reddit-feed-page';
 import { FeedsPage } from './lib/pages/feeds-page';
 import { AllFeedsPage } from './lib/pages/all-feeds-page';
 import { FeedPage } from './lib/pages/feed';
+import { loadFeeds } from './lib/state/feed-actions';
 
 // Initialize htm with Preact
 function App (props) {
+  loadFeeds(store);
+
   return html`
     <${Provider} store=${store}>
       <${Router}>

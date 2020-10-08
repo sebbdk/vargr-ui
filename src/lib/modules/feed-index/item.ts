@@ -1,6 +1,6 @@
 import { html } from "htm/preact"
 import styled from "styled-components"
-import { FeedItem, Feed } from "../../state/store";
+import { Feed } from "../../state/feeds";
 
 const ItemElm = styled.div`
     border: 1px solid #999;
