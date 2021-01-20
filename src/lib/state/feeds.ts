@@ -23,11 +23,11 @@ export const FeedActions = {
 export interface FeedAction {
     type: symbol,
     payload: {
-        items?: FeedItem[]
+        items?: Feed[]
     }
 }
 
-export function feeds(s = [], action: FeedAction) {
+export function feeds(s: Feed[] = [], action: FeedAction) {
     if(action.type === FeedActions.LOADED) {
         return action.payload.items;
     }

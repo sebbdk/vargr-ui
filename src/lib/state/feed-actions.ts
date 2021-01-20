@@ -1,6 +1,7 @@
 import { Store } from "redux";
 import { FeedActions } from './feeds';
 import defImg from "./fallback.jpg";
+import { FeedAction, Feed, FeedItem } from "./feeds";
 
 export function createFeedItem(sort = 0, img = defImg, preview = defImg): FeedItem {
     return {
@@ -47,5 +48,5 @@ export function loadFeeds(store: Store) {
         payload: {
             items: placeholderFeeds
         }
-    })
+    } as FeedAction)
 }
