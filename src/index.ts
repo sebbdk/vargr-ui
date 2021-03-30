@@ -10,6 +10,7 @@ import { loadFeeds } from './lib/state/feed-actions';
 import { RipsIndex } from './lib/modules/rip/rip-index';
 import { loadRips } from './lib/state/rips-actions';
 import { ActionsPage } from './lib/pages/actions-page';
+import { GalleriesPage } from './lib/pages/galleries-page';
 
 // Initialize htm with Preact
 function App (props) {
@@ -21,6 +22,7 @@ function App (props) {
       <${Router}>
         <${FeedsPage} path="/" />
         <${ActionsPage} path="/actions" />
+        <${GalleriesPage} path="/galleries" />
         <${AllFeedsPage} path="/all" />
         <${RedditFeedPage} path="/reddit" />
         <${FeedPage} path="/feed/:id" />

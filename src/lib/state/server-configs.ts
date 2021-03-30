@@ -41,5 +41,4 @@ export function serverConfigs(s: ServerConfig[] = [], action: ServerConfigAction
             return s;
         }
     }
-    
 };
