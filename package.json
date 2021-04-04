@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "storybook": "start-storybook -p 6006",
-    "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "npm run dev & npm run storybook ",
+    "build": "npm run build-storybook && npm run build-parcel",
+    "build-storybook": "build-storybook --output-dir dist",
+    "build-parcel": "parcel build src/index.html",
+    "serve": "serve ./dist"
   },
   "resolutions": {
     "styled-components": "^5"
@@ -27,6 +30,8 @@
     "preact-router": "^3.2.1",
     "react-redux": "^7.2.1",
     "redux": ">=2",
+    "serve": "^11.3.2",
+    "src": "^1.1.2",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "styled": "^1.0.0",
     "styled-components": "^5.2.0"
