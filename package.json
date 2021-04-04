@@ -10,6 +10,7 @@
     "build": "npm run build-storybook && npm run build-parcel",
     "build-storybook": "build-storybook --output-dir dist",
     "build-parcel": "parcel build src/index.html",
+    "build-parcel-serve": "parcel build src/index.html && serve ./dist",
     "serve": "serve ./dist"
   },
   "resolutions": {
