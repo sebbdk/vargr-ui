@@ -9,6 +9,7 @@
     "start": "npm run dev & npm run storybook ",
     "build": "npm run build-storybook && npm run build-parcel",
     "build-storybook": "build-storybook --output-dir dist",
+    "build-storybook-serve": "build-storybook --output-dir dist && serve ./dist",
     "build-parcel": "parcel build src/index.html",
     "build-parcel-serve": "parcel build src/index.html && serve ./dist",
     "serve": "serve ./dist"
