@@ -1,6 +1,6 @@
-/** @jsx h */
-import { h } from 'preact';
 import { Button } from './Button';
+import { html } from 'htm/preact';
+import { CenterPreview } from '../../templates/centerpreview';
 
 export default {
   title: 'Atoms/Button',
@@ -11,7 +11,7 @@ export default {
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => html`<${CenterPreview}><${Button} ...${args} /></${CenterPreview}>`;
 
 export const Primary = Template.bind({});
 Primary.args = {
