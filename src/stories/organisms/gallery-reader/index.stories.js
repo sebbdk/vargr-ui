@@ -24,11 +24,11 @@ const FakePage = styled.div`
 const Template = (args) => <FakePage><GalleryReader {...args} /></FakePage>;
 export const SinglePage = Template.bind({});
 SinglePage.args = {
-  images: DemoPages1,
+  images: DemoPages2
 };
 
 export const DualPage = Template.bind({});
 DualPage.args = {
-  images: DemoPages2,
+  images: DemoPages1,
   dualPage: true
 };

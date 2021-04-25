@@ -30,7 +30,7 @@ ActionsDemo.args = {
 export const WithPickAction = Template.bind({});
 WithPickAction.args = {
   title: 'Brave new world',
-  images: DemoPages1,
+  images: DemoPages2,
   onPick: (index, images) => {
     window.open(images[index],'_blank');
   }
