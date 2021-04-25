@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook --loglevel verbose -p 6006",
     "start": "npm run dev & npm run storybook ",
     "build": "npm run build-storybook && npm run build-parcel",
     "build-storybook": "build-storybook --output-dir dist",
