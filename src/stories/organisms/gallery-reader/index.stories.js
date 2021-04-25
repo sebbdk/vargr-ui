@@ -2,6 +2,7 @@
 import { h } from 'preact';
 import { GalleryReader } from './index';
 import styled from 'styled-components';
+import { DemoPages2, DemoPages1 } from 'stories/assets';
 
 export default {
   title: 'Organisms/Gallery Reader',
@@ -21,15 +22,13 @@ const FakePage = styled.div`
 `;
 
 const Template = (args) => <FakePage><GalleryReader {...args} /></FakePage>;
-const demoPages1 = (new Array(36)).fill(undefined).map((i, index) => require(`stories/assets/atomic_war/1/${index}.jpg`));
-const demoPages2 = (new Array(36)).fill(undefined).map((i, index) => require(`stories/assets/atomic_war/2/${index}.jpg`));
 export const SinglePage = Template.bind({});
 SinglePage.args = {
-  images: demoPages1
+  images: DemoPages1,
 };
 
 export const DualPage = Template.bind({});
 DualPage.args = {
-  images: demoPages2,
+  images: DemoPages2,
   dualPage: true
 };
