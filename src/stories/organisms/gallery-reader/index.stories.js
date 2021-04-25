@@ -21,15 +21,15 @@ const FakePage = styled.div`
 `;
 
 const Template = (args) => <FakePage><GalleryReader {...args} /></FakePage>;
-const demoPages = (new Array(36)).fill(undefined).map((i, index) => require(`stories/assets/atomic_war/${index}.jpg`));
-
+const demoPages1 = (new Array(36)).fill(undefined).map((i, index) => require(`stories/assets/atomic_war/1/${index}.jpg`));
+const demoPages2 = (new Array(36)).fill(undefined).map((i, index) => require(`stories/assets/atomic_war/2/${index}.jpg`));
 export const SinglePage = Template.bind({});
 SinglePage.args = {
-  images: demoPages
+  images: demoPages1
 };
 
 export const DualPage = Template.bind({});
 DualPage.args = {
-  images: demoPages,
+  images: demoPages2,
   dualPage: true
 };
