@@ -1,6 +1,6 @@
 import { html } from 'htm/preact';
 import { LocalHub } from './index';
-import { CenterPreview } from '../../templates/centerpreview/index';
+import { CenterPreview } from 'stories/templates/centerpreview';
 
 export default {
   title: 'Organisms/Hub',

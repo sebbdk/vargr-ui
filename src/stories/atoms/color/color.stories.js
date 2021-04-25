@@ -1,6 +1,6 @@
 import { ColorPreview } from './color';
 import { html } from 'htm/preact';
-import { CenterPreview } from '../../templates/centerpreview';
+import { CenterPreview } from 'stories/templates/centerpreview';
 
 export default {
   title: 'Atoms/Color',

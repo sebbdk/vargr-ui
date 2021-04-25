@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "es6",
+      "paths": {
+        "storybook/*": ["./storybook/*"],
+      },
+      "baseUrl": ".",
+    },
+    "include": ["./**/*"],
+    "checkJs": true,
+    "exclude": ["node_modules"],
+}
