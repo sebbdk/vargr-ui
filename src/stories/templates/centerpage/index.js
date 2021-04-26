@@ -6,17 +6,16 @@ const BasepageElm = styled.div`
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const ContentWrapper = styled.div`
     max-width: 1280px;
-    width: 100%;
-    margin: auto;
-    margin-top: 2rem;
-    padding: 0 2rem;
+    padding: 2rem;
 `;
 
-export const BasePage = (props) => {
+export const CenterPage = (props) => {
     return html`<${BasepageElm}>
         <${GlobalStyles} />
 
