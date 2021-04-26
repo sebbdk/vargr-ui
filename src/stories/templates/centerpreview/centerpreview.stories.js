@@ -2,7 +2,7 @@ import { CenterPreview } from './index.js';
 import { html } from 'htm/preact';
 
 export default {
-  title: 'templates/centerpreview',
+  title: 'templates/CenterPreview',
   component: CenterPreview,
   argTypes: {},
 };
