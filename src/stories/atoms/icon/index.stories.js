@@ -11,11 +11,11 @@ export default {
 
 const Template = (args) => html`<${BasePage}>
     <${CenterPreview}>
-      <${Icon}>menu</${Icon}>
-      <${Icon}>close</${Icon}>
-      <${Icon}>favorite</${Icon}>
-      <${Icon}>loyalty</${Icon}>
-      <${Icon}>delete</${Icon}>
+        <${Icon}>menu</${Icon}>
+        <${Icon}>close</${Icon}>
+        <${Icon}>favorite</${Icon}>
+        <${Icon}>loyalty</${Icon}>
+        <${Icon}>delete</${Icon}>
     </${CenterPreview}>
 </${BasePage}>`;
 

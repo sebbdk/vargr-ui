@@ -5,7 +5,6 @@ const IconElm = styled.div`
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;
     font-display: block;
     text-transform: none;
     letter-spacing: normal;
@@ -16,7 +15,6 @@ const IconElm = styled.div`
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'liga';
-
     vertical-align: middle;
     display: inline-block;
 `;
