@@ -41,6 +41,9 @@ const MainWrapper = styled.div`
   border: 0.2em solid #BBB;
   border-radius: 0.2em;
   min-width: 50%;
+  max-width: 600px;
+  width: calc(100vw - 4rem);
+  margin: auto;
 `;
 
 export const LocalHub = ({ services = serviceList, ...props }) => {
