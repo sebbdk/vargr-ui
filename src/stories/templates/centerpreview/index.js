@@ -12,6 +12,7 @@ const CenterpreviewElm = styled.div`
     align-content: center;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 `;
 
 export const CenterPreview = (props) => {
