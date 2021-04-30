@@ -232,6 +232,8 @@ export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags =
 
     // TODO, add option to use other media blocks to support video, image ratio
 
+    // Inspiration: https://uxdesign.cc/designing-cards-for-beginners-9ed9454d27f6
+
     return html`
     <${CardElm}>
         <${CardContentElm} highlight=${highlight}>
