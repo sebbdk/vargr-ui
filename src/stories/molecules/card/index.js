@@ -230,6 +230,8 @@ export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags =
     // TODO, consider actions bar block into molecule
     // this component is problably an organism.... :)
 
+    // TODO, add option to use other media blocks to support video, image ratio
+
     return html`
     <${CardElm}>
         <${CardContentElm} highlight=${highlight}>
