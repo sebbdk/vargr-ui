@@ -37,6 +37,11 @@ export const GlobalStyles = createGlobalStyle`
         --card-bg-color: rgba(255,255,255, 0.6);
         --card-font-color: var(--layer-font-color);
         --card-font-color-contrast: #fff;
+        --card-highlighted-bg-color: #c3003c;
+        --card-highlighted-font-color: #fff;
+        --card-highlighted-font-color-contrast: #fff;
+
+
         --primary-font: helvetica;
 
         font-family: var(--primary-font);

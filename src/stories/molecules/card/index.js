@@ -21,8 +21,12 @@ const CardElm = styled.article`
 const CardContentElm = styled.div`
     border-radius: 0.25rem;
     overflow: hidden;
-    background-color: rgba(255,255,255, 0.5);
-    color: var(--card-font-color);
+    background-color: ${({highlight}) => highlight ? 'var(--card-highlighted-bg-color)' : 'rgba(255,255,255, 0.5)'};
+    color: ${({highlight}) => highlight ? 'var(--card-highlighted-font-color)' : 'var(--card-font-color)'};
+
+    a {
+        color: ${({highlight}) => highlight ? 'var(--card-highlighted-font-color)' : 'var(--link-color)'};
+    }
 `;
 
 const MediaElm = styled.div`
@@ -170,11 +174,13 @@ const GlobalLinkElm = styled.a.attrs(props => ({ src: props.href, target: "_blan
     bottom: 0;
 `;
 
+/*
 const InfoBar = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
 `;
+
 
 const InfoBarItem = styled.div`
     display: block;
@@ -189,6 +195,7 @@ const InfoBarItem = styled.div`
         background-color: rgba(0,0,0, 0.1);
     }
 `;
+*/
 
 const ActionsBar = styled.div`
     display: flex;
@@ -210,7 +217,7 @@ const Action = styled.a`
     }
 `;
 
-export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags = [], detailsLink, detailsText, actions = [], compact = false }) => {
+export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags = [], detailsLink, detailsText, actions = [], compact = false, highlight = false }) => {
     const hasImage = mediaSrc && mediaSrc !== '';
     const hasActions = actions.length > 0;
     const tagElms = tags.map(({ text }) => html`<${Tag}>${text}</${Tag}>`);
@@ -233,7 +240,7 @@ export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags =
 
     return html`
     <${CardElm}>
-        <${CardContentElm}>
+        <${CardContentElm} highlight=${highlight}>
             <${TextContentWrapper} compact=${compact}>
                 ${PrimaryText}
                 ${!hasImage && Tags}
