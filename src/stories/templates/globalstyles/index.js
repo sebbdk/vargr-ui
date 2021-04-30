@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { InterationColors, LinkColors } from "stories/vars";
 
 export const GlobalStyles = createGlobalStyle`
     @font-face {
@@ -17,18 +18,32 @@ export const GlobalStyles = createGlobalStyle`
         --main-bg-color: #333;
 
         /* Interaction elements */
-        --focused-interaction-color: #E92763;
+        --primary-interaction-color: ${InterationColors.primary};
         --secondary-interaction-color: #E07EA0;
+
+        /* Static info */
+        --primary-info: #e07ea0;
+        --primary-info-contrast: #73092b;
+        --secondary-info: #E07EA0;
 
         --button-primary: var(--focused-interaction-color);
 
+        /*Links*/
+        --link-color: ${LinkColors.text};
+
         /* Layers */
-        --layer-bg-color: #EEE;
-        --layer-font-color: #333;
+        --card-bg-color: rgba(255,255,255, 0.6);
+        --card-font-color: #333;
+        --card-font-color-contrast: #fff;
         --primary-font: helvetica;
 
         font-family: var(--primary-font);
         color: var(--primary-color);
         background-color: var(--main-bg-color);
+    }
+
+    a {
+        color: var(--link-color);
+        text-decoration: none;
     }
 `;

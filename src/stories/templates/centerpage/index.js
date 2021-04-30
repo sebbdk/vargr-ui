@@ -1,6 +1,7 @@
 import { html } from "htm/preact"
 import styled from "styled-components"
 import { GlobalStyles } from '../globalstyles/index';
+import { MediaQuerySize } from "stories/vars";
 
 const BasepageElm = styled.div`
     min-width: 100vw;
@@ -12,7 +13,12 @@ const BasepageElm = styled.div`
 
 const ContentWrapper = styled.div`
     max-width: 1280px;
-    padding: 2rem;
+    margin: 0.5rem;
+    flex-grow: 1;
+    
+    ${MediaQuerySize.largeMobile} {
+        margin: 1rem;
+    }
 `;
 
 export const CenterPage = (props) => {
