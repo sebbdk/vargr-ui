@@ -12,7 +12,7 @@ const DemoContent = styled.div`
     background-color: yellow;
     height: 2rem;
     padding: 1rem;
-    text-align center;
+    text-align: center;
     line-height: 2rem;
     color: var(--layer-font-color);
 `;

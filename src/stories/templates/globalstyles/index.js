@@ -31,9 +31,11 @@ export const GlobalStyles = createGlobalStyle`
         /*Links*/
         --link-color: ${LinkColors.text};
 
+        --layer-font-color: #333;
+
         /* Layers */
         --card-bg-color: rgba(255,255,255, 0.6);
-        --card-font-color: #333;
+        --card-font-color: var(--layer-font-color);
         --card-font-color-contrast: #fff;
         --primary-font: helvetica;
 
