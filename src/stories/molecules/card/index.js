@@ -225,6 +225,11 @@ export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags =
         </${MediaElm}>
     `;
 
+    // TODO, consider splitting text content into a molecule
+    // TODO, consider splitting media block into molecule
+    // TODO, consider actions bar block into molecule
+    // this component is problably an organism.... :)
+
     return html`
     <${CardElm}>
         <${CardContentElm} highlight=${highlight}>
