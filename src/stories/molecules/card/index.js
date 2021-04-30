@@ -83,10 +83,6 @@ const PrimaryTextElm = styled.h4`
     }
 `;
 
-const PrimaryTextWrapperElm = styled.div`
-    display: flex;
-`;
-
 const SecondaryTextElm = styled.div`
     font-weight: bold;
     margin: 0.25rem 0;
@@ -163,15 +159,6 @@ const DetailsLinkElm = styled.a`
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
-`;
-
-const GlobalLinkElm = styled.a.attrs(props => ({ src: props.href, target: "_blank" }))`
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 `;
 
 /*
