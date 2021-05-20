@@ -67,11 +67,10 @@
 		  "  argTypes: {},",
 		  "};",
 		  "",
-		  "const Template = (args) => html`<${${1}} {...args} />`;",
+		  "const Template = (args) => html`<${${1}} ...${args} />`;",
 		  "",
 		  "export const primary= Template.bind({});",
-		  "primary.args = {",
-		  "};"
+		  "primary.args = {};"
 		],
 		"description": "Preact storybook"
 	  }
