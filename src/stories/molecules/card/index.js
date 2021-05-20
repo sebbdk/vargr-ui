@@ -12,6 +12,7 @@ const CardElm = styled.article`
     box-shadow: 0.15rem 0.15rem 0.5rem 0.15rem rgba(0,0,0, 0.25);
     border-radius: 0.25rem;
     position: relative;
+    box-sizing: border-box;
 
     *:last-child {
         margin-bottom: 0;
@@ -196,6 +197,7 @@ const Action = styled.a`
     padding: 0.5rem;
     text-align: center;
     cursor: pointer;
+    flex-basis: 100%;
 
     border-top: 1px solid rgba(0,0,0, 0.25);
 

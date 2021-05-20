@@ -37,7 +37,7 @@ primary.args = {
   secondaryText: 'read here about why this is amazing!',
   tertiaryText: 'Hello world, i am content text',
   tags: [{ text: 'New' }, {text: 'bad add'}],
-  actions: [{ text: 'Like', onClick:() => alert('Hello world!') }, { text: 'Comment' }],
+  actions: [{ text: 'Like', onClick:() => alert('Hello world!') }, { text: 'Comment' }, { text: 'Report' }],
   detailsLink: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz',
   detailsText: 'View details'
 };

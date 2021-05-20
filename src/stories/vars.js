@@ -27,7 +27,8 @@ function LightenDarkenColor(col,amt) {
 
 export const MediaQuerySize = {
     largeMobile: '@media only screen and (min-width: 414px)',
-    desktop: '@media only screen and (min-width: 896px)'
+    smallDesktop: '@media only screen and (min-width: 896px)',
+    desktop: '@media only screen and (min-width: 1280px)'
 };
 
 export const InterationColors = {
