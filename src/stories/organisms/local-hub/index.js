@@ -8,7 +8,8 @@ export const serviceList = [
   { name: 'NextCloud', link: 'http://next.hopper.local' },
   { name: 'Parse', link: 'http://parse.hopper.local' },
   { name: 'Portainer', link: 'http://Portainer.hopper.local' },
-  { name: 'Nginx', link: 'http://hopper.local:81' }
+  { name: 'Nginx', link: 'http://hopper.local:81' },
+  { name: '3D printer', link: 'http://octo.local' }
 ];
 
 const ListItem = styled.a`
