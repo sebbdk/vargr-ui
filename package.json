@@ -19,7 +19,8 @@
   },
   "alias": {
     "react": "preact/compat",
-    "react-dom": "preact/compat"
+    "react-dom": "preact/compat",
+    "stories": "./src/stories"
   },
   "dependencies": {
     "@storybook/cli": "^6.2.9",
