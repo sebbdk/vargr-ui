@@ -2,6 +2,7 @@ import { html } from "htm/preact";
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 
+// Most of the logo's are sources from: https://www.vectorlogo.zone/
 import mongodbLogo from './icons/mongodb.svg';
 import nextcloudLogo from './icons/nextcloud.svg';
 import nginxLogo from './icons/nginx.svg';
