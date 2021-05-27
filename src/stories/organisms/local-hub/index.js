@@ -1,15 +1,23 @@
-import { html } from "htm/preact"
+import { html } from "htm/preact";
 import PropTypes from 'prop-types';
-import styled from "styled-components"
+import styled from "styled-components";
+
+import mongodbLogo from './icons/mongodb.svg';
+import nextcloudLogo from './icons/nextcloud.svg';
+import nginxLogo from './icons/nginx.svg';
+import octoprintLogo from './icons/octoprint.png';
+import parseLogo from './icons/parse.svg';
+import portainerLogo from './icons/portainer.svg';
+import storybookLogo from './icons/storybook.svg';
 
 export const serviceList = [
-  { name: 'Storybook', link: 'http://book.hopper.local' },
-  { name: 'MongoDB', link: 'http://mongo.hopper.local' },
-  { name: 'NextCloud', link: 'http://next.hopper.local' },
-  { name: 'Parse', link: 'http://parse.hopper.local' },
-  { name: 'Portainer', link: 'http://Portainer.hopper.local' },
-  { name: 'Nginx', link: 'http://hopper.local:81' },
-  { name: '3D printer', link: 'http://octo.local' }
+  { name: 'Storybook', link: 'http://book.hopper.local', logo: storybookLogo },
+  { name: 'MongoDB', link: 'http://mongo.hopper.local', logo: mongodbLogo },
+  { name: 'NextCloud', link: 'http://next.hopper.local', logo: nextcloudLogo},
+  { name: 'Parse', link: 'http://parse.hopper.local', logo: parseLogo },
+  { name: 'Portainer', link: 'http://Portainer.hopper.local', logo: portainerLogo },
+  { name: 'Nginx', link: 'http://hopper.local:81', logo: nginxLogo },
+  { name: '3D printer', link: 'http://octo.local', logo: octoprintLogo }
 ];
 
 const ListItem = styled.a`
@@ -23,10 +31,18 @@ const ListItem = styled.a`
   font-family: Arial;
   font-weight: bold;
   border-radius: 0.2em;
+  position: relative;
 
   &:hover {
     background-color: #999;
-  } 
+  }
+
+  img {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    height: calc(100% - 1rem);
+  }
 `;
 
 const List = styled.div`
@@ -49,7 +65,10 @@ const MainWrapper = styled.div`
 
 export const LocalHub = ({ services = serviceList, ...props }) => {
   const imgElms = serviceList.map((item, index) => {
-    return html`<${ListItem} href=${item.link} target="_blank" >${item.name}</${ListItem}>`
+    return html`<${ListItem} href=${item.link} target="_blank">
+      ${item.name}
+      <img src=${item.logo} />
+    </${ListItem}>`
   });
 
   return html`<${MainWrapper}>
