@@ -1,16 +1,16 @@
 import { html, Component } from "htm/preact"
 import PropTypes from 'prop-types';
 import styled from "styled-components"
+import { Card } from "stories/molecules/card";
 
-const ImgElm = styled.img`
+const ImgElm = styled.div`
   width: calc(100% - 1rem);
-  max-height: 200px;
-  object-fit: contain;
-  background-color: #333;
+  aspect-ratio: 595 / 842; // A4 paper aspect
   margin: 0.5rem;
   box-sizing: border-box;
-  user-select: none;
-  
+  display:  flex;
+  align-items: stretch;
+
   ${({ hasPick }) => {
       return hasPick && 'cursor: pointer;'
   }}
@@ -35,7 +35,6 @@ const ImgElm = styled.img`
 const ListView = styled.div`
   display: flex;
   flex-wrap: wrap;
-  
   padding: 0.5rem;
 `;
 
@@ -55,7 +54,14 @@ export function ImagePage({ src, onPick }) {
     onPick && onPick(src)
   }
 
-  return html`<${ImgElm} hasPick="${ onPick !== undefined }" onClick="${openImage}" src="${src}" />`;
+  const d = {
+    mediaSrc: src,
+    compact:true
+  }
+
+  return html`<${ImgElm} hasPick=${onPick !== undefined} onClick=${onPick && openImage}>
+    <${Card} ...${d} />
+  </${ImgElm}>`;
 }
 
 export const Gallery = ({ title, onPick, images, ...props }) => {

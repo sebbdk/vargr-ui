@@ -6,6 +6,7 @@ const CardElm = styled.article`
     padding: 0.5rem;
     max-width: 100%;
     display: flex;
+    align-items: stretch;
     flex-grow: 1;
     flex-direction: column;
     background-color: var(--card-bg-color, #EEE);
@@ -20,8 +21,12 @@ const CardElm = styled.article`
 `;
 
 const CardContentElm = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     border-radius: 0.25rem;
     overflow: hidden;
+    flex-grow: 1;
     background-color: ${({highlight}) => highlight ? 'var(--card-highlighted-bg-color)' : 'rgba(255,255,255, 0.5)'};
     color: ${({highlight}) => highlight ? 'var(--card-highlighted-font-color)' : 'var(--card-font-color)'};
 
@@ -31,7 +36,7 @@ const CardContentElm = styled.div`
 `;
 
 const MediaElm = styled.div`
-    height: ${({hasImage}) => (hasImage ? '8rem' : 'auto')};
+    min-height: ${({hasImage}) => (hasImage ? '8rem' : 'auto')};
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 0 2rem rgba(0,0,0, 0.25);
@@ -43,6 +48,7 @@ const MediaElm = styled.div`
     display: flex;
     align-items: flex-end;
     box-sizing: border-box;
+    flex-grow: 1;
 
     border-top: ${({compact}) => (compact ? '' : '1px solid rgba(0,0,0, 0.05)')};
 
@@ -206,7 +212,7 @@ const Action = styled.a`
     }
 `;
 
-export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags = [], detailsLink, detailsText, actions = [], compact = false, highlight = false }) => {
+export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags = [], detailsLink, detailsText, actions = [], compact = false, highlight = false, onClick=undefined }) => {
     const hasImage = mediaSrc && mediaSrc !== '';
     const hasActions = actions.length > 0;
     const tagElms = tags.map(({ text }) => html`<${Tag}>${text}</${Tag}>`);
@@ -237,7 +243,7 @@ export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags =
     // Inspiration: https://uxdesign.cc/designing-cards-for-beginners-9ed9454d27f6
 
     return html`
-    <${CardElm}>
+    <${CardElm} onClick=${onClick}>
         <${CardContentElm} highlight=${highlight}>
             <${TextContentWrapper} compact=${compact}>
                 ${PrimaryText}
