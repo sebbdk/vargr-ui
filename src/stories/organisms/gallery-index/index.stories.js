@@ -1,7 +1,7 @@
-/** @jsx h */
-import { h } from 'preact';
 import { Gallery } from './index';
 import { DemoPages2, DemoPages1 } from 'stories/assets';
+import { BasePage } from 'stories/templates/basepage';
+import { html } from "htm/preact"
 
 export default {
   title: 'Organisms/Gallery',
@@ -12,7 +12,11 @@ export default {
   },
 };
 
-const Template = (args) => <Gallery {...args} />;
+const Template = (args) => html`
+  <${BasePage}>
+    <${Gallery} ...${args} />
+  </${BasePage}>
+`;
 
 export const NoneInteractive = Template.bind({});
 NoneInteractive.args = {
