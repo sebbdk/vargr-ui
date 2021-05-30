@@ -26,7 +26,6 @@ function addGroup(group) {
         observer: new IntersectionObserver((items) => {
             items.forEach(entry => {
                 if (entry.isIntersecting) {
-                    console.log('123')
                     load(entry.target, group)
                 } 
             });
