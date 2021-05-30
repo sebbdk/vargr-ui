@@ -47,6 +47,8 @@ export const GlobalStyles = createGlobalStyle`
         font-family: var(--primary-font);
         color: var(--primary-color);
         background-color: var(--main-bg-color);
+        height: 100vh;
+        overflow-x: hidden;
     }
 
     a {
