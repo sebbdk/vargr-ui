@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { LazyImage } from "stories/atoms/lazy-image";
 
 const CardElm = styled.article`
-    padding: 0.5rem;
+    padding: ${({hasBorder}) => (hasBorder ? '0.5rem' : '')};
     max-width: 100%;
     display: flex;
     align-items: stretch;
@@ -218,13 +218,40 @@ const Action = styled.a`
     }
 `;
 
-export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags = [], detailsLink, detailsText, actions = [], compact = false, highlight = false, onClick=undefined }) => {
+const CoverLink = styled.a`
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+`;
+
+export const Card = ({
+        hasBorder = true,
+        mediaSrc,
+        primaryText,
+        secondaryText,
+        tertiaryText,
+        tags = [],
+        link = undefined,
+        target = '_blank',
+        detailsLink,
+        detailsText,
+        actions = [],
+        compact = false,
+        highlight = false,
+        onClick = undefined
+    }) => {
+
     const hasImage = mediaSrc && mediaSrc !== '';
     const hasActions = actions.length > 0;
     const tagElms = tags.map(({ text }) => html`<${Tag}>${text}</${Tag}>`);
     const actionElms = actions.map((props) => html`<${Action} ...${props}>${props.text}</${Action}>`);
 
-    const Tags = html`<${TagsList} inContent>${tagElms}</${TagsList}>`;
+    const coverLink = link !== undefined ? html`<${CoverLink} href=${link} target=${target}></${CoverLink}>`:'';
+    const Tags = tagElms.length > 0 ? html`<${TagsList} inContent>${tagElms}</${TagsList}>`:'';
     const PrimaryText = primaryText ? html`<${PrimaryTextElm}>${primaryText}</${PrimaryTextElm}>` : '';
     const SecondaryText = secondaryText ? html`<${SecondaryTextElm}>${secondaryText}</${SecondaryTextElm}>` : '';
     const TertiaryText = tertiaryText ? html`<<${TertiaryTextElm}>${tertiaryText}</${TertiaryTextElm}>` : '';
@@ -249,7 +276,8 @@ export const Card = ({mediaSrc, primaryText, secondaryText, tertiaryText, tags =
     // Inspiration: https://uxdesign.cc/designing-cards-for-beginners-9ed9454d27f6
 
     return html`
-    <${CardElm} onClick=${onClick}>
+    <${CardElm} hasBorder=${hasBorder} onClick=${onClick}>
+        ${coverLink}
         <${CardContentElm} highlight=${highlight}>
             <${TextContentWrapper} compact=${compact}>
                 ${PrimaryText}
