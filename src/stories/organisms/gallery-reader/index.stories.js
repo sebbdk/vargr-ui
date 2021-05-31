@@ -13,15 +13,8 @@ export default {
   }
 };
 
-const FakePage = styled.div`
-  /*
-  height: 80vh;
-  max-width: 80vw;
-  margin: auto;
-  */
-`;
 
-const Template = (args) => <FakePage><GalleryReader {...args} /></FakePage>;
+const Template = (args) => <GalleryReader {...args} />;
 export const SinglePage = Template.bind({});
 SinglePage.args = {
   images: DemoPages2

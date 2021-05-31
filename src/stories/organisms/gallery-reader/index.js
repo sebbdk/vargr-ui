@@ -21,26 +21,25 @@ const ImagePage = styled.img`
 `;
 
 const GalleryReaderContainer = styled.div`
-  background-color: #999;
-  height: 100%;
-  max-height: 100vh;
-  box-sizing: border-box;
-  max-width: 100vw;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  position: relative;
+    width: 100vw;
+    height: 100vh;
 `;
 
 const CurrentPageHint = styled.div`
-  background-color: #999;
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
+    background-color: #999;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
 `;
 
+const Transformer = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    height: calc(100% - 2rem);
+`;
 
 export class GalleryReader extends Component {
 
@@ -95,7 +94,9 @@ export class GalleryReader extends Component {
         });
     
         return html`<${GalleryReaderContainer}>
-            ${imgElms}
+            <${Transformer}>
+                ${imgElms}
+            </${Transformer}>
             <${CurrentPageHint}>
                 ${this.state.index+1}/${this.props.images.length}
             </${CurrentPageHint}>
