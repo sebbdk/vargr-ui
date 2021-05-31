@@ -42,6 +42,19 @@ primary.args = {
   detailsText: 'View details'
 };
 
+export const borderless= Template.bind({});
+  borderless.args = {
+  hasBorder: false,
+  mediaSrc: require('stories/assets/resizeme_hori.jpg'),
+  primaryText: 'Taxi drivers hate him',
+  secondaryText: 'read here about why this is amazing!',
+  tertiaryText: 'Hello world, i am content text',
+  tags: [{ text: 'New' }, {text: 'bad add'}],
+  actions: [{ text: 'Like', onClick:() => alert('Hello world!') }, { text: 'Comment' }, { text: 'Report' }],
+  detailsLink: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz',
+  detailsText: 'View details'
+};
+
 export const Highlighted= Template.bind({});
 Highlighted.args = {
   mediaSrc: require('stories/assets/resizeme_hori.jpg'),
@@ -79,10 +92,19 @@ Compact.args = {
   compact:true
 };
 
-export const OnlyMedia= Template.bind({});
-OnlyMedia.args = {
+export const LinkedCompactMedia = Template.bind({});
+LinkedCompactMedia.args = {
   mediaSrc: require('stories/assets/resizeme_hori.jpg'),
   primaryText: 'Taxi drivers hate him',
+  compact: true,
+  link: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz'
+};
+
+export const LinkedTextOnly= Template.bind({});
+LinkedTextOnly.args = {
+  primaryText: 'Taxi drivers hate him',
+  hasBorder: false,
+  link: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz'
 };
 
 export const Overflowed = Template.bind({});

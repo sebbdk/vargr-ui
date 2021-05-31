@@ -41,10 +41,8 @@ WithInfo.args = {
     mediaSrc: src,
     primaryText: 'hello i am the titlea asd asd ads ad asda sdadsadasd asd asd ',
     tags: [{ text: 'New' }],
-  })),
-  onPick: (index, images) => {
-    window.open(images[index].mediaSrc,'_blank');
-  }
+    link: src
+  }))
 };
 
 // @TODO add example for gallery overviews with names and tags
