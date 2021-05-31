@@ -1,6 +1,16 @@
 import { Component, createRef } from "preact"
 import { html } from "htm/preact"
 import styled from "styled-components"
+import { PerfImage } from "../perf-image";
+
+// TODO:
+// Intersection observer should be debounced so it is does not trigger images loading when doing fast scroll
+
+//TODO:
+// Create a method to pre-initialize a loadGroup and pass/update it with an element reference
+
+// Question:
+// Should we unload images when not in viewport???
 
 const LazyImageElm = styled.img.attrs(props => ({ src: props.src, OnLoad: props.OnLoad }))`
     opacity: ${({loaded}) => (loaded ? 1 : 0)};

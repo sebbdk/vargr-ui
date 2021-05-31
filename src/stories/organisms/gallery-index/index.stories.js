@@ -39,3 +39,5 @@ WithPickAction.args = {
     window.open(images[index],'_blank');
   }
 };
+
+// @TODO add example for gallery overviews with names and tags
