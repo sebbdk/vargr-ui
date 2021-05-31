@@ -8,7 +8,7 @@ export default {
   title: 'molecules/card',
   component: Card,
   argTypes: {
-    mediaSrc: 'https://placebear.com/301/200',
+    mediaSrc: require('stories/assets/resizeme_hori.jpg'),
     primaryText: 'Taxi drivers hate him',
     secondaryText: 'read here about why this is amazing!',
     tertiaryText: 'Hello world, i am content text',
@@ -32,7 +32,7 @@ const Template = (args) => html`<${CenterPage}>
 
 export const primary= Template.bind({});
 primary.args = {
-  mediaSrc: 'https://placebear.com/301/200',
+  mediaSrc: require('stories/assets/resizeme_hori.jpg'),
   primaryText: 'Taxi drivers hate him',
   secondaryText: 'read here about why this is amazing!',
   tertiaryText: 'Hello world, i am content text',
@@ -44,7 +44,7 @@ primary.args = {
 
 export const Highlighted= Template.bind({});
 Highlighted.args = {
-  mediaSrc: 'https://placebear.com/301/200',
+  mediaSrc: require('stories/assets/resizeme_hori.jpg'),
   primaryText: 'Taxi drivers hate him',
   secondaryText: 'read here about why this is amazing!',
   tertiaryText: 'Hello world, i am content text',
@@ -68,7 +68,7 @@ NoMedia.args = {
 
 export const Compact= Template.bind({});
 Compact.args = {
-  mediaSrc: 'https://placebear.com/301/200',
+  mediaSrc: require('stories/assets/resizeme_hori.jpg'),
   primaryText: 'Taxi drivers hate him',
   secondaryText: 'read here about why this is amazing!',
   tertiaryText: 'Hello world, i am content text',
@@ -81,13 +81,13 @@ Compact.args = {
 
 export const OnlyMedia= Template.bind({});
 OnlyMedia.args = {
-  mediaSrc: 'https://placebear.com/301/200',
+  mediaSrc: require('stories/assets/resizeme_hori.jpg'),
   primaryText: 'Taxi drivers hate him',
 };
 
 export const Overflowed = Template.bind({});
 Overflowed.args = {
-  mediaSrc: 'https://placebear.com/301/200',
+  mediaSrc: require('stories/assets/resizeme_hori.jpg'),
   primaryText: 'Taxi drivers hate him Taxi drivers hate himTaxi drivers hate himTaxi drivers hate him drivers hate himTaxi drivers hate him drivers hate himTaxi drivers hate him',
   secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.read here about why this is amazing!read here about why this is amazing!read here about why this is amazing!',
   tertiaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',

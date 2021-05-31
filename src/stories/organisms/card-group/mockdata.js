@@ -1,6 +1,6 @@
 
 const defaultItem = {
-    mediaSrc: 'https://placebear.com/301/200',
+    mediaSrc: require('stories/assets/resizeme_hori.jpg'),
     primaryText: 'Taxi drivers hate him',
     secondaryText: 'read here about why this is amazing!',
     tertiaryText: 'Hello world, i am content text',
