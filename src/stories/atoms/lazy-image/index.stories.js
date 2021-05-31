@@ -17,5 +17,5 @@ const Template = (args) => html`<${BasePage}>
 
 export const primary= Template.bind({});
 primary.args = {
-    src: 'https://placebear.com/600/200'
+    src: require(`stories/assets/resizeme_hori.jpg`)
 };

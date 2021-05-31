@@ -19,10 +19,8 @@ function getGroup(group) {
 
 function addGroup(group) {
     loadingGroups[group] = {
-        limit: 5,
-        loading: [],
         queued: [],
-        waitTime: 250,
+        waitTime: 50,
         observer: new IntersectionObserver((items) => {
             items.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -42,23 +40,20 @@ function queueLoad(loadRef, group) {
         });
     });
 
-    getGroup(group).observer.observe(loadRef.current);
+    getGroup(group).observer.observe(loadRef.current.base);
 
     return promise
 }
 
 function load(loadRefCurrent, group) {
     getGroup(group).observer.unobserve(loadRefCurrent);
-    const next = getGroup(group).queued.find(i => i.loadRef.current === loadRefCurrent);
+    const next = getGroup(group).queued.find(i => i.loadRef.current.base === loadRefCurrent);
     if (next !== undefined) {
-        getGroup(group).loading.push(next);
         next.resolve();
     }
 }
 
 function stopLoad(loadRef, group) {
-    
-    getGroup(group).loading = getGroup(group).loading.filter(i => i.loadRef !== loadRef);
     getGroup(group).queued = getGroup(group).queued.filter(i => i.loadRef !== loadRef);
 }
 
@@ -75,7 +70,6 @@ export class LazyImage extends Component {
 
     componentDidMount() {
         this.componentDidUpdate({});
-        
     }
 
 
@@ -91,17 +85,16 @@ export class LazyImage extends Component {
         stopLoad(this.elmRef, this.state.loadGroup);
 
         queueLoad(this.elmRef, this.state.loadGroup).then(() => {
-            const img = new Image();
-            img.onload = () => {
+            this.img = new Image();
+            this.img.onload = () => {
                 this.setState({
                     ...this.state,
-                    loaded: true,
                     src: this.props.src
                 });
 
                 stopLoad(this.elmRef, this.state.loadGroup);
             }
-            img.src = this.props.src;
+            this.img.src = this.props.src;
         });
     }
 
@@ -110,6 +103,6 @@ export class LazyImage extends Component {
     }
 
     render() {
-        return html`<${LazyImageElm} ref=${this.elmRef} loaded=${this.state.loaded} src=${this.state.src}>Hello</${LazyImageElm}>`
+        return html`<${PerfImage} ref=${this.elmRef} img=${this.img} src=${this.state.src} />`
     }
 }
