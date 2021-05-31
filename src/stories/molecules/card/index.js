@@ -14,6 +14,13 @@ const CardElm = styled.article`
     border-radius: 0.25rem;
     position: relative;
     box-sizing: border-box;
+    transition: background-color 150ms ease-in;
+
+    ${({hasLink}) => (hasLink && `
+        &:hover {
+            background-color: var(--card-bg-color-hover, red);
+        }
+    `)};
 
     *:last-child {
         margin-bottom: 0;
@@ -90,6 +97,11 @@ const PrimaryTextElm = styled.h4`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    background-image: url(${({icon}) => (icon ? icon : '')});
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
 
     &::first-letter {
         text-transform: capitalize;
@@ -231,6 +243,7 @@ const CoverLink = styled.a`
 export const Card = ({
         hasBorder = true,
         mediaSrc,
+        icon,
         primaryText,
         secondaryText,
         tertiaryText,
@@ -252,7 +265,7 @@ export const Card = ({
 
     const coverLink = link !== undefined ? html`<${CoverLink} href=${link} target=${target}></${CoverLink}>`:'';
     const Tags = tagElms.length > 0 ? html`<${TagsList} inContent>${tagElms}</${TagsList}>`:'';
-    const PrimaryText = primaryText ? html`<${PrimaryTextElm}>${primaryText}</${PrimaryTextElm}>` : '';
+    const PrimaryText = primaryText ? html`<${PrimaryTextElm} icon=${icon}>${primaryText}</${PrimaryTextElm}>` : '';
     const SecondaryText = secondaryText ? html`<${SecondaryTextElm}>${secondaryText}</${SecondaryTextElm}>` : '';
     const TertiaryText = tertiaryText ? html`<<${TertiaryTextElm}>${tertiaryText}</${TertiaryTextElm}>` : '';
     const DetailsLink = detailsLink ? html`<${DetailsLinkElm} href=${detailsLink} target="_blank">${detailsText}</${DetailsLinkElm}>` : '';
@@ -276,7 +289,7 @@ export const Card = ({
     // Inspiration: https://uxdesign.cc/designing-cards-for-beginners-9ed9454d27f6
 
     return html`
-    <${CardElm} hasBorder=${hasBorder} onClick=${onClick}>
+    <${CardElm} hasLink=${link !== undefined} hasBorder=${hasBorder} onClick=${onClick}>
         ${coverLink}
         <${CardContentElm} highlight=${highlight}>
             <${TextContentWrapper} compact=${compact}>

@@ -1,6 +1,6 @@
 import { html } from 'htm/preact';
 import { LocalHub } from './index';
-import { CenterPreview } from 'stories/templates/centerpreview';
+import { CenterPage } from 'stories/templates/centerpage';
 
 export default {
   title: 'Organisms/Hub',
@@ -11,7 +11,7 @@ export default {
   },
 };
 
-const Template = (args) => html`<${CenterPreview}><${LocalHub} ...${args} /></${CenterPreview}>`;
+const Template = (args) => html`<${CenterPage}><${LocalHub} ...${args} /></${CenterPage}>`;
 
 export const RegularHub = Template.bind({});
 RegularHub.args = {};

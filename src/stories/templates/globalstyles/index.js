@@ -35,6 +35,7 @@ export const GlobalStyles = createGlobalStyle`
 
         /* Layers */
         --card-bg-color: rgba(255,255,255, 0.6);
+        --card-bg-color-hover: rgba(255,255,255, 0.2);
         --card-font-color: var(--layer-font-color);
         --card-font-color-contrast: #fff;
         --card-highlighted-bg-color: #c3003c;

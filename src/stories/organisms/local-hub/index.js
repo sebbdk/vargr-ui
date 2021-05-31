@@ -1,6 +1,7 @@
 import { html } from "htm/preact";
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import { Card } from "stories/molecules/card";
 
 // Most of the logo's are sources from: https://www.vectorlogo.zone/
 import mongodbLogo from './icons/mongodb.svg';
@@ -22,28 +23,7 @@ export const serviceList = [
 ];
 
 const ListItem = styled.a`
-  border: 0.25em;
-  padding: 1rem;
-  display: block;
-  background-color: #AAA;
   margin: 0.5rem;
-  color: #333;
-  text-decoration: none;
-  font-family: Arial;
-  font-weight: bold;
-  border-radius: 0.2em;
-  position: relative;
-
-  &:hover {
-    background-color: #999;
-  }
-
-  img {
-    position: absolute;
-    right: 1rem;
-    top: 0.5rem;
-    height: calc(100% - 1rem);
-  }
 `;
 
 const List = styled.div`
@@ -55,8 +35,7 @@ const List = styled.div`
 
 const MainWrapper = styled.div`
   display: block;
-  background-color: #EEE;
-  border: 0.2em solid #BBB;
+
   border-radius: 0.2em;
   min-width: 50%;
   max-width: 600px;
@@ -66,10 +45,14 @@ const MainWrapper = styled.div`
 
 export const LocalHub = ({ services = serviceList, ...props }) => {
   const imgElms = serviceList.map((item, index) => {
-    return html`<${ListItem} href=${item.link} target="_blank">
-      ${item.name}
-      <img src=${item.logo} />
-    </${ListItem}>`
+    const props = {
+      primaryText: item.name,
+      icon: item.logo,
+      link: item.link,
+      hasBorder: false
+    };
+
+    return html`<${ListItem}><${Card} ...${props} /></${ListItem}>`;
   });
 
   return html`<${MainWrapper}>

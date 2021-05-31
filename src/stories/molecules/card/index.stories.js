@@ -100,11 +100,12 @@ LinkedCompactMedia.args = {
   link: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz'
 };
 
-export const LinkedTextOnly= Template.bind({});
-LinkedTextOnly.args = {
+export const LinkedTextOnlyWithIcon= Template.bind({});
+LinkedTextOnlyWithIcon.args = {
   primaryText: 'Taxi drivers hate him',
   hasBorder: false,
-  link: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz'
+  link: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz',
+  icon: require('stories/assets/icon.png')
 };
 
 export const Overflowed = Template.bind({});
@@ -115,5 +116,5 @@ Overflowed.args = {
   tertiaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   tags: [{ text: 'New incididunt ut labore et dolore magnaectetur adipiscing elit,ectetur adipiscing elit,' }, {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'}],
   detailsLink: 'https://www.youtube.com/watch?v=ZLKZKmdZEjM&ab_channel=Gorillaz',
-  detailsText: 'View details Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  detailsText: 'View details Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 };
