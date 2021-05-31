@@ -23,6 +23,7 @@ const ImagePage = styled.img`
 const GalleryReaderContainer = styled.div`
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 `;
 
 const CurrentPageHint = styled.div`
@@ -39,6 +40,7 @@ const Transformer = styled.div`
     justify-content: center;
     padding: 1rem;
     height: calc(100% - 2rem);
+    user-select: none;
 `;
 
 export class GalleryReader extends Component {
@@ -46,11 +48,17 @@ export class GalleryReader extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            index: props.index || 0
+            index: props.index || 0,
+            dragStart: {x:0, y:0},
+            translate: {x:0, y:0},
+            startTranslate: {x:0, y:0},
+            isDragging: false,
         }
     }
 
     handleKeyDown(evt) {
+        evt.preventDefault()
+
         if (evt.key === 'ArrowRight') {
             this.next();
         }
@@ -60,13 +68,57 @@ export class GalleryReader extends Component {
         }
     }
 
+    handleDragStart(evt) {
+        document.hasFocus();
+        evt.preventDefault()
+        this.setState({
+            isDragging: true,
+            dragStart: {x:evt.clientX, y:evt.clientY},
+            startTranslate: {
+                ...this.state.translate
+            }
+        });
+    }
+
+    handleDrag(evt) {
+        if(!this.state.isDragging) {
+            return;
+        }
+
+        const translateDiff = {
+            x:  evt.clientX - this.state.dragStart.x,
+            y: evt.clientY - this.state.dragStart.y
+        };
+
+        this.setState({
+            translate: {
+                x: this.state.startTranslate.x + translateDiff.x,
+                y: this.state.startTranslate.y + translateDiff.y
+            }
+        });
+    }
+
+    handleDragEnd(evt) {
+        evt.preventDefault()
+        this.setState({
+            isDragging: false
+        });
+    }
+
     componentDidMount(){
         document.addEventListener("keyup", this.handleKeyDown.bind(this));
+        
+        document.addEventListener("mousedown", this.handleDragStart.bind(this));
+        document.addEventListener("mousemove", this.handleDrag.bind(this));
+        document.addEventListener("mouseup", this.handleDragEnd.bind(this));
     }
     
     
     componentWillUnmount() {
         document.removeEventListener("keyup", this.handleKeyDown.bind(this));
+        document.removeEventListener("mousedown", this.handleDragStart.bind(this));
+        document.removeEventListener("mousemove", this.handleDrag.bind(this));
+        document.removeEventListener("mouseup", this.handleDragEnd.bind(this));
     }
 
     next() {
@@ -90,11 +142,15 @@ export class GalleryReader extends Component {
     render() {
         const offSet = this.props.dualPage ? 2:1;
         const imgElms = this.props.images.slice(this.state.index, this.state.index+offSet).map((src, index) => {
-            return html`<${ImagePage} isDualPage=${this.props.dualPage} onClick="${this.next.bind(this)}" src="${src}"></${ImagePage}>`
+            return html`<${ImagePage} isDualPage=${this.props.dualPage} src="${src}"></${ImagePage}>`
         });
+
+        const style = {
+            transform: `translate(${this.state.translate.x}px, ${this.state.translate.y}px)`
+        }
     
         return html`<${GalleryReaderContainer}>
-            <${Transformer}>
+            <${Transformer} style=${style}>
                 ${imgElms}
             </${Transformer}>
             <${CurrentPageHint}>
