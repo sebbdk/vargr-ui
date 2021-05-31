@@ -23,7 +23,8 @@ NoneInteractive.args = {
   infoCard: {
     primaryText: 'And they talked',
     tags: [{ text: 'New' }, {text: 'bad add'}],
-    tertiaryText: 'Hello world, i am content text'
+    tertiaryText: 'Hello world, i am content text',
+    actions: [{ text: 'Favorite', onClick: () => alert('go!') }],
   },
   images: DemoPages3.map(src => ({ mediaSrc: src })),
   onPick: undefined
@@ -34,7 +35,8 @@ WithPickAction.args = {
   infoCard: {
     primaryText: 'Brave new world',
     tags: [{ text: 'New' }, {text: 'bad add'}],
-    tertiaryText: 'Hello world, i am content text'
+    tertiaryText: 'Hello world, i am content text',
+    actions: [{ text: 'Favorite', onClick: () => alert('go!') }],
   },
   images: DemoPages1.map(src => ({ mediaSrc: src })),
   onPick: (index, images) => {
@@ -47,7 +49,8 @@ WithInfo.args = {
   infoCard: {
     primaryText: 'Cakes',
     tags: [{ text: 'New' }, {text: 'bad add'}],
-    tertiaryText: 'Hello world, i am content text'
+    tertiaryText: 'Hello world, i am content text',
+    actions: [{ text: 'Favorite', onClick: () => alert('go!') }],
   },
   images: DemoPages2.map((src, index) => ({
     mediaSrc: src,
