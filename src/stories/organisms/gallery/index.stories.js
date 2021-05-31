@@ -1,5 +1,5 @@
 import { Gallery } from './index';
-import { DemoPages2, DemoPages1 } from 'stories/assets';
+import { DemoPages2, DemoPages1, DemoPages3 } from 'stories/assets';
 import { BasePage } from 'stories/templates/basepage';
 import { html } from "htm/preact"
 
@@ -21,22 +21,29 @@ const Template = (args) => html`
 export const NoneInteractive = Template.bind({});
 NoneInteractive.args = {
   title: 'And they talked',
-  images: DemoPages1,
+  images: DemoPages3.map(src => ({ mediaSrc: src })),
   onPick: undefined
-};
-
-export const ActionsDemo = Template.bind({});
-ActionsDemo.args = {
-  title: 'And they talked',
-  images: DemoPages2
 };
 
 export const WithPickAction = Template.bind({});
 WithPickAction.args = {
   title: 'Brave new world',
-  images: DemoPages2,
+  images: DemoPages1.map(src => ({ mediaSrc: src })),
   onPick: (index, images) => {
-    window.open(images[index],'_blank');
+    window.open(images[index].mediaSrc,'_blank');
+  }
+};
+
+export const WithInfo = Template.bind({});
+WithInfo.args = {
+  title: 'Cakes',
+  images: DemoPages2.map((src, index) => ({
+    mediaSrc: src,
+    primaryText: 'hello i am the titlea asd asd ads ad asda sdadsadasd asd asd ',
+    tags: [{ text: 'New' }],
+  })),
+  onPick: (index, images) => {
+    window.open(images[index].mediaSrc,'_blank');
   }
 };
 

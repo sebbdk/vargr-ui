@@ -49,28 +49,28 @@ const Title = styled.h2`
   font-size: 1.25em;
 `;
 
-export function ImagePage({ src, onPick }) {
+export function ImagePage(props) {
   function openImage() {
-    onPick && onPick(src)
+    props.onPick && props.onPick(props.src)
   }
 
   const d = {
-    mediaSrc: src,
-    compact:true
+    compact:true,
+    ...props
   }
 
-  return html`<${ImgElm} hasPick=${onPick !== undefined} onClick=${onPick && openImage}>
+  return html`<${ImgElm} hasPick=${props.onPick !== undefined} onClick=${props.onPick && openImage}>
     <${Card} ...${d} />
   </${ImgElm}>`;
 }
 
 export const Gallery = ({ title, onPick, images, ...props }) => {
-  const imgElms = images.map((src, index) => {
+  const imgElms = images.map((props, index) => {
     function onImagePick() {
       onPick(index, images)
     }
 
-    return html`<${ImagePage} onPick=${onPick && onImagePick} src="${src}"></${ImagePage}>`
+    return html`<${ImagePage} onPick=${onPick && onImagePick} ...${props}></${ImagePage}>`
   });
 
   return html`<${GalleryContainer}>

@@ -70,6 +70,12 @@ const MediaElm = styled.div`
         color: var(--card-font-color-contrast);
         margin: 0;
         text-shadow: 0 0 0.2em rgb(0 0 0);
+        line-height: 1.5em;
+        overflow: visible;
+        background: linear-gradient(to top, #04040499, #65656500);
+        width: 100%;
+        margin: -0.5rem;
+        padding: 0.5rem;
     }
 `;
 
