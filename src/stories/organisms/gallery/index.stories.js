@@ -20,14 +20,22 @@ const Template = (args) => html`
 
 export const NoneInteractive = Template.bind({});
 NoneInteractive.args = {
-  title: 'And they talked',
+  infoCard: {
+    primaryText: 'And they talked',
+    tags: [{ text: 'New' }, {text: 'bad add'}],
+    tertiaryText: 'Hello world, i am content text'
+  },
   images: DemoPages3.map(src => ({ mediaSrc: src })),
   onPick: undefined
 };
 
 export const WithPickAction = Template.bind({});
 WithPickAction.args = {
-  title: 'Brave new world',
+  infoCard: {
+    primaryText: 'Brave new world',
+    tags: [{ text: 'New' }, {text: 'bad add'}],
+    tertiaryText: 'Hello world, i am content text'
+  },
   images: DemoPages1.map(src => ({ mediaSrc: src })),
   onPick: (index, images) => {
     window.open(images[index].mediaSrc,'_blank');
@@ -36,7 +44,11 @@ WithPickAction.args = {
 
 export const WithInfo = Template.bind({});
 WithInfo.args = {
-  title: 'Cakes',
+  infoCard: {
+    primaryText: 'Cakes',
+    tags: [{ text: 'New' }, {text: 'bad add'}],
+    tertiaryText: 'Hello world, i am content text'
+  },
   images: DemoPages2.map((src, index) => ({
     mediaSrc: src,
     primaryText: 'hello i am the titlea asd asd ads ad asda sdadsadasd asd asd ',

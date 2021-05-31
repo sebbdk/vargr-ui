@@ -12,8 +12,8 @@ const ContentWrapper = styled.div`
     max-width: 1280px;
     width: 100%;
     margin: auto;
-    margin-top: 2rem;
-    // padding: 0 2rem;
+    margin-top: 0;
+    padding-top: 2rem;
 `;
 
 export const BasePage = (props) => {

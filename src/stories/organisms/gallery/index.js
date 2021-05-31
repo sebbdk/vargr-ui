@@ -39,14 +39,10 @@ const ListView = styled.div`
 `;
 
 const GalleryContainer = styled.div`
-  background-color: #999;
 `;
 
-const Title = styled.h2`
-  margin: 0rem;
-  padding: 1rem;
-  padding-bottom: 0;
-  font-size: 1.25em;
+const InfoWrapper = styled.div`
+  padding: 0 1rem;
 `;
 
 export function ImagePage(props) {
@@ -64,7 +60,7 @@ export function ImagePage(props) {
   </${ImgElm}>`;
 }
 
-export const Gallery = ({ title, onPick, images, ...props }) => {
+export const Gallery = ({ infoCard, onPick, images, ...props }) => {
   const imgElms = images.map((props, index) => {
     function onImagePick() {
       onPick(index, images)
@@ -74,7 +70,9 @@ export const Gallery = ({ title, onPick, images, ...props }) => {
   });
 
   return html`<${GalleryContainer}>
-    <${Title}>${title}</${Title}>
+    <${InfoWrapper}>
+      <${Card} ...${infoCard} hasBorder=${false} />
+    </${InfoWrapper}>
     <${ListView}>
       ${imgElms}
     </${ListView}>

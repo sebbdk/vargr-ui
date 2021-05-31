@@ -293,8 +293,8 @@ export const Card = ({
         ${coverLink}
         <${CardContentElm} highlight=${highlight}>
             <${TextContentWrapper} compact=${compact}>
+            ${!hasImage && Tags}
                 ${PrimaryText}
-                ${!hasImage && Tags}
                 ${SecondaryText}
                 ${TertiaryText}
                 ${DetailsLink}
