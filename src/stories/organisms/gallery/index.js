@@ -70,7 +70,7 @@ export const Gallery = ({ title, onPick, images, ...props }) => {
       onPick(index, images)
     }
 
-    return html`<${ImagePage} onPick=${onPick && onImagePick} ...${props}></${ImagePage}>`
+    return html`<${ImagePage} hasBorder=${false} onPick=${onPick && onImagePick} ...${props}></${ImagePage}>`
   });
 
   return html`<${GalleryContainer}>
