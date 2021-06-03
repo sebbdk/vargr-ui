@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { html } from 'htm/preact';
 
 export default {
-  title: 'Organisms/ZoomBox',
+  title: 'molecules/ZoomBox',
   component: ZoomBox,
   argTypes: {
     images: [],

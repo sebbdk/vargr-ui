@@ -2,10 +2,9 @@ import { Card } from './index.js';
 import { html } from 'htm/preact';
 import { CenterPage } from 'stories/templates/centerpage';
 import styled from 'styled-components';
-import { Icon } from 'stories/atoms/icon';
 
 export default {
-  title: 'molecules/card',
+  title: 'molecules/Card',
   component: Card,
   argTypes: {
     mediaSrc: require('stories/assets/resizeme_hori.jpg'),
