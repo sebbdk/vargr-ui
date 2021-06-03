@@ -2,24 +2,25 @@ import { html, Component } from "htm/preact"
 import { createRef } from "preact";
 import PropTypes from 'prop-types';
 import styled from "styled-components"
-import { ZoomBox } from "../../molecules/zoombox";
+import { ZoomBox } from "stories/molecules/zoombox";
+import { Icon } from "stories/atoms/icon";
 
 // @TODO, somehwo focus the current frame so keyboard events will work
 
 const ImagePage = styled.img`
     object-fit: scale-down;
-    object-position: top;
+    object-position: center;
     display: block;
     max-height: 100vh;
     min-width: 0;
 
     ${({ isDualPage }) => isDualPage ? `
         &:first-of-type {
-            object-position: top right;
+            object-position: center right;
         }
         
         &:last-of-type {
-            object-position: top left;
+            object-position: center left;
         }
     ` : ''};
 `;
@@ -28,6 +29,7 @@ const GalleryReaderContainer = styled.div`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    background-color: #333;
 `;
 
 const CurrentPageHint = styled.div`
@@ -37,6 +39,31 @@ const CurrentPageHint = styled.div`
     bottom: 0;
     left: 0;
     padding: 1rem;
+`;
+
+const NavigationArrow = styled.div`
+    background-color: #999;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 1rem;
+    font-size: 1em;
+
+	border: none;
+	cursor: pointer;
+    user-select:none;
+
+    box-shadow: 0rem 0rem 0.5rem 0.15rem rgba(0,0,0, 0.25);
+
+    ${(props) => {
+        if (props.direction === 'left') {
+            return `
+                right: initial;
+                left: 0;
+            `;
+        }
+    }};
 `;
 
 export class GalleryReader extends Component {
@@ -96,6 +123,8 @@ export class GalleryReader extends Component {
                 <${ZoomBox}>
                     ${imgElms}
                 </${ZoomBox}>
+                <${NavigationArrow} direction="left" onClick=${this.prev.bind(this)}><${Icon}>arrow_back_ios</${Icon}></${NavigationArrow}>
+                <${NavigationArrow} direction="right" onClick=${this.next.bind(this)}><${Icon}>arrow_forward_ios</${Icon}></${NavigationArrow}>
                 <${CurrentPageHint}>
                     ${this.state.index+1}/${this.props.images.length}
                 </${CurrentPageHint}>
@@ -105,7 +134,6 @@ export class GalleryReader extends Component {
 }
 
 GalleryReader.propTypes = {
-  //images: PropTypes.arrayOf.string.isRequired,
   dualPage: PropTypes.bool,
 };
 
