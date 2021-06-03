@@ -52,11 +52,7 @@ export class GalleryReader extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            index: props.index || 0,
-            dragStart: {x:0, y:0},
-            translate: {x:0, y:0},
-            startTranslate: {x:0, y:0},
-            isDragging: false,
+            index: props.index || 0
         }
         this.elmRef = createRef();
     }
@@ -103,10 +99,6 @@ export class GalleryReader extends Component {
         const imgElms = this.props.images.slice(this.state.index, this.state.index+offSet).map((src, index) => {
             return html`<${ImagePage} isDualPage=${this.props.dualPage} src="${src}"></${ImagePage}>`
         });
-
-        const style = {
-            transform: `translate(${this.state.translate.x}px, ${this.state.translate.y}px)`
-        }
     
         return html`
             <${GalleryReaderContainer} ref=${this.elmRef}>
