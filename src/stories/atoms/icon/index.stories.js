@@ -10,6 +10,7 @@ export default {
 };
 
 const Template = (args) => html`<${BasePage}>
+    <div>A full list of icons can be found here: <a href="https://fonts.google.com/icons" target="_blank">https://fonts.google.com/icons</a></div>
     <${CenterPreview}>
         <${Icon}>menu</${Icon}>
         <${Icon}>close</${Icon}>
