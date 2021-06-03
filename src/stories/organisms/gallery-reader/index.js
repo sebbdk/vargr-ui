@@ -39,14 +39,6 @@ const CurrentPageHint = styled.div`
     padding: 1rem;
 `;
 
-const Transformer = styled.div`
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    height: calc(100% - 2rem);
-    user-select: none;
-`;
-
 export class GalleryReader extends Component {
 
     constructor(props) {
@@ -54,7 +46,6 @@ export class GalleryReader extends Component {
         this.state = {
             index: props.index || 0
         }
-        this.elmRef = createRef();
     }
 
     handleKeyDown(evt) {    
@@ -101,7 +92,7 @@ export class GalleryReader extends Component {
         });
     
         return html`
-            <${GalleryReaderContainer} ref=${this.elmRef}>
+            <${GalleryReaderContainer}>
                 <${ZoomBox}>
                     ${imgElms}
                 </${ZoomBox}>
