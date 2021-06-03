@@ -2,6 +2,8 @@ import { html, Component } from "htm/preact"
 import PropTypes from 'prop-types';
 import styled from "styled-components"
 
+// @TODO, somehwo focus the current frame so keyboard events will work
+
 const ImagePage = styled.img`
     object-fit: scale-down;
     object-position: top;

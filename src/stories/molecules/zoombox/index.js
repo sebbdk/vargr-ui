@@ -148,6 +148,8 @@ export class ZoomBox extends Component {
         this.elmRef.current.addEventListener("mouseup", this.handleDragEnd.bind(this));
         this.elmRef.current.addEventListener("wheel", this.handleWheel.bind(this));
 
+        // TODO, add touch listeners for pinch-zoom
+
         this.setState({
             size: {
                 w:this.transformRef.current.offsetWidth,
