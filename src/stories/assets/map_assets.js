@@ -55,7 +55,6 @@ scan('private', {}).then(res => {
     fs.appendFileSync('private.index.js', "export const DList = [");
     res['private/d'].forEach(i => {
         fs.appendFileSync('private.index.js', `require('stories/assets/${i}'),\n`);
-        
-    })
+    });
     fs.appendFileSync('private.index.js', "];\n\n");
 })
