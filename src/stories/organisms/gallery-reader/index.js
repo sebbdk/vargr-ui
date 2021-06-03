@@ -1,6 +1,8 @@
 import { html, Component } from "htm/preact"
+import { createRef } from "preact";
 import PropTypes from 'prop-types';
 import styled from "styled-components"
+import { ZoomBox } from "../../molecules/zoombox";
 
 // @TODO, somehwo focus the current frame so keyboard events will work
 
@@ -56,71 +58,26 @@ export class GalleryReader extends Component {
             startTranslate: {x:0, y:0},
             isDragging: false,
         }
+        this.elmRef = createRef();
     }
 
-    handleKeyDown(evt) {
-        evt.preventDefault()
-
-        if (evt.key === 'ArrowRight') {
+    handleKeyDown(evt) {    
+        if (evt.key === 'ArrowRight' || evt.key === 'd') {
             this.next();
         }
 
-        if (evt.key === 'ArrowLeft') {
+        if (evt.key === 'ArrowLeft' || evt.key === 'a') {
             this.prev();
         }
     }
 
-    handleDragStart(evt) {
-        document.hasFocus();
-        evt.preventDefault()
-        this.setState({
-            isDragging: true,
-            dragStart: {x:evt.clientX, y:evt.clientY},
-            startTranslate: {
-                ...this.state.translate
-            }
-        });
-    }
-
-    handleDrag(evt) {
-        if(!this.state.isDragging) {
-            return;
-        }
-
-        const translateDiff = {
-            x:  evt.clientX - this.state.dragStart.x,
-            y: evt.clientY - this.state.dragStart.y
-        };
-
-        this.setState({
-            translate: {
-                x: this.state.startTranslate.x + translateDiff.x,
-                y: this.state.startTranslate.y + translateDiff.y
-            }
-        });
-    }
-
-    handleDragEnd(evt) {
-        evt.preventDefault()
-        this.setState({
-            isDragging: false
-        });
-    }
-
     componentDidMount(){
         document.addEventListener("keyup", this.handleKeyDown.bind(this));
-        
-        document.addEventListener("mousedown", this.handleDragStart.bind(this));
-        document.addEventListener("mousemove", this.handleDrag.bind(this));
-        document.addEventListener("mouseup", this.handleDragEnd.bind(this));
     }
     
     
     componentWillUnmount() {
         document.removeEventListener("keyup", this.handleKeyDown.bind(this));
-        document.removeEventListener("mousedown", this.handleDragStart.bind(this));
-        document.removeEventListener("mousemove", this.handleDrag.bind(this));
-        document.removeEventListener("mouseup", this.handleDragEnd.bind(this));
     }
 
     next() {
@@ -151,14 +108,16 @@ export class GalleryReader extends Component {
             transform: `translate(${this.state.translate.x}px, ${this.state.translate.y}px)`
         }
     
-        return html`<${GalleryReaderContainer}>
-            <${Transformer} style=${style}>
-                ${imgElms}
-            </${Transformer}>
-            <${CurrentPageHint}>
-                ${this.state.index+1}/${this.props.images.length}
-            </${CurrentPageHint}>
-        </${GalleryReaderContainer}>`;
+        return html`
+            <${GalleryReaderContainer} ref=${this.elmRef}>
+                <${ZoomBox}>
+                    ${imgElms}
+                </${ZoomBox}>
+                <${CurrentPageHint}>
+                    ${this.state.index+1}/${this.props.images.length}
+                </${CurrentPageHint}>
+            </${GalleryReaderContainer}>
+        `;
     }
 }
 
