@@ -49,4 +49,6 @@ const Template = (args) => html`
 `;
 
 export const SinglePage = Template.bind({});
-SinglePage.args = {};
+SinglePage.args = {
+    debug: true
+};

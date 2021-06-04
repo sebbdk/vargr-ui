@@ -1,6 +1,7 @@
 import { html, Component } from "htm/preact"
 import { createRef } from "preact";
 import styled from "styled-components"
+import { ConsoleComponent } from "../../organisms/log";
 
 // @TODO, somehwo focus the current frame so keyboard events will work
 const ZoomBoxContainer = styled.div`
@@ -39,13 +40,16 @@ export class ZoomBox extends Component {
             translate: {x:0, y:0},
             scale: 1,
             startTranslate: {x:0, y:0},
+            startTouches: [],
             isDragging: false,
+            debug: false,
+            messages: [[' ']]
         }
         this.elmRef = createRef();
         this.transformRef = createRef();
     }
 
-    handleDragStart(evt) {
+    handleDragStart(evt = {}) {
         evt.preventDefault && evt.preventDefault();
 
         this.setState({
@@ -57,7 +61,7 @@ export class ZoomBox extends Component {
         });
     }
 
-    handleDrag(evt) {
+    handleDrag(evt = {}) {
         if(!this.state.isDragging) {
             return;
         }
@@ -75,7 +79,7 @@ export class ZoomBox extends Component {
         });
     }
 
-    handleDragEnd(evt) {
+    handleDragEnd(evt = {}) {
         evt.preventDefault && evt.preventDefault()
         this.setState({
             isDragging: false
@@ -141,23 +145,48 @@ export class ZoomBox extends Component {
     }
 
     handleTouchStart(evt) {
+        this.setState({
+            startTouches: evt.touches
+        });
+
         this.handleDragStart({
             clientX: evt.touches[0].clientX,
-            clientY: evt.touches[0].clientY
+            clientY: evt.touches[0].clientY,
         });
     }
 
     handleTouchMove(evt) {
         evt.preventDefault();
 
+        if (evt.touches.length > 1) {
+            const ogP1 = { x: this.state.startTouches[0].clientX, y: this.state.startTouches[0].clientY };
+            const ogP2 = { x: this.state.startTouches[1].clientX, y: this.state.startTouches[1].clientY };
+            const ogDistance = Math.hypot(ogP2.x-ogP1.x, ogP2.y-ogP1.y);
+
+            const p1 = { x: evt.touches[0].clientX, y: evt.touches[0].clientY };
+            const p2 = { x: evt.touches[1].clientX, y: evt.touches[1].clientY };
+            const distance = Math.hypot(p2.x-p1.x, p2.y-p1.y);
+
+            this.setState({
+                messages: [
+                    [distance / ogDistance],
+                    [p1, p2]
+                ]
+            });
+            return;
+        }
+
         this.handleDrag({
             clientX: evt.touches[0].clientX,
             clientY: evt.touches[0].clientY
-        });
+        });        
     }
 
     handleTouchEnd(evt) {
         this.handleDragEnd();
+        this.setState({
+            startTouches: []
+        });
     }
 
     componentDidMount(){        
@@ -180,7 +209,6 @@ export class ZoomBox extends Component {
         });
     }
     
-    
     componentWillUnmount() {
         this.elmRef.current.removeEventListener("mousedown", this.handleDragStart.bind(this));
         this.elmRef.current.removeEventListener("mousemove", this.handleDrag.bind(this));
@@ -192,12 +220,17 @@ export class ZoomBox extends Component {
         const style = {
             transform: `translate(${this.state.translate.x}px, ${this.state.translate.y}px) scale(${this.state.scale}, ${this.state.scale})`
         };
+
+        const debugConsole = this.props.debug ? html`<${ConsoleComponent} messages=${this.state.messages} />`:'';
     
         return html`
-        <${ZoomBoxContainer} ref=${this.elmRef}>
-            <${Transformer} style=${style} ref=${this.transformRef}>
-                ${this.props.children}
-            </${Transformer}>
-        </${ZoomBoxContainer}>`;
+            <${ZoomBoxContainer} ref=${this.elmRef}>
+                <${Transformer} style=${style} ref=${this.transformRef}>
+                    ${this.props.children}
+                </${Transformer}>
+            </${ZoomBoxContainer}>
+            <br />
+            ${debugConsole}
+        `;
     }
 }
