@@ -12,8 +12,9 @@ import parseLogo from './icons/parse.svg';
 import portainerLogo from './icons/portainer.svg';
 import storybookLogo from './icons/storybook.svg';
 
+// @TODO, move this configuration out of storybook
 export const serviceList = [
-  { name: 'Storybook', link: 'http://book.hopper.local', logo: storybookLogo },
+  { name: 'Storybook', link: 'https://sebbdk.github.io/vargr-ui/', logo: storybookLogo },
   { name: 'MongoDB', link: 'http://mongo.hopper.local', logo: mongodbLogo },
   { name: 'NextCloud', link: 'http://next.hopper.local', logo: nextcloudLogo},
   { name: 'Parse', link: 'http://parse.hopper.local', logo: parseLogo },
