@@ -31,11 +31,13 @@ const ImagePage = styled.img`
 
 const ParentContainer = styled.div`
     width: 500px;
+    max-width: 100%;
     height: 500px;
     border: 5px solid red;
     position: relative;
     background-color: #DDD;
     margin: auto;
+    box-sizing: border-box;
 `;
 
 const Template = (args) => html`

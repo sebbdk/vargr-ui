@@ -1,6 +1,5 @@
 import { html, Component } from "htm/preact"
 import { createRef } from "preact";
-import PropTypes from 'prop-types';
 import styled from "styled-components"
 
 // @TODO, somehwo focus the current frame so keyboard events will work
@@ -47,8 +46,8 @@ export class ZoomBox extends Component {
     }
 
     handleDragStart(evt) {
-        document.hasFocus();
-        evt.preventDefault()
+        evt.preventDefault && evt.preventDefault();
+
         this.setState({
             isDragging: true,
             dragStart: {x:evt.clientX, y:evt.clientY},
@@ -77,7 +76,7 @@ export class ZoomBox extends Component {
     }
 
     handleDragEnd(evt) {
-        evt.preventDefault()
+        evt.preventDefault && evt.preventDefault()
         this.setState({
             isDragging: false
         });
@@ -141,12 +140,35 @@ export class ZoomBox extends Component {
         });
     }
 
+    handleTouchStart(evt) {
+        this.handleDragStart({
+            clientX: evt.touches[0].clientX,
+            clientY: evt.touches[0].clientY
+        });
+    }
+
+    handleTouchMove(evt) {
+        evt.preventDefault();
+
+        this.handleDrag({
+            clientX: evt.touches[0].clientX,
+            clientY: evt.touches[0].clientY
+        });
+    }
+
+    handleTouchEnd(evt) {
+        this.handleDragEnd();
+    }
+
     componentDidMount(){        
         this.elmRef.current.addEventListener("mousedown", this.handleDragStart.bind(this));
         this.elmRef.current.addEventListener("mousemove", this.handleDrag.bind(this));
         this.elmRef.current.addEventListener("mouseup", this.handleDragEnd.bind(this));
-        this.elmRef.current.addEventListener("mouseup", this.handleDragEnd.bind(this));
         this.elmRef.current.addEventListener("wheel", this.handleWheel.bind(this));
+
+        this.elmRef.current.addEventListener("touchstart", this.handleTouchStart.bind(this));
+        this.elmRef.current.addEventListener("touchmove", this.handleTouchMove.bind(this));
+        this.elmRef.current.addEventListener("touchend", this.handleTouchEnd.bind(this));
 
         // TODO, add touch listeners for pinch-zoom
 
@@ -163,6 +185,7 @@ export class ZoomBox extends Component {
         this.elmRef.current.removeEventListener("mousedown", this.handleDragStart.bind(this));
         this.elmRef.current.removeEventListener("mousemove", this.handleDrag.bind(this));
         this.elmRef.current.removeEventListener("mouseup", this.handleDragEnd.bind(this));
+        this.elmRef.current.removeEventListener("wheel", this.handleWheel.bind(this));
     }
 
     render() {
@@ -170,7 +193,8 @@ export class ZoomBox extends Component {
             transform: `translate(${this.state.translate.x}px, ${this.state.translate.y}px) scale(${this.state.scale}, ${this.state.scale})`
         };
     
-        return html`<${ZoomBoxContainer} ref=${this.elmRef}>
+        return html`
+        <${ZoomBoxContainer} ref=${this.elmRef}>
             <${Transformer} style=${style} ref=${this.transformRef}>
                 ${this.props.children}
             </${Transformer}>
