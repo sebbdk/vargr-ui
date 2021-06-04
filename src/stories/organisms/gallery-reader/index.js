@@ -73,6 +73,7 @@ export class GalleryReader extends Component {
         this.state = {
             index: props.index || 0
         }
+        this.zoombox = createRef();
     }
 
     handleKeyDown(evt) {    
@@ -95,6 +96,7 @@ export class GalleryReader extends Component {
     }
 
     next() {
+        this.zoombox.current.reset();
         const reachedEndOfList = this.state.index+1 === this.props.images.length;
         if (reachedEndOfList) {
             return this.setState({ index: 0 });
@@ -104,6 +106,7 @@ export class GalleryReader extends Component {
     }
 
     prev() {
+        this.zoombox.current.reset();
         const reachedStartOfList = this.state.index-1 === -1;
         if (reachedStartOfList) {
             return this.setState({ index: this.props.images.length-1 });
@@ -120,7 +123,7 @@ export class GalleryReader extends Component {
     
         return html`
             <${GalleryReaderContainer}>
-                <${ZoomBox}>
+                <${ZoomBox} ref=${this.zoombox}>
                     ${imgElms}
                 </${ZoomBox}>
                 <${NavigationArrow} direction="left" onClick=${this.prev.bind(this)}><${Icon}>arrow_back_ios</${Icon}></${NavigationArrow}>

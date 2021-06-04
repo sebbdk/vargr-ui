@@ -49,6 +49,13 @@ export class ZoomBox extends Component {
         this.transformRef = createRef();
     }
 
+    reset() {
+        this.setState({
+            scale: 1,
+            translate: { x: 0, y:0 }
+        });
+    }
+
     handleDragStart(evt = {}) {
         evt.preventDefault && evt.preventDefault();
 
