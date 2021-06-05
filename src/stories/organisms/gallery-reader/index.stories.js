@@ -1,8 +1,11 @@
 import { GalleryReader } from './index';
 import { BasePage } from 'stories/templates/basepage';
-import { DemoPages2, DemoPages1 } from 'stories/assets';
+import settings from 'app.settings';
 import { html } from 'htm/preact';
 import styled from 'styled-components';
+
+const DemoPages1 = settings.examples.DemoPages1;
+const DemoPages2 = settings.examples.DemoPages2;
 
 export default {
   title: 'Organisms/Gallery Reader',

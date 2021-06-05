@@ -8,7 +8,16 @@ import portainerLogo from './stories/assets/icons/portainer.svg';
 import storybookLogo from './stories/assets/icons/storybook.svg';
 import backgroundImage from './stories/assets/resizeme_hori.jpg';
 
+export const DemoPages1 = (new Array(22)).fill(undefined).map((i, index) => require(`stories/assets/atomic_war/1/${index+1}.jpg`));
+export const DemoPages2 = DemoPages1;
+export const DemoPages3 = DemoPages1;
+
 export default {
+    "examples": {
+        DemoPages1,
+        DemoPages2,
+        DemoPages3
+    },
     "intra": {
         "hub": {
             "backgroundImage": backgroundImage,

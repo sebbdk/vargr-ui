@@ -1,7 +1,11 @@
 import { Gallery } from './index';
-import { DemoPages2, DemoPages1, DemoPages3 } from 'stories/assets';
 import { BasePage } from 'stories/templates/basepage';
-import { html } from "htm/preact"
+import { html } from "htm/preact";
+import settings from 'app.settings';
+
+const DemoPages1 = settings.examples.DemoPages1;
+const DemoPages2 = settings.examples.DemoPages2;
+const DemoPages3 = settings.examples.DemoPages3;
 
 export default {
   title: 'Organisms/Gallery',

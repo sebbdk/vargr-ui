@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "preinstall": "node ./preinstall.js",
     "dev": "parcel src/index.html",
     "storybook": "start-storybook --loglevel verbose -p 6006",
     "start": "npm run dev & npm run storybook ",
