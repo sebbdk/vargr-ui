@@ -223,6 +223,10 @@ export class ZoomBox extends Component {
         this.elmRef.current.removeEventListener("mouseup", this.handleDragEnd.bind(this));
         this.elmRef.current.removeEventListener("onmouseout", this.handleDragEnd.bind(this));
         this.elmRef.current.removeEventListener("wheel", this.handleWheel.bind(this));
+
+        this.elmRef.current.removeEventListener("touchstart", this.handleTouchStart.bind(this));
+        this.elmRef.current.removeEventListener("touchmove", this.handleTouchMove.bind(this));
+        this.elmRef.current.removeEventListener("touchend", this.handleTouchEnd.bind(this));
     }
 
     render() {
