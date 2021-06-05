@@ -11,7 +11,7 @@ export default {
   title: 'Organisms/Gallery',
   component: Gallery,
   argTypes: {
-    images: [],
+    cards: [],
     onPick: { action: 'picked' }
   },
 };
@@ -30,7 +30,7 @@ NoneInteractive.args = {
     tertiaryText: 'Hello world, i am content text',
     actions: [{ text: 'Favorite', onClick: () => alert('go!') }],
   },
-  images: DemoPages3.map(src => ({ mediaSrc: src })),
+  cards: DemoPages3.map(src => ({ mediaSrc: src })),
   onPick: undefined
 };
 
@@ -42,9 +42,9 @@ WithPickAction.args = {
     tertiaryText: 'Hello world, i am content text',
     actions: [{ text: 'Favorite', onClick: () => alert('go!') }],
   },
-  images: DemoPages1.map(src => ({ mediaSrc: src })),
-  onPick: (index, images) => {
-    window.open(images[index].mediaSrc,'_blank');
+  cards: DemoPages1.map(src => ({ mediaSrc: src })),
+  onPick: (index, cards) => {
+    window.open(cards[index].mediaSrc,'_blank');
   }
 };
 
@@ -56,7 +56,7 @@ WithInfo.args = {
     tertiaryText: 'Hello world, i am content text',
     actions: [{ text: 'Favorite', onClick: () => alert('go!') }],
   },
-  images: DemoPages2.map((src, index) => ({
+  cards: DemoPages2.map((src, index) => ({
     mediaSrc: src,
     primaryText: 'hello i am the titlea asd asd ads ad asda sdadsadasd asd asd ',
     tags: [{ text: 'New' }],

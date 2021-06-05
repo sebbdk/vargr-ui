@@ -60,10 +60,10 @@ export function ImagePage(props) {
   </${ImgElm}>`;
 }
 
-export const Gallery = ({ infoCard, onPick, images, ...props }) => {
-  const imgElms = images.map((props, index) => {
+export const Gallery = ({ infoCard, onPick, cards, ...props }) => {
+  const imgElms = cards.map((props, index) => {
     function onImagePick() {
-      onPick(index, images)
+      onPick(index, cards)
     }
 
     return html`<${ImagePage} hasBorder=${false} onPick=${onPick && onImagePick} ...${props}></${ImagePage}>`

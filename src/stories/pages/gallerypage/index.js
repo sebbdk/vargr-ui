@@ -32,7 +32,7 @@ export class GalleryPage extends Component {
     render() {    
         const galleryArgs = {
             infoCard: this.props.infoCard,
-            images: this.props.cards,
+            cards: this.props.cards,
             onPick: (index) => {
                 this.overlay.current.show()
                 this.gallery.current.goto(index);
