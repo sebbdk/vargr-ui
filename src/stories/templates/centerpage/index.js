@@ -10,9 +10,9 @@ const BasepageElm = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-image: url(${({backgroundImage}) => backgroundImage ? backgroundImage:''});
-    background-size: cover;
-    background-position: center;
+    background-image: url(${({backgroundImage}) => backgroundImage ? backgroundImage : ''});
+    background-size: ${({backgroundSize}) => backgroundSize ? backgroundSize : 'cover'};
+    background-position: ${({backgroundPosition}) => backgroundPosition ? backgroundPosition : 'center'};
 `;
 
 const ContentWrapper = styled.div`
@@ -27,7 +27,7 @@ const ContentWrapper = styled.div`
 
 export const CenterPage = (props) => {
     console.log(props.backgroundImage)
-    return html`<${BasepageElm} backgroundImage=${props.backgroundImage}>
+    return html`<${BasepageElm} ...${props}>
         <${GlobalStyles} />
 
         <${ContentWrapper}>
