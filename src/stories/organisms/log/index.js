@@ -2,7 +2,6 @@ import { Component } from "preact"
 import { html } from "htm/preact"
 import styled from "styled-components"
 
-
 const ConsoleComponentElm = styled.div`
   background-color: #666;
   border: 3px solid rgba(0,0,0, 0.7);
@@ -48,7 +47,11 @@ export class ConsoleComponent extends Component {
     }
 
     this.loadMe();
-}
+  }
+
+  // @TODO, add setPinnedMessage method
+  // @TODO, add setMessages method
+  // @TODO, add pushMessage method
 
   render() {
     const messages = this.props.messages.map(msg => {
@@ -65,10 +68,10 @@ export class ConsoleComponent extends Component {
       `;
     })
 
-      return html`
-        <${ConsoleComponentElm}>
-          ${messages}
-        </${ConsoleComponentElm}>
-      `;
+    return html`
+      <${ConsoleComponentElm}>
+        ${messages}
+      </${ConsoleComponentElm}>
+    `;
   }
 }
