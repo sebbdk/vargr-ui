@@ -21,7 +21,11 @@ export default {
     },
     "intra": {
         "hub": {
-            "backgroundImage": backgroundImage,
+            "page": {
+                "backgroundImage": backgroundImage,
+                "backgroundPosition": 'center',
+                "backgroundSize": 'cover'
+            },
             "serviceList": [
                 { "name": "Storybook", "link": "https://sebbdk.github.io/vargr-ui/", "logo": storybookLogo },
                 { "name": "MongoDB", "link": "http://mongo.hopper.local", "logo": mongodbLogo },
