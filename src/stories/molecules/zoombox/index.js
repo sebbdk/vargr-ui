@@ -200,6 +200,7 @@ export class ZoomBox extends Component {
         this.elmRef.current.addEventListener("mousedown", this.handleDragStart.bind(this));
         this.elmRef.current.addEventListener("mousemove", this.handleDrag.bind(this));
         this.elmRef.current.addEventListener("mouseup", this.handleDragEnd.bind(this));
+        this.elmRef.current.addEventListener("mouseout", this.handleDragEnd.bind(this));
         this.elmRef.current.addEventListener("wheel", this.handleWheel.bind(this));
 
         this.elmRef.current.addEventListener("touchstart", this.handleTouchStart.bind(this));
@@ -220,6 +221,7 @@ export class ZoomBox extends Component {
         this.elmRef.current.removeEventListener("mousedown", this.handleDragStart.bind(this));
         this.elmRef.current.removeEventListener("mousemove", this.handleDrag.bind(this));
         this.elmRef.current.removeEventListener("mouseup", this.handleDragEnd.bind(this));
+        this.elmRef.current.removeEventListener("onmouseout", this.handleDragEnd.bind(this));
         this.elmRef.current.removeEventListener("wheel", this.handleWheel.bind(this));
     }
 
