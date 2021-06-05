@@ -196,6 +196,9 @@ export class ZoomBox extends Component {
             // @TODO, handle multitouch translate
             // I would like to be able to pinch & translate at the same time
 
+            // To do this, translate first, then zoom
+            // also, ensure state.translate is up to date...
+
             this.setState({
                 scale: newScale,
                 translate: scalePoint,
@@ -216,12 +219,6 @@ export class ZoomBox extends Component {
     handleTouchEnd(evt) {
         const stoppedPinching = evt.touches.length === 1;
         if (stoppedPinching) {
-            this.setState({
-                messages: [
-                    [{x:evt.touches[0].clientX, y:evt.touches[0].clientY}]
-                ]
-            });
-
             this.setState({
                 dragStart: {x:evt.touches[0].clientX, y:evt.touches[0].clientY},
                 startTranslate: {
