@@ -21,7 +21,9 @@
   "alias": {
     "react": "preact/compat",
     "react-dom": "preact/compat",
-    "stories": "./src/stories"
+    "stories": "./src/stories",
+    "default.settings": "./src/default.settings.js",
+    "app.settings": "./src/app.settings.js"
   },
   "dependencies": {
     "@storybook/cli": "^6.2.9",
