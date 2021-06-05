@@ -11,7 +11,7 @@ import { RipsIndex } from './lib/modules/rip/rip-index';
 import { loadRips } from './lib/state/rips-actions';
 import { ActionsPage } from './lib/pages/actions-page';
 import { GalleriesPage } from './lib/pages/galleries-page';
-import { HomePage } from './lib/pages/home';
+import { HubPage } from './stories/pages/hubpage';
 
 // Initialize htm with Preact
 function App (props) {
@@ -21,7 +21,7 @@ function App (props) {
   return html`
     <${Provider} store=${store}>
       <${Router}>
-        <${HomePage} path="/" />
+        <${HubPage} path="/" />
         <${FeedsPage} path="/feeds" />
         <${ActionsPage} path="/actions" />
         <${GalleriesPage} path="/galleries" />
