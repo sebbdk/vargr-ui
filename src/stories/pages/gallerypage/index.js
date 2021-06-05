@@ -16,8 +16,6 @@ export class GalleryPage extends Component {
     }
 
     handleKeyDown(evt) {
-        console.log(evt.key)
-
         if (evt.key === 'Escape') {
             this.overlay.current.hide()
         }
@@ -27,30 +25,27 @@ export class GalleryPage extends Component {
         document.addEventListener("keyup", this.handleKeyDown.bind(this));
     }
     
-    
     componentWillUnmount() {
         document.removeEventListener("keyup", this.handleKeyDown.bind(this));
     }
+
     render() {    
         const galleryArgs = {
-            infoCard: {
-                primaryText: 'And they talked',
-                tags: [{ text: 'New' }, {text: 'bad add'}],
-                tertiaryText: 'Hello world, i am content text',
-                actions: [{ text: 'Favorite', onClick: () => alert('go!') }],
-            },
-            images: this.props.images.map(src => ({ mediaSrc: src })),
+            infoCard: this.props.infoCard,
+            images: this.props.cards,
             onPick: (index) => {
                 this.overlay.current.show()
                 this.gallery.current.goto(index);
             }
-        } 
+        } ;
+
+        const readerImages = this.props.cards.map(i => i.mediaSrc);
         
         return html`
             <${BasePage}>
                 <${Gallery} ...${galleryArgs} />
                 <${Overlay} ref=${this.overlay}>    
-                    <${GalleryReader} ref=${this.gallery} images=${this.props.images} />
+                    <${GalleryReader} ref=${this.gallery} images=${readerImages} />
                 </${Overlay}>
             </${BasePage}>
         `;
