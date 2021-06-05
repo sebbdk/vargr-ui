@@ -6,6 +6,10 @@ const BasepageElm = styled.div`
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
+
+    background-image: url(${(backgroundImage) => backgroundImage ? backgroundImage:''});
+    background-size: cover;
+    background-position: center;
 `;
 
 const ContentWrapper = styled.div`
@@ -17,7 +21,7 @@ const ContentWrapper = styled.div`
 `;
 
 export const BasePage = (props) => {
-    return html`<${BasepageElm}>
+    return html`<${BasepageElm} backgroundImage=${props.backgroundImage}>
         <${GlobalStyles} />
 
         <${ContentWrapper}>
