@@ -6,6 +6,16 @@ import { Gallery } from 'stories/organisms/gallery';
 import { createRef, Component } from 'preact';
 import { Overlay } from 'stories/molecules/overlay';
 
+const CloseButton = styled.a`
+    display: block;
+    background-color: #999;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    cursor: pointer;
+`;
 
 export class GalleryPage extends Component {
 
@@ -40,12 +50,16 @@ export class GalleryPage extends Component {
         } ;
 
         const readerImages = this.props.cards.map(i => i.mediaSrc);
+
+        const close = () => this.overlay.current.hide()
         
         return html`
             <${BasePage}>
                 <${Gallery} ...${galleryArgs} />
                 <${Overlay} ref=${this.overlay}>    
-                    <${GalleryReader} ref=${this.gallery} images=${readerImages} />
+                <${GalleryReader} ref=${this.gallery} images=${readerImages}>
+                    <${CloseButton} onClick=${close}>Close</${CloseButton}>
+                </${GalleryReader}>
                 </${Overlay}>
             </${BasePage}>
         `;

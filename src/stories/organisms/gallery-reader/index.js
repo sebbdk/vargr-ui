@@ -131,6 +131,7 @@ export class GalleryReader extends Component {
                 </${ZoomBox}>
                 <${NavigationArrow} direction="left" onClick=${this.prev.bind(this)}><${Icon}>arrow_back_ios</${Icon}></${NavigationArrow}>
                 <${NavigationArrow} direction="right" onClick=${this.next.bind(this)}><${Icon}>arrow_forward_ios</${Icon}></${NavigationArrow}>
+                ${this.props.children}
                 <${CurrentPageHint}>
                     ${this.state.index+1}/${this.props.images.length}
                 </${CurrentPageHint}>
