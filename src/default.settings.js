@@ -16,7 +16,8 @@ export default {
     "examples": {
         DemoPages1,
         DemoPages2,
-        DemoPages3
+        DemoPages3,
+        zoombox: backgroundImage
     },
     "intra": {
         "hub": {
