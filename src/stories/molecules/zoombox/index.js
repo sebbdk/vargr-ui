@@ -153,7 +153,7 @@ export class ZoomBox extends Component {
 
     handleTouchStart(evt) {
         this.setState({
-            startTouches: evt.touches
+            startTouches: evt.touches,
         });
 
         this.handleDragStart({
@@ -165,7 +165,8 @@ export class ZoomBox extends Component {
     handleTouchMove(evt) {
         evt.preventDefault();
 
-        if (evt.touches.length > 1) {
+        const handlePinchZoom = evt.touches.length > 1;
+        if (handlePinchZoom) {
             const ogP1 = { x: this.state.startTouches[0].clientX, y: this.state.startTouches[0].clientY };
             const ogP2 = { x: this.state.startTouches[1].clientX, y: this.state.startTouches[1].clientY };
             const ogDistance = Math.hypot(ogP2.x-ogP1.x, ogP2.y-ogP1.y);
@@ -174,9 +175,12 @@ export class ZoomBox extends Component {
             const p2 = { x: evt.touches[1].clientX, y: evt.touches[1].clientY };
             const distance = Math.hypot(p2.x-p1.x, p2.y-p1.y);
 
+            const zoom = distance / ogDistance;
+            // @TODO, apply calculated zoom
+
             this.setState({
                 messages: [
-                    [distance / ogDistance],
+                    [zoom],
                     [p1, p2]
                 ]
             });
@@ -206,8 +210,6 @@ export class ZoomBox extends Component {
         this.elmRef.current.addEventListener("touchstart", this.handleTouchStart.bind(this));
         this.elmRef.current.addEventListener("touchmove", this.handleTouchMove.bind(this));
         this.elmRef.current.addEventListener("touchend", this.handleTouchEnd.bind(this));
-
-        // TODO, add touch listeners for pinch-zoom
 
         this.setState({
             size: {
