@@ -89,10 +89,13 @@ export class GalleryReader extends Component {
     componentDidMount(){
         document.addEventListener("keyup", this.handleKeyDown.bind(this));
     }
-    
-    
+
     componentWillUnmount() {
         document.removeEventListener("keyup", this.handleKeyDown.bind(this));
+    }
+
+    goto(index) {
+        this.setState({ index: index });
     }
 
     next() {

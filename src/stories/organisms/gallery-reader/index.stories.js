@@ -24,7 +24,6 @@ const FullScreen = styled.div`
     height: 100%;
 `;
 
-
 const Template = (args) => html`
   <${BasePage}>
     <${FullScreen}>
