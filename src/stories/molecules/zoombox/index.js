@@ -31,6 +31,26 @@ const Transformer = styled.div`
     height: 100%;
 `;
 
+export function scaleFromPoint(currentPos, pointerPos, originalScale, newScale, offset) {
+    const pos = { ...currentPos };
+    const zoom_target = {x:0,y:0}
+    const zoom_point = {x:0,y:0}
+    
+    zoom_point.x = pointerPos.x - offset.x
+    zoom_point.y = pointerPos.y - offset.y
+
+    // determine the point on where the slide is zoomed in
+    zoom_target.x = (zoom_point.x - pos.x)/originalScale
+    zoom_target.y = (zoom_point.y - pos.y)/originalScale
+
+
+    // calculate x and y based on zoom
+    pos.x = -zoom_target.x * newScale + zoom_point.x
+    pos.y = -zoom_target.y * newScale + zoom_point.y
+
+    return pos;
+}
+
 export class ZoomBox extends Component {
 
     constructor(props) {
@@ -74,7 +94,7 @@ export class ZoomBox extends Component {
         }
 
         const translateDiff = {
-            x:  evt.clientX - this.state.dragStart.x,
+            x: evt.clientX - this.state.dragStart.x,
             y: evt.clientY - this.state.dragStart.y
         };
 
@@ -94,66 +114,44 @@ export class ZoomBox extends Component {
     }
 
     handleWheel(e) {
-        e.preventDefault()
-        
+        e.preventDefault();
+
+        const currentPosition = this.state.translate;
+        const currentScale = this.state.scale;
+        const pointerPosition = {x: e.pageX, y: e.pageY};
+        const boundingRect = this.elmRef.current.getBoundingClientRect();
+
+        // Calculate new scale
         const max_scale = 10;
         const min_scale = 0.25;
         const factor = 0.25;
-        const pos = { ...this.state.translate };
-        const zoom_target = {x:0,y:0}
-        const zoom_point = {x:0,y:0}
-        const offset = this.elmRef.current.getBoundingClientRect();
-        const size = this.state.size;
-        let scale = this.state.scale;
-        
-		let delta = e.delta || e.wheelDelta;
-		if (delta === undefined) {
+        let newScale = this.state.scale;
+        let delta = e.delta || e.wheelDelta;
+        if (delta === undefined) {
             delta = e.detail;
         }
         delta = Math.max(-1,Math.min(1,delta)) // cap the delta to [-1,1] for cross browser consistency
-        
-		zoom_point.x = e.pageX - offset.x
-		zoom_point.y = e.pageY - offset.y
+        newScale += delta*factor * newScale
+        newScale = Math.max(min_scale,Math.min(max_scale,newScale))
 
-        // determine the point on where the slide is zoomed in
-        zoom_target.x = (zoom_point.x - pos.x)/scale
-        zoom_target.y = (zoom_point.y - pos.y)/scale
-
-        // apply zoom
-        scale += delta*factor * scale
-        scale = Math.max(min_scale,Math.min(max_scale,scale))
-
-        // calculate x and y based on zoom
-        pos.x = -zoom_target.x * scale + zoom_point.x
-        pos.y = -zoom_target.y * scale + zoom_point.y
-
-        /*
-        See the fiffle linked here:
-        https://stackoverflow.com/questions/46647138/zoom-in-on-a-mousewheel-point-using-scale-and-translate
-        https://jsfiddle.net/xta2ccdt/13/
-
-        Does not seem to support negative sizes
-        */
-       /*
-        // Make sure the slide stays in its container area when zooming out
-	    if(pos.x>0) { pos.x = 0 }
-	        
-	    if(pos.x+size.w*scale<size.w) {pos.x = -size.w*(scale-1)}
-	    	
-	    if(pos.y>0) {pos.y = 0}
-	        
-	    if(pos.y+size.h*scale<size.h) { pos.y = -size.h*(scale-1) }
-        */
+        const scalePoint = scaleFromPoint(
+            currentPosition,
+            pointerPosition,
+            currentScale,
+            newScale,
+            boundingRect
+        );
 
         this.setState({
-            scale,
-            translate: pos
+            scale: newScale,
+            translate: scalePoint
         });
     }
 
     handleTouchStart(evt) {
         this.setState({
             startTouches: evt.touches,
+            startScale: this.state.scale
         });
 
         this.handleDragStart({
@@ -169,18 +167,40 @@ export class ZoomBox extends Component {
         if (handlePinchZoom) {
             const ogP1 = { x: this.state.startTouches[0].clientX, y: this.state.startTouches[0].clientY };
             const ogP2 = { x: this.state.startTouches[1].clientX, y: this.state.startTouches[1].clientY };
-            const ogDistance = Math.hypot(ogP2.x-ogP1.x, ogP2.y-ogP1.y);
-
             const p1 = { x: evt.touches[0].clientX, y: evt.touches[0].clientY };
             const p2 = { x: evt.touches[1].clientX, y: evt.touches[1].clientY };
-            const distance = Math.hypot(p2.x-p1.x, p2.y-p1.y);
 
-            const zoom = distance / ogDistance;
-            // @TODO, apply calculated zoom
+            // calculate new scale
+            const ogDistance = Math.hypot(ogP2.x-ogP1.x, ogP2.y-ogP1.y);
+            const distance = Math.hypot(p2.x-p1.x, p2.y-p1.y);
+            const newScale = this.state.startScale * (distance / ogDistance);
+
+            // calculate pointer position / center of pinch
+            const currentPointerPosition = {
+                x: (p1.x+p2.x)/2,
+                y: (p1.y+p2.y)/2
+            };
+
+            const currentPosition = this.state.translate;
+            const currentScale = this.state.scale;            
+            const boundingRect = this.elmRef.current.getBoundingClientRect();
+
+            const scalePoint = scaleFromPoint(
+                currentPosition,
+                currentPointerPosition,
+                currentScale,
+                newScale,
+                boundingRect
+            );
+
+            // @TODO, handle multitouch translate
+            // I would like to be able to pinch & translate at the same time
 
             this.setState({
+                scale: newScale,
+                translate: scalePoint,
                 messages: [
-                    [zoom],
+                    [newScale],
                     [p1, p2]
                 ]
             });
@@ -190,14 +210,33 @@ export class ZoomBox extends Component {
         this.handleDrag({
             clientX: evt.touches[0].clientX,
             clientY: evt.touches[0].clientY
-        });        
+        });   
     }
 
     handleTouchEnd(evt) {
-        this.handleDragEnd();
-        this.setState({
-            startTouches: []
-        });
+        const stoppedPinching = evt.touches.length === 1;
+        if (stoppedPinching) {
+            this.setState({
+                messages: [
+                    [{x:evt.touches[0].clientX, y:evt.touches[0].clientY}]
+                ]
+            });
+
+            this.setState({
+                dragStart: {x:evt.touches[0].clientX, y:evt.touches[0].clientY},
+                startTranslate: {
+                    ...this.state.translate
+                }
+            });
+        }
+
+        const stoppedDragging = evt.touches.length === 0;
+        if (stoppedDragging) {
+            this.handleDragEnd();
+            this.setState({
+                startTouches: []
+            });
+        }
     }
 
     componentDidMount(){        
