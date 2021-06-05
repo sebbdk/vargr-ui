@@ -3,7 +3,7 @@ import { LocalHub } from 'stories/organisms/local-hub';
 import { HubPage } from '.';
 
 export default {
-  title: 'Pages/HubPage',
+  title: 'Pages/Hub',
   component: LocalHub,
   argTypes: {},
 };
