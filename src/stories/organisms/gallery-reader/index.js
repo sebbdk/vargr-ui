@@ -30,6 +30,15 @@ const GalleryReaderContainer = styled.div`
     background-color: #333;
 `;
 
+const GalleryContentArea = styled.div`
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 3rem;
+`;
+
 const CurrentPageHint = styled.div`
     background-color: #999;
     color: #fff;
@@ -38,6 +47,7 @@ const CurrentPageHint = styled.div`
     left: 0;
     width: 100%;
     padding: 1rem;
+    line-height: 1rem;
     z-index: 0;
     text-align: center;
     box-sizing: border-box;
@@ -50,6 +60,9 @@ const NavigationArrow = styled.div`
     bottom: 0%;
     right: 0;
     padding: 1rem;
+    line-height: 2rem;
+    width: 2rem;
+    text-align: center;
     font-size: 1em;
     z-index: 1;
 
@@ -79,7 +92,6 @@ export class GalleryReader extends Component {
         this.zoombox = createRef();
 
         // @TODO, ensure viewport is set so doupletap zoom is disabled
-        // @TODO, fix the image position problem on iOS safari when user has not scrolled
         // @TODO, add transitions
         // @TODO, add a touch gesture for next/previous page
         // @TODO, add douple tab/click to zoom
@@ -137,9 +149,11 @@ export class GalleryReader extends Component {
     
         return html`
             <${GalleryReaderContainer}>
-                <${ZoomBox} ref=${this.zoombox}>
-                    ${imgElms}
-                </${ZoomBox}>
+                <${GalleryContentArea}>
+                    <${ZoomBox} ref=${this.zoombox}>
+                        ${imgElms}
+                    </${ZoomBox}>
+                </${GalleryContentArea}>
                 <${NavigationArrow} direction="left" onClick=${this.prev.bind(this)}><${Icon}>arrow_back_ios</${Icon}></${NavigationArrow}>
                 <${NavigationArrow} direction="right" onClick=${this.next.bind(this)}><${Icon}>arrow_forward_ios</${Icon}></${NavigationArrow}>
                 ${this.props.children}
