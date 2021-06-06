@@ -96,6 +96,7 @@ export class GalleryReader extends Component {
         // @TODO, add a touch gesture for next/previous page
         // @TODO, add douple tab/click to zoom
         // @TODO, move next button to left corner for easier press
+        // @TODO, on desktop the footer wastes vertical screenspace
     }
 
     handleKeyDown(evt) {    
