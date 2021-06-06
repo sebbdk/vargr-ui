@@ -5,8 +5,6 @@ import styled from "styled-components"
 import { ZoomBox } from "stories/molecules/zoombox";
 import { Icon } from "stories/atoms/icon";
 
-// @TODO, somehwo focus the current frame so keyboard events will work
-
 const ImagePage = styled.img`
     object-fit: scale-down;
     object-position: center;
@@ -38,17 +36,22 @@ const CurrentPageHint = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
+    width: 100%;
     padding: 1rem;
+    z-index: 0;
+    text-align: center;
+    box-sizing: border-box;
 `;
 
 const NavigationArrow = styled.div`
     background-color: #999;
     color: #fff;
     position: absolute;
-    top: 50%;
+    bottom: 0%;
     right: 0;
     padding: 1rem;
     font-size: 1em;
+    z-index: 1;
 
 	border: none;
 	cursor: pointer;
@@ -74,6 +77,13 @@ export class GalleryReader extends Component {
             index: props.index || 0
         }
         this.zoombox = createRef();
+
+        // @TODO, ensure viewport is set so doupletap zoom is disabled
+        // @TODO, fix the image position problem on iOS safari when user has not scrolled
+        // @TODO, add transitions
+        // @TODO, add a touch gesture for next/previous page
+        // @TODO, add douple tab/click to zoom
+        // @TODO, move next button to left corner for easier press
     }
 
     handleKeyDown(evt) {    
@@ -96,6 +106,7 @@ export class GalleryReader extends Component {
 
     goto(index) {
         this.setState({ index: index });
+        this.zoombox.current.reset();
     }
 
     next() {
