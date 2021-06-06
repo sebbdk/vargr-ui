@@ -64,8 +64,8 @@ export class PerfImage extends Component {
     }
 
     scaleImage() {
-        const maxHeight = this.elmRef.current.parentElement.clientHeight * 1.5;
-        const maxWidth = this.elmRef.current.parentElement.clientWidth * 1.5;
+        const maxHeight = this.elmRef.current.parentElement.clientHeight * 4;
+        const maxWidth = this.elmRef.current.parentElement.clientWidth * 4;
 
         // Re-use the img context if passed
         if (this.props.img) {
