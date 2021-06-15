@@ -7,7 +7,7 @@ export function createFeedItem(sort = 0, img = defImg, preview = defImg): FeedIt
     return {
         type: 'image',
         title: 'nice bum',
-        source: 'https://www.reddit.com/r/rule34/comments/iz56nd/bowsette_is_ready_for_some_naughty_fun_tonight/',
+        source: 'REDACTED',
         data: {
             image: img
         },
