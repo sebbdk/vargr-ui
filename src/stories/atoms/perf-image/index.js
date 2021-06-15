@@ -12,32 +12,37 @@ const PerfImageElm = styled.img.attrs(props => ({ src: props.src }))`
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 function resizeImage(img, maxHeight, maxWidth) {
-    ctx.drawImage(img, 0, 0);
+    try {
+        ctx.drawImage(img, 0, 0);
 
-    let width = img.width;
-    let height = img.height;
+        let width = img.width;
+        let height = img.height;
+        
+        // do not images that are smaller then the parent box already
+        if (width < maxWidth && height < maxHeight) {
+            return img.src;
+        }
     
-    // do not images that are smaller then the parent box already
-    if (width < maxWidth && height < maxHeight) {
+        if (width > height) {
+            if (width > maxWidth) {
+                height *= maxWidth / width;
+                width = maxWidth;
+            }
+        } else {
+            if (height > maxHeight) {
+                width *= maxHeight / height;
+                height = maxHeight;
+            }
+        }
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(img, 0, 0, width, height);
+    
+        return canvas.toDataURL("image/png");
+    } catch(err) {
+        console.info(err);
         return img.src;
     }
-
-    if (width > height) {
-        if (width > maxWidth) {
-            height *= maxWidth / width;
-            width = maxWidth;
-        }
-    } else {
-        if (height > maxHeight) {
-            width *= maxHeight / height;
-            height = maxHeight;
-        }
-    }
-    canvas.width = width;
-    canvas.height = height;
-    ctx.drawImage(img, 0, 0, width, height);
-
-    return canvas.toDataURL("image/png");
 }
 
 export class PerfImage extends Component {
