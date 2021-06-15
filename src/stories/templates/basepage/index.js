@@ -5,11 +5,15 @@ import { GlobalStyles } from '../globalstyles/index';
 const BasepageElm = styled.div`
     min-width: 100vw;
     min-height: 100vh;
+    max-height: 100%;
     display: flex;
+    overflow: auto;
 
-    background-image: url(${(backgroundImage) => backgroundImage ? backgroundImage:''});
-    background-size: cover;
-    background-position: center;
+    background-image: url(${({backgroundImage}) => backgroundImage ? backgroundImage : ''});
+    background-size: ${({backgroundSize}) => backgroundSize ? backgroundSize : 'cover'};
+    background-position: ${({backgroundPosition}) => backgroundPosition ? backgroundPosition : 'center'};
+    background-color: ${({backgroundColor}) => backgroundColor ? backgroundColor : 'center'};
+    background-repeat: no-repeat;
 `;
 
 const ContentWrapper = styled.div`
@@ -18,10 +22,15 @@ const ContentWrapper = styled.div`
     margin: auto;
     margin-top: 0;
     padding-top: 2rem;
+    max-height: 100%;
 `;
 
 export const BasePage = (props) => {
-    return html`<${BasepageElm} backgroundImage=${props.backgroundImage}>
+    return html`<${BasepageElm}
+        backgroundImage=${props.backgroundImage}
+        backgroundSize=${props.backgroundSize}
+        backgroundColor=${props.backgroundColor}
+        backgroundPosition=${props.backgroundPosition}>
         <${GlobalStyles} />
 
         <${ContentWrapper}>
