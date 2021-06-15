@@ -12,7 +12,7 @@
     "build-storybook": "build-storybook --output-dir dist",
     "build-storybook-serve": "build-storybook --output-dir dist && serve ./dist",
     "build-parcel": "parcel build src/index.html",
-    "build-parcel-serve": "parcel build src/index.html && serve ./dist",
+    "build-parcel-serve": "parcel build src/index.html && npm run serve",
     "serve": "serve --config ../serve.json ./dist"
   },
   "resolutions": {
