@@ -22,6 +22,8 @@ export const GlobalStyles = createGlobalStyle`
         --secondary-interaction-color: #E07EA0;
 
         /* Static info */
+        --primary-highlight: dodgerblue;
+        --primary-highlight-contrast: #fff;
         --primary-info: #e07ea0;
         --primary-info-contrast: #73092b;
         --secondary-info: #E07EA0;

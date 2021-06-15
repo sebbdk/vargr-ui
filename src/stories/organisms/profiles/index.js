@@ -38,7 +38,7 @@ const ListView = styled.div`
   padding: 0.5rem;
 `;
 
-const GalleryContainer = styled.div`
+const ProfilesWrapper = styled.div`
 `;
 
 const InfoWrapper = styled.div`
@@ -53,6 +53,7 @@ export function ImagePage(props) {
   const d = {
     compact:true,
     wide: true,
+    //flexDirection: 'column-reverse',
     ...props
   }
 
@@ -61,7 +62,7 @@ export function ImagePage(props) {
   </${ImgElm}>`;
 }
 
-export const Gallery = ({ infoCard, onPick, cards, ...props }) => {
+export const Profiles = ({ infoCard, onPick, cards, ...props }) => {
   const imgElms = cards.map((props, index) => {
     function onImagePick() {
       onPick(index, cards)
@@ -70,23 +71,23 @@ export const Gallery = ({ infoCard, onPick, cards, ...props }) => {
     return html`<${ImagePage} hasBorder=${false} onPick=${onPick && onImagePick} ...${props}></${ImagePage}>`
   });
 
-  return html`<${GalleryContainer}>
+  return html`<${ProfilesWrapper}>
     <${InfoWrapper}>
       <${Card} ...${infoCard} hasBorder=${false} />
     </${InfoWrapper}>
     <${ListView}>
       ${imgElms}
     </${ListView}>
-  </${GalleryContainer}>`;
+  </${ProfilesWrapper}>`;
 };
 
-Gallery.propTypes = {
+Profiles.propTypes = {
   title: PropTypes.string.isRequired,
   onPick: PropTypes.func,
   //images: PropTypes.arrayOf.string.isRequired,
 };
 
-Gallery.defaultProps = {
+Profiles.defaultProps = {
   title: 'UNDEFINED TITLE',
   images: [],
 };
