@@ -22,13 +22,13 @@ function App (props) {
     <${Provider} store=${store}>
       <${Router}>
         <${HubPage} path="/" />
-        <${FeedsPage} path="/feeds" />
-        <${ActionsPage} path="/actions" />
-        <${GalleriesPage} path="/galleries" />
-        <${AllFeedsPage} path="/all" />
-        <${RedditFeedPage} path="/reddit" />
-        <${FeedPage} path="/feed/:id" />
-        <${RipsIndex} path="/rips" />
+        <${FeedsPage} path="/pages/feeds" />
+        <${ActionsPage} path="/pages/actions" />
+        <${GalleriesPage} path="/pages/galleries" />
+        <${AllFeedsPage} path="/pages/all" />
+        <${RedditFeedPage} path="/pages/reddit" />
+        <${FeedPage} path="/pages/feed/:id" />
+        <${RipsIndex} path="/pages/rips" />
       </${Router}>
     </${Provider}>`;
 }

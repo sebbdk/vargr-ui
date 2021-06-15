@@ -13,7 +13,7 @@
     "build-storybook-serve": "build-storybook --output-dir dist && serve ./dist",
     "build-parcel": "parcel build src/index.html",
     "build-parcel-serve": "parcel build src/index.html && serve ./dist",
-    "serve": "serve ./dist"
+    "serve": "serve --config ../serve.json ./dist"
   },
   "resolutions": {
     "styled-components": "^5"
@@ -38,7 +38,7 @@
     "preact-router": "^3.2.1",
     "react-redux": "^7.2.1",
     "redux": ">=2",
-    "serve": "^11.3.2",
+    "serve": "^12.0.0",
     "src": "^1.1.2",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "styled": "^1.0.0",
