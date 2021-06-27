@@ -37,26 +37,27 @@ const GalleryReaderContainer = styled.div`
     height: 100vh;
     overflow: hidden;
     background-color: #333;
+    font-size: 0.75em;
 `;
 
 const GalleryContentArea = styled.div`
     width: 100%;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 3rem;
+    top: 2em;
 `;
 
 const CurrentPageHint = styled.div`
     background-color: #999;
     color: #fff;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem;
-    line-height: 1rem;
+    padding: 1em;
+    line-height: 1em;
     z-index: 0;
     text-align: center;
     box-sizing: border-box;
@@ -64,7 +65,7 @@ const CurrentPageHint = styled.div`
     &:after {
         content: " ";
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
         height: 0.25rem;
@@ -74,7 +75,7 @@ const CurrentPageHint = styled.div`
     .hint {
         content: " ";
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 0%;
         height: 0.25rem;
@@ -129,6 +130,11 @@ export class GalleryReader extends Component {
         // @TODO, add douple tab/click to zoom
         // @TODO, move next button to left corner for easier press
         // @TODO, on desktop the footer wastes vertical screenspace
+
+
+        // i changed it to show all images at once
+        // @TODO darken all but the X(default 1) item in the center
+        // use a smooth transition
 
         this.imgGroupRef = createRef();
     }
