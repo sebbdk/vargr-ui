@@ -123,6 +123,7 @@ export class GalleryReader extends Component {
             scrollPct: 0
         }
         this.zoombox = createRef();
+        this.imageElms = [];
 
         // @TODO, ensure viewport is set so doupletap zoom is disabled
         // @TODO, add transitions
@@ -137,6 +138,10 @@ export class GalleryReader extends Component {
         // use a smooth transition
 
         this.imgGroupRef = createRef();
+
+        this.imageElms = this.props.images.map((src, index) => {
+            return html`<${ImagePage} isDualPage=${this.props.dualPage} src="${src}"></${ImagePage}>`
+        });
     }
 
     handleKeyDown(evt) {    
@@ -149,8 +154,12 @@ export class GalleryReader extends Component {
         }
     }
 
-    componentDidMount(){
-        document.addEventListener("keyup", this.handleKeyDown.bind(this));
+    componentDidUpdate(prevProps) {
+        if (prevProps.images !== this.props.images) {
+            this.imageElms = this.props.images.map((src, index) => {
+                return html`<${ImagePage} isDualPage=${this.props.dualPage} src="${src}"></${ImagePage}>`
+            });
+        }
     }
 
     componentWillUnmount() {
@@ -193,12 +202,6 @@ export class GalleryReader extends Component {
     }
 
     render() {
-        const offSet = this.props.dualPage ? 2:1;
-        //const imgElms = this.props.images.slice(this.state.index, this.state.index+offSet).map((src, index) => {
-        const imgElms = this.props.images/*.slice(this.state.index, this.state.index+offSet)*/.map((src, index) => {
-            return html`<${ImagePage} isDualPage=${this.props.dualPage} src="${src}"></${ImagePage}>`
-        });
-
         let pagePct = this.state.scrollPct * (this.props.images.length);
         if (pagePct > this.props.images.length) {
             pagePct = this.props.images.length;
@@ -213,7 +216,7 @@ export class GalleryReader extends Component {
                 <${GalleryContentArea}>
                     <${ZoomBox} ref=${this.zoombox} onTransform=${this.onTransform.bind(this)}>
                         <${ImagePageGroup} ref=${this.imgGroupRef}>
-                            ${imgElms}
+                            ${this.imageElms}
                         </${ImagePageGroup}>
                     </${ZoomBox}>
                 </${GalleryContentArea}>
