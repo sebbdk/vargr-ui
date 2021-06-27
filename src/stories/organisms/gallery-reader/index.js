@@ -177,7 +177,7 @@ export class GalleryReader extends Component {
     }
 
     onTransform(translate, scale) {
-        const rightPos = ((translate.x-this.imgGroupRef.current.offsetWidth)/scale) * -1;
+        const rightPos = ((translate.x-this.imgGroupRef.current.offsetWidth*0.5)/scale) * -1;
         const totalWidth = this.imgGroupRef.current.scrollWidth;
         const scrollPct = rightPos / totalWidth;
 
@@ -211,8 +211,10 @@ export class GalleryReader extends Component {
                         </${ImagePageGroup}>
                     </${ZoomBox}>
                 </${GalleryContentArea}>
+                <!--
                 <${NavigationArrow} direction="left" onClick=${this.prev.bind(this)}><${Icon}>arrow_back_ios</${Icon}></${NavigationArrow}>
                 <${NavigationArrow} direction="right" onClick=${this.next.bind(this)}><${Icon}>arrow_forward_ios</${Icon}></${NavigationArrow}>
+                -->
                 ${this.props.children}
                 <${CurrentPageHint}>
                     <div class="hint" style=${ { width: this.state.scrollPct* 100 + '%'} }></div>
