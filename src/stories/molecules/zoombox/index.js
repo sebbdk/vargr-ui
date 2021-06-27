@@ -182,7 +182,7 @@ export class ZoomBox extends Component {
             };
 
             const currentPosition = this.state.translate;
-            const currentScale = this.state.scale;            
+            const currentScale = this.state.scale;
             const boundingRect = this.elmRef.current.getBoundingClientRect();
 
             const scalePoint = scaleFromPoint(
@@ -213,7 +213,7 @@ export class ZoomBox extends Component {
         this.handleDrag({
             clientX: evt.touches[0].clientX,
             clientY: evt.touches[0].clientY
-        });   
+        });
     }
 
     handleTouchEnd(evt) {
@@ -236,7 +236,7 @@ export class ZoomBox extends Component {
         }
     }
 
-    componentDidMount(){        
+    componentDidMount(){
         this.elmRef.current.addEventListener("mousedown", this.handleDragStart.bind(this));
         this.elmRef.current.addEventListener("mousemove", this.handleDrag.bind(this));
         this.elmRef.current.addEventListener("mouseup", this.handleDragEnd.bind(this));
@@ -247,6 +247,8 @@ export class ZoomBox extends Component {
         this.elmRef.current.addEventListener("touchmove", this.handleTouchMove.bind(this));
         this.elmRef.current.addEventListener("touchend", this.handleTouchEnd.bind(this));
 
+        window.test = this.transformRef.current;
+
         this.setState({
             size: {
                 w:this.transformRef.current.offsetWidth,
@@ -254,7 +256,7 @@ export class ZoomBox extends Component {
             }
         });
     }
-    
+
     componentWillUnmount() {
         this.elmRef.current.removeEventListener("mousedown", this.handleDragStart.bind(this));
         this.elmRef.current.removeEventListener("mousemove", this.handleDrag.bind(this));
@@ -267,13 +269,19 @@ export class ZoomBox extends Component {
         this.elmRef.current.removeEventListener("touchend", this.handleTouchEnd.bind(this));
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.onTransform && ((prevState.translate.x !== this.state.translate.x) || (this.state.scale !== prevState.scale))) {
+            this.props.onTransform(this.state.translate, this.state.scale);
+        }
+    }
+
     render() {
         const style = {
             transform: `translate(${this.state.translate.x}px, ${this.state.translate.y}px) scale(${this.state.scale}, ${this.state.scale})`
         };
 
         const debugConsole = this.props.debug ? html`<${ConsoleComponent} messages=${this.state.messages} />`:'';
-    
+
         return html`
             <${ZoomBoxContainer} ref=${this.elmRef}>
                 <${Transformer} style=${style} ref=${this.transformRef}>

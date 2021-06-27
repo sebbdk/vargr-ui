@@ -6,11 +6,13 @@ import { ZoomBox } from "stories/molecules/zoombox";
 import { Icon } from "stories/atoms/icon";
 
 const ImagePage = styled.img`
-    object-fit: scale-down;
+    //object-fit: scale-down;
     object-position: center;
     display: block;
-    max-height: 100vh;
+    height: 100%;
+    //width: 100%;
     min-width: 0;
+    flex-shrink: 0;
 
     ${({ isDualPage }) => isDualPage ? `
         &:first-of-type {
@@ -21,6 +23,13 @@ const ImagePage = styled.img`
             object-position: center left;
         }
     ` : ''};
+`;
+
+const ImagePageGroup = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
 `;
 
 const GalleryReaderContainer = styled.div`
@@ -51,6 +60,28 @@ const CurrentPageHint = styled.div`
     z-index: 0;
     text-align: center;
     box-sizing: border-box;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0.25rem;
+        background-color: rgba(0,0,0, 0.2);
+    }
+
+    .hint {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 0.25rem;
+        background-color: tomato;
+
+        
+    }
 `;
 
 const NavigationArrow = styled.div`
@@ -87,7 +118,8 @@ export class GalleryReader extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            index: props.index || 0
+            index: props.index || 0,
+            scrollPct: 0
         }
         this.zoombox = createRef();
 
@@ -97,6 +129,8 @@ export class GalleryReader extends Component {
         // @TODO, add douple tab/click to zoom
         // @TODO, move next button to left corner for easier press
         // @TODO, on desktop the footer wastes vertical screenspace
+
+        this.imgGroupRef = createRef();
     }
 
     handleKeyDown(evt) {    
@@ -142,24 +176,47 @@ export class GalleryReader extends Component {
         this.setState({ index: this.state.index-1 })  
     }
 
+    onTransform(translate, scale) {
+        const rightPos = ((translate.x-this.imgGroupRef.current.offsetWidth)/scale) * -1;
+        const totalWidth = this.imgGroupRef.current.scrollWidth;
+        const scrollPct = rightPos / totalWidth;
+
+        this.setState({
+            scrollPct
+        });
+    }
+
     render() {
         const offSet = this.props.dualPage ? 2:1;
-        const imgElms = this.props.images.slice(this.state.index, this.state.index+offSet).map((src, index) => {
+        //const imgElms = this.props.images.slice(this.state.index, this.state.index+offSet).map((src, index) => {
+        const imgElms = this.props.images/*.slice(this.state.index, this.state.index+offSet)*/.map((src, index) => {
             return html`<${ImagePage} isDualPage=${this.props.dualPage} src="${src}"></${ImagePage}>`
         });
+
+        let pagePct = this.state.scrollPct * (this.props.images.length);
+        if (pagePct > this.props.images.length) {
+            pagePct = this.props.images.length;
+        }
+
+        if (pagePct < 0) {
+            pagePct = 0;
+        }
     
         return html`
             <${GalleryReaderContainer}>
                 <${GalleryContentArea}>
-                    <${ZoomBox} ref=${this.zoombox}>
-                        ${imgElms}
+                    <${ZoomBox} ref=${this.zoombox} onTransform=${this.onTransform.bind(this)}>
+                        <${ImagePageGroup} ref=${this.imgGroupRef}>
+                            ${imgElms}
+                        </${ImagePageGroup}>
                     </${ZoomBox}>
                 </${GalleryContentArea}>
                 <${NavigationArrow} direction="left" onClick=${this.prev.bind(this)}><${Icon}>arrow_back_ios</${Icon}></${NavigationArrow}>
                 <${NavigationArrow} direction="right" onClick=${this.next.bind(this)}><${Icon}>arrow_forward_ios</${Icon}></${NavigationArrow}>
                 ${this.props.children}
                 <${CurrentPageHint}>
-                    ${this.state.index+1}/${this.props.images.length}
+                    <div class="hint" style=${ { width: this.state.scrollPct* 100 + '%'} }></div>
+                    ${Math.ceil(pagePct)} / ${this.props.images.length}
                 </${CurrentPageHint}>
             </${GalleryReaderContainer}>
         `;
