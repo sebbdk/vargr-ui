@@ -9,7 +9,7 @@ const PickerOptionElm = styled.div`
 	line-height: 1em;
 	padding: 0.5em;
 	color: #fff;
-	border-bottom: 1px solid rgba(0,0,0, 0.2);
+	border-bottom: 0.0125em solid rgba(0,0,0, 0.2);
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -30,31 +30,41 @@ const PickerOptionElm = styled.div`
 	`}
 `;
 
+const PickerContainerElm = styled.div`
+	border-radius: 0.25em;
+	overflow: hidden;
+	border: 0.0125em solid transparent;
+`;
+
 const PickerElm = styled.div`
 	border-radius: 0.25em;
 	overflow: visible;
 	height: 2em;
 
 	${PickerOptionElm} {
-		display: none;
-		border-bottom: none;
+		visibility: hidden;
 	}
 
 	${PickerOptionElm}:first-of-type {
-		display: block;
+		visibility: visible;
+		border-radius: 0.25em;
 	}
 
 	${({ isOpen }) => isOpen && `
 		${PickerOptionElm} {
-			display: block;
+			visibility: visible;
+		}
+
+		${PickerOptionElm}:first-of-type {
+			visibility: visible;
+			border-radius: 0;
+		}
+
+		${PickerContainerElm} {
+			box-shadow: 0 0em 0.25em rgba(0, 0, 0, 0.5);
+			border: 0.0125em solid #666;
 		}
 	`}
-`;
-
-
-const PickerContainerElm = styled.div`
-	border-radius: 0.25em;
-	overflow: hidden;
 `;
 
 export const PickerOption = ({ children, selected, onClick }) => {
