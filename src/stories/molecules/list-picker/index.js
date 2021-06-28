@@ -75,7 +75,7 @@ export const PickerOption = ({ children, selected, onClick }) => {
 	`;
 }
 
-export const ListPicker = ({ options = [], inputSelection, onChange }) => {
+export const ListPicker = ({ options = [ { label: 'no options', value: 0 } ], inputSelection, onChange }) => {
 	const [ isOpen, setIsOpen ]= useState( false );
 	const [ selection, setSelection ]= useState( inputSelection || options[0].value );
 
