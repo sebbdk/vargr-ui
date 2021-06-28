@@ -67,6 +67,10 @@ export class ZoomBox extends Component {
         }
         this.elmRef = createRef();
         this.transformRef = createRef();
+
+        // @TODO, add 100% sticky zoom option
+        // @TODO, add contain option, that keeps the transformer from begin less thatn 100% height/width when scaled.
+        // @TODO, add a set set tranform method to set translation & scale
     }
 
     reset() {

@@ -191,6 +191,7 @@ export class GalleryReader extends Component {
         this.setState({ index: this.state.index-1 })  
     }
 
+    // @TODO, use onTranslateEnd for better performance
     onTransform(translate, scale) {
         const rightPos = ((translate.x-this.imgGroupRef.current.offsetWidth*0.5)/scale) * -1;
         const totalWidth = this.imgGroupRef.current.scrollWidth;
