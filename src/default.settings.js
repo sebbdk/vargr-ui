@@ -24,6 +24,7 @@ export default {
                 "backgroundSize": 'cover'
             },
             "serviceList": [
+                // @TODO, change to card interface, use primaryText instead of name
                 { "name": "Storybook", "link": "https://sebbdk.github.io/vargr-ui/", "logo": storybookLogo },
                 { "name": "MongoDB", "link": "http://mongo.hopper.local", "logo": mongodbLogo },
                 { "name": "NextCloud", "link": "http://next.hopper.local", "logo": nextcloudLogo},
