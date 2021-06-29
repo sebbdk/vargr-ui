@@ -9,6 +9,7 @@ const ZoomBoxContainer = styled.div`
     height: 100%;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
     
     &:after {
         content: " ";
