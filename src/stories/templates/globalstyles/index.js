@@ -45,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
         --card-highlighted-font-color-contrast: #fff;
 
 
-        --primary-font: helvetica;
+        --primary-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';;
 
         font-family: var(--primary-font);
         color: var(--primary-color);
