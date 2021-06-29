@@ -3,9 +3,8 @@ import styled from "styled-components"
 import { GlobalStyles } from '../globalstyles/index';
 
 const FullPageElm = styled.div`
-    min-width: 100vw;
-    min-height: 100vh;
-    max-height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     overflow: auto;
 
