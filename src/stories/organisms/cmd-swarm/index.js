@@ -1,6 +1,7 @@
 /** @jsx h */
 import { html } from "htm/preact"
 import styled from "styled-components";
+import { Draggable } from "../../molecules/draggable";
 
 export const selectionCmdTypes = {
 	selectText: [
@@ -99,11 +100,14 @@ export const CmdNodeArg = ({ name = 'unknown', type = 'text', color = 'tomato'  
 
 export const CmdNode = ({ name = 'Undefined', args = [] }) => {
 	return html`
-		<${CmdNodeElm}>
-			<div className="title">${name}</div>
-			<${CmdNodeArg} name="Hello" color="#bcd6ff"></${CmdNodeArg}>
-			<${CmdNodeArg} name="world"></${CmdNodeArg}>
-			<${CmdNodeArg} name="dave"></${CmdNodeArg}>
+		
+		<${Draggable}>
+			<${CmdNodeElm}>
+				<div className="title">${name}</div>
+				<${CmdNodeArg} name="Hello" color="#bcd6ff"></${CmdNodeArg}>
+				<${CmdNodeArg} name="world"></${CmdNodeArg}>
+				<${CmdNodeArg} name="dave"></${CmdNodeArg}>
+			</${Draggable}>
 		</${CmdNodeElm}>
 	`;
 }
