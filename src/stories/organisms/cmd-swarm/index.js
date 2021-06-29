@@ -111,6 +111,8 @@ const CmdSwarmElm = styled.div`
 	width: 100%;
 	height: 100%;
 	display: flex;
+	overflow: auto;
+	position: relative;
 
     background-color: rgba(0,0,0, 0.125);
     background-image: linear-gradient(#333 0.125rem, transparent 0.125rem), linear-gradient(90deg, #333 0.125rem, transparent 0.125rem);
