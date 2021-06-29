@@ -1,4 +1,3 @@
-/** @jsx h */
 import { html } from "htm/preact"
 import styled from "styled-components";
 import { Draggable } from "../../molecules/draggable";
@@ -152,8 +151,8 @@ export const CmdNode = ({ name = 'Undefined', args = [], outs = [], x = 0, y = 0
 export const CmdSwarm = ({  }) => {
   return html`
   <${CmdSwarmElm}>
-	<${CmdNode} x=${220} y=${20} name=${demoCMD.name} args=${demoCMD.args} outs=${demoCMD.outs}></${CmdNode}>
-	<${CmdNode} x=${375} y=${75} name=${selectTextContentCMD.name} args=${selectTextContentCMD.args} outs=${selectTextContentCMD.outs}></${CmdNode}>
+	<${CmdNode} x=${220} y=${20} ...${demoCMD}></${CmdNode}>
+	<${CmdNode} x=${475} y=${75} ...${selectTextContentCMD}></${CmdNode}>
   </${CmdSwarmElm}>
   `;
 };
