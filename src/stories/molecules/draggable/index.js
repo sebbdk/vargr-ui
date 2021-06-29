@@ -72,6 +72,14 @@ export class Draggable extends Component {
         });
 	}
 
+	handleDragOut(evt) {
+		if (evt.toElement == null && evt.relatedTarget == null) {
+			this.setState({
+				isDragging: false
+			});
+		}
+	}
+
 	handleDragEnd(evt) {
         evt.preventDefault && evt.preventDefault()
         this.setState({
@@ -83,14 +91,14 @@ export class Draggable extends Component {
         this.elmRef.current.addEventListener("mousedown", this.handleDragStart.bind(this));
         document.addEventListener("mousemove", this.handleDrag.bind(this));
         document.addEventListener("mouseup", this.handleDragEnd.bind(this));
-        document.addEventListener("mouseout", this.handleDragEnd.bind(this));
+        document.addEventListener("mouseout", this.handleDragOut.bind(this));
     }
 
     componentWillUnmount() {
         this.elmRef.current.removeEventListener("mousedown", this.handleDragStart.bind(this));
         document.removeEventListener("mousemove", this.handleDrag.bind(this));
         document.removeEventListener("mouseup", this.handleDragEnd.bind(this));
-        document.removeEventListener("onmouseout", this.handleDragEnd.bind(this));
+        document.removeEventListener("onmouseout", this.handleDragOut.bind(this));
     }
 
     render() {
