@@ -22,6 +22,28 @@ export const cmdTypes = {
 	...selectionCmdTypes
 };
 
+export const demoCMD = {
+	name: 'Navigate to',
+	args: [
+		{ type: 'text', value: '', label: 'address', color: '#bcd6ff' }
+	],
+	outs: [
+		{ type: 'cmd', value: '', label: 'next', color: 'yellow' },
+	]
+}
+
+export const selectTextContentCMD = {
+	name: 'Select text in',
+	args: [
+		{ type: 'text', value: '', label: 'selector', color: 'tomato' },
+		{ type: 'text', value: '', label: 'output', color: 'rebeccapurple' },
+		
+	],
+	outs: [
+		{ type: 'cmd', value: '', label: 'next', color: 'yellow' }
+	]
+}
+
 const CmdNodeElm = styled.div`
 	background-color: rgba(0,0,0, 0.9);
 	border: 1px solid rgba(255,255,255, 0.25);
@@ -31,15 +53,12 @@ const CmdNodeElm = styled.div`
 	padding: 0.5em;
 	border-radius: 0.25em;
 	flex-grow: 0;
-	position: absolute;
-	top: 1em;
-	left: 1em;
 	user-select: none;
 
 	.title {
 		padding: 0 1em;
 		padding-bottom: 0.5em;
-		margin-bottom: 0.5em;
+		margin-bottom: 0.5rem;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.125);
 	}
 `;
@@ -49,7 +68,7 @@ const CmdNodeArgElm = styled.div`
 	line-height: 1rem;
 	position: relative;
 	padding-left: 1.5rem;
-	margin-bottom: 1em;
+	margin-bottom: 0.5rem;
 	font-size: 0.75em;
 
 	&:last-of-type {
@@ -73,6 +92,20 @@ const CmdNodeArgElm = styled.div`
 		border-radius: 50%;
 		background-color: ${({ color }) => color  ? color : 'rebeccapurple'};
 	}
+
+	${({ isOut }) => isOut && `
+		padding-left: 0;
+		padding-right: 1.5rem;
+		text-align: right;
+		padding-top: 0.5em;
+		border-top: 1px solid rgba(255, 255, 255, 0.125);
+
+		&:after {
+			left: initial;
+			right: 0;
+			top: 0.5em;
+		}
+	`};
 `;
 
 const CmdSwarmElm = styled.div`
@@ -88,36 +121,39 @@ const CmdSwarmElm = styled.div`
 }
 `;
 
-export const CmdNodeArg = ({ name = 'unknown', type = 'text', color = 'tomato'  }) => {
-	console.log(color)
-
+export const CmdNodeArg = ({ name = 'unknown', type = 'text', color = 'tomato', isOut = false  }) => {
 	return html`
-		<${CmdNodeArgElm} color=${color}>
+		<${CmdNodeArgElm} color=${color} isOut=${isOut}>
 			${name}
 		</${CmdNodeArgElm}>
 	`;
 }
 
-export const CmdNode = ({ name = 'Undefined', args = [] }) => {
+export const CmdNode = ({ name = 'Undefined', args = [], outs = [], x = 0, y = 0 }) => {
+	const argElms = args.map(arg => html`
+		<${CmdNodeArg} name=${arg.label} color=${arg.color}></${CmdNodeArg}>
+	`);
+
+	const outElms = outs.map(arg => html`
+		<${CmdNodeArg} name=${arg.label} color=${arg.color} isOut=${true}></${CmdNodeArg}>
+	`);
+
 	return html`
-		
-		<${Draggable}>
+		<${Draggable} x=${x} y=${y}>
 			<${CmdNodeElm}>
 				<div className="title">${name}</div>
-				<${CmdNodeArg} name="Hello" color="#bcd6ff"></${CmdNodeArg}>
-				<${CmdNodeArg} name="world"></${CmdNodeArg}>
-				<${CmdNodeArg} name="dave"></${CmdNodeArg}>
+				${argElms}
+				${outElms}
 			</${Draggable}>
 		</${CmdNodeElm}>
 	`;
 }
 
-
-
 export const CmdSwarm = ({  }) => {
   return html`
   <${CmdSwarmElm}>
-	<${CmdNode}></${CmdNode}>
+	<${CmdNode} x=${220} y=${20} name=${demoCMD.name} args=${demoCMD.args} outs=${demoCMD.outs}></${CmdNode}>
+	<${CmdNode} x=${375} y=${75} name=${selectTextContentCMD.name} args=${selectTextContentCMD.args} outs=${selectTextContentCMD.outs}></${CmdNode}>
   </${CmdSwarmElm}>
   `;
 };
