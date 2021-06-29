@@ -37,6 +37,12 @@ export class Draggable extends Component {
 		this.elmRef = createRef();
     }
 
+    emitOnTranslationEnd() {
+        if(this.props.onTranslationEnd) {
+            this.props.onTranslationEnd(this.state.translate);
+        }
+    }
+
 	handleDragStart(evt) {
         evt.preventDefault && evt.preventDefault();
 
@@ -81,13 +87,19 @@ export class Draggable extends Component {
 	}
 
 	handleDragEnd(evt) {
-        evt.preventDefault && evt.preventDefault()
-        this.setState({
-            isDragging: false
-        });
+        evt.preventDefault && evt.preventDefault();
+        if(this.state.isDragging) {
+            console.log('called twice?')
+            this.setState({
+                isDragging: false
+            });
+
+            this.emitOnTranslationEnd();
+        }
 	}
 
     componentDidMount(){
+        console.log()
         this.elmRef.current.addEventListener("mousedown", this.handleDragStart.bind(this));
         document.addEventListener("mousemove", this.handleDrag.bind(this));
         document.addEventListener("mouseup", this.handleDragEnd.bind(this));

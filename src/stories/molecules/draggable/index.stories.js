@@ -6,7 +6,9 @@ import styled from 'styled-components';
 export default {
   title: 'molecules/Draggable',
   component: Draggable,
-  argTypes: {},
+  argTypes: {
+    onTranslationEnd: { action: 'translationEnd' }
+  },
 };
 
 const DemoContent = styled.div`
