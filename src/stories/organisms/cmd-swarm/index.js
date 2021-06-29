@@ -36,7 +36,6 @@ export const selectTextContentCMD = {
 	args: [
 		{ type: 'text', value: '', label: 'selector', color: 'tomato' },
 		{ type: 'text', value: '', label: 'output', color: 'rebeccapurple' },
-		
 	],
 	outs: [
 		{ type: 'cmd', value: '', label: 'next', color: 'yellow' }
