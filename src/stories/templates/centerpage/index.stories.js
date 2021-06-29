@@ -10,8 +10,7 @@ export default {
 
 const DemoContent = styled.div`
     background-color: yellow;
-    height: 2rem;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
     line-height: 2rem;
     color: var(--layer-font-color);
@@ -19,7 +18,11 @@ const DemoContent = styled.div`
 
 const Template = (args) => html`
     <${CenterPage} {...args}>
-        <${DemoContent}>Content Goes here</${DemoContent}>
+        <${DemoContent}>
+            <p>The yellow area here area shows the page container limit</p>
+            <p>The yellow area can grow infinitely in height</p>
+            <p>The content will align on the vertical center of the page when less that 100% height</p>
+        </${DemoContent}>
     </${CenterPage} {...args}>
 `;
 
