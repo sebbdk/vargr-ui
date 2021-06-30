@@ -1,6 +1,7 @@
 import { RelationLine } from './index.js';
 import { html } from 'htm/preact';
 import { BasePage } from 'stories/templates/basepage';
+import { FullPage } from '../../templates/fullpage/index.js';
 
 export default {
   title: 'molecules/RelationLine',
@@ -9,9 +10,9 @@ export default {
 };
 
 const Template = (args) => html`
-	<${BasePage}>
+	<${FullPage}>
 		<${RelationLine} ...${args}></${RelationLine}>
-	</${BasePage}>
+	</${FullPage}>
 `;
 
 export const primary= Template.bind({});

@@ -76,6 +76,8 @@ export class Draggable extends Component {
                 y: this.state.startTranslate.y + translateDiff.y
             }
         });
+
+        this.emitOnTranslationEnd();
 	}
 
 	handleDragOut(evt) {
