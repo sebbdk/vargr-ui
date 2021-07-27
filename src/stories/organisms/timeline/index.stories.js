@@ -12,6 +12,7 @@ const Template = (args) => html`<${BasePage}><${Timeline} ...${args} /></${BaseP
 
 export const primary = Template.bind({});
 primary.args = {
+  title: 'hello world!',
   items: [
     {
       label: '2019',
