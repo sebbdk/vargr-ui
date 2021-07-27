@@ -1,7 +1,7 @@
 import { html } from "htm/preact"
 import styled from "styled-components"
 
-const RichtextElm = styled.div`
+export const RichtextElm = styled.div`
 	h1, h2, h3 {
 		margin: 0;
 		font-size: 1em;
@@ -37,6 +37,10 @@ const RichtextElm = styled.div`
 	p {
 		color: rgba(255, 255, 255, 0.8);
 		margin: 1rem 0;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 
 	ul {
