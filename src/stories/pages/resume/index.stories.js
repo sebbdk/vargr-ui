@@ -21,9 +21,7 @@ primary.args = {
 			Sebastian Vargr <br />
 			<small>Developing' Developer</small>
 		</h2>
-
 		<img className="--framed" src="https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png" />
-		
 		<br />
 		<br />
 		<h3 className="--line">Contact info & links</h3>
@@ -68,9 +66,9 @@ primary.args = {
 	`,
 	experiences: [
 		{
-			label: '2019',
+			label: '2020',
 			content: html`
-				<h3>Frontend Tech/Team-lead <br /></h3>
+				<h3>Frontend Tech/Team-lead  <br /> <small>Feb 2020 - Current</small></h3>
 				<p>
 					I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.
 				</p>
@@ -78,7 +76,7 @@ primary.args = {
 		},
 		{
 			content: html`
-				<h3>Frontend Tech/Team-lead <br /></h3>
+				<h3>Frontend Tech/Team-lead</h3>
 				<p>
 					I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.
 				</p>
@@ -87,7 +85,7 @@ primary.args = {
 		{
 			label: '2018',
 			content: html`
-				<h3>Frontend Tech/Team-lead <br /></h3>
+				<h3>Frontend Tech/Team-lead <br /> <small>Feb 2019 - Current</small></h3>
 				<p>
 					I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.
 				</p>
