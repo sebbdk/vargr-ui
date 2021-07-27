@@ -6,7 +6,8 @@ import { Timeline, TimelineElm } from "stories/organisms/timeline";
 import { Richtext } from "stories/molecules/richtext";
 
 const ResumeElm = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: auto auto;
 `;
 
 const PrimaryContententElm = styled.div`
@@ -14,7 +15,7 @@ const PrimaryContententElm = styled.div`
 	flex-direction: column;
 	padding: 1em;
 	background-color: rgba(255,255,255, 0.1);
-	width: 70%;
+	height: 100%;
 	flex-shrink: 0;
 
 	${TimelineElm} {
