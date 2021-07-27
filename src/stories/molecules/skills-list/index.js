@@ -25,10 +25,10 @@ const SkillElm = styled.span`
     display: block;
     border-radius: 5px;
     text-align: center;
-    font-size: .9em;
-    margin-right: 5px;
-    padding: 2px 0.75em;
-    line-height: 25px;
+    font-size: 0.75em;
+    margin-right: 0.5em;
+    padding: 2px 0.5em;
+    line-height: 1.5em;
 	margin-bottom: 1em;
 `;
 
