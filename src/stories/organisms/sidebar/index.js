@@ -8,7 +8,7 @@ const SidebarElm = styled.div`
 	background-color: rgba(0,0,0, 0.25);
 	padding: 1em;
 	text-align: left;
-	width: 18rem;
+	max-width: 18rem;
 	height: 100%;
 `;
 
