@@ -5,7 +5,7 @@ import { Richtext } from "../../molecules/richtext";
 const SidebarElm = styled.div`
 	display: flex;
 	flex-direction: column;
-	background-color: rgba(0,0,0, 0.8);
+	background-color: rgba(0,0,0, 0.25);
 	padding: 1em;
 	text-align: left;
 	width: 18rem;
