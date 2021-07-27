@@ -26,7 +26,6 @@ const ContentWrapper = styled.div`
 `;
 
 export const CenterPage = (props) => {
-    console.log(props.backgroundImage)
     return html`<${BasepageElm} ...${props}>
         <${GlobalStyles} />
 
