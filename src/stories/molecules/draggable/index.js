@@ -43,6 +43,18 @@ export class Draggable extends Component {
         }
     }
 
+    emitOnTranslationStart() {
+        if(this.props.onTranslationStart) {
+            this.props.onTranslationStart(this.state.translate);
+        }
+    }
+
+    emitOnTranslation() {
+        if(this.props.onTranslation) {
+            this.props.onTranslation(this.state.translate);
+        }
+    }
+
 	handleDragStart(evt) {
         evt.preventDefault && evt.preventDefault();
 
@@ -58,6 +70,8 @@ export class Draggable extends Component {
                 ...this.state.translate
             }
         });
+
+        this.emitOnTranslationStart();
 	}
 
 	handleDrag(evt) {
@@ -77,7 +91,7 @@ export class Draggable extends Component {
             }
         });
 
-        this.emitOnTranslationEnd();
+        this.emitOnTranslation();
 	}
 
 	handleDragOut(evt) {
@@ -96,6 +110,7 @@ export class Draggable extends Component {
                 isDragging: false
             });
 
+            this.emitOnTranslation();
             this.emitOnTranslationEnd();
         }
 	}

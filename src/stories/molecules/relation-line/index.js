@@ -72,7 +72,7 @@ export const RelationPart = ({ from = { x: 0, y: 0 }, to = { x: 0, y: 0 }, color
 	}
 
 	return html`
-		<${Draggable} x=${position.x} y=${position.y} onTranslationEnd=${pos => emitPositionChange(pos)}>
+		<${Draggable} x=${position.x} y=${position.y} onTranslation=${pos => emitPositionChange(pos)}>
 			<${RelationPartControlElm} color=${color}></${RelationPartControlElm}>
 		</${Draggable}>
 		<${RelationConnector} from=${position} to=${to} color=${color}></${RelationConnector}>
@@ -82,6 +82,11 @@ export const RelationPart = ({ from = { x: 0, y: 0 }, to = { x: 0, y: 0 }, color
 export const RelationLine = ({ posA = { x: 0, y: 0}, posB = { x: 100, y: 100} }) => {
 	const [ statePosA, setstatePosA ]= useState( posA );
 	const [ statePosB, setstatePosB ]= useState( posB );
+
+	// @TODO, currently only horizontal out lines are supported
+	// add a option to set the horizonal/vertical out for both points
+
+	// @TODO, add option to lock dragging one of both points
 
 	return html`
 		<${RelationPart} from=${statePosA} to=${statePosB} onMove=${(pos) => setstatePosA(pos)} color="tomato"></${RelationPart}>

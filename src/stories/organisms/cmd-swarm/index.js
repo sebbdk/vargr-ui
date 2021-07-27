@@ -1,6 +1,7 @@
 import { html } from "htm/preact"
 import styled from "styled-components";
 import { Draggable } from "../../molecules/draggable";
+import { RelationLine } from "../../molecules/relation-line";
 
 export const selectionCmdTypes = {
 	selectText: [
@@ -150,10 +151,14 @@ export const CmdNode = ({ name = 'Undefined', args = [], outs = [], x = 0, y = 0
 }
 
 export const CmdSwarm = ({  }) => {
+	const posses = { posA: { x: 30, y: 30}, posB: { x: 100, y: 100} }
+
   return html`
   <${CmdSwarmElm}>
 	<${CmdNode} x=${220} y=${20} ...${demoCMD}></${CmdNode}>
 	<${CmdNode} x=${475} y=${75} ...${selectTextContentCMD}></${CmdNode}>
+
+	<${RelationLine} ...${posses}></${RelationLine}>
   </${CmdSwarmElm}>
   `;
 };
