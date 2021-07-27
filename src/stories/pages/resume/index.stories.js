@@ -24,7 +24,31 @@ primary.args = {
 		telephone: '+45 28491314',
 		linkedinLink: 'https://www.linkedin.com/in/sebbdk/'
 	},
-	introduction: html``,
+	introduction: html`
+		<h2 className="--line">Hi there!</h2>
+		<p>
+			My name is Sebastian Vargr, a mostly' autodidact developer from Copenhagen, Denmark.
+			I enjoy jogging, making games, building more physical things like e-boards,
+			GPU mining rigs, 3d-printers etc. in my workshop.
+		</p>
+		<h3 className="--line">What i do</h3>
+		<p>
+			I have been developing web-applications since 2007, and have been around the stack and back.
+			In short i have no problem jumping between debbuggin a legacy AngularJS app,
+			setting up new docker images, and writing/extending restful API's,
+			while juggeling the websites load metrics like, time to interactive, and kb'size budgets.
+		</p>
+		<p>
+			Having been a freelancer for a few years i have also gotten a good understanding of balancing
+			time, maintainebillity, and performance budgets to get the best posible product with availeble resources.
+		</p>
+		<h3 className="--line">What excites me</h3>
+		<p>
+			Topics that excite me include things like SSR SPA's, GraphQL, state-management,
+			React/Preact (what this page is build on), game-development,
+			14kb performance-budgets, web-assembly, and so on.
+		</p>
+	`,
 	experiences: [
 		{
 			title: 'Frontend Tech/Team-lead',

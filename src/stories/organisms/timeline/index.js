@@ -1,7 +1,7 @@
 import { html } from "htm/preact";
 import styled from "styled-components";
 
-const TimelineElm = styled.div`
+export const TimelineElm = styled.div`
   display: flex;
   flex-direction: column;
 `;
