@@ -6,9 +6,24 @@ const RichtextElm = styled.div`
 		margin: 0;
 		font-size: 1em;
 		line-height: 1em;
-		margin-bottom: 0.5rem;
+		margin-bottom: 1rem;
 		font-weight: 700;
 		color: rgba(255, 255, 255, 1);
+
+		small {
+			font-size: 0.75em;
+			font-weight: 300;
+		}
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.--framed {
+		border-radius: 0.25rem;
+		box-shadow: 0 0 10px rgb(0 0 0 / 20%);
 	}
 
 	h1 { font-size: 2em; }
@@ -21,6 +36,7 @@ const RichtextElm = styled.div`
 
 	p {
 		color: rgba(255, 255, 255, 0.8);
+		margin: 1rem 0;
 	}
 
 	ul {
