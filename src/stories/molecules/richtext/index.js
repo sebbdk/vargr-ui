@@ -10,6 +10,10 @@ export const RichtextElm = styled.div`
 		font-weight: 700;
 		color: rgba(255, 255, 255, 1);
 
+		&:last-child {
+			margin-bottom: 0;
+		}
+
 		small {
 			font-size: 0.75em;
 			font-weight: 300;
