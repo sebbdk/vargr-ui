@@ -16,14 +16,20 @@ const Template = (args) => html`
 
 export const primary= Template.bind({});
 primary.args = {
-	profile: {
-		title: 'Sebastian Vargr',
-		subTitle: "Developing' Developer",
-		imageSrc: 'https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png',
-		email: 'sebb@sebb.dk',
-		telephone: '+45 28491314',
-		linkedinLink: 'https://www.linkedin.com/in/sebbdk/'
-	},
+	profile: html`
+	<h2>
+		Sebastian Vargr <br />
+		<small>Developing' Developer</small>
+	</h2>
+
+	<img className="--framed" src="https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png" />
+	<p>
+		<b>Contact me here:</b><br />
+		E-mail: sebb@sebb.dk<br />
+		Tlf: +45 28491314<br />
+		<a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a>
+	</p>
+	`,
 	introduction: html`
 		<h2 className="--line">Hi there!</h2>
 		<p>

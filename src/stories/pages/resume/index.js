@@ -26,6 +26,7 @@ export const ResumePage = ({ profile, introduction, experiences, skills }) => {
 	return html`
 		<${ResumeElm}>
 			<${Sidebar} ...${profile}>
+				${profile}
 				<${SkillsSection} groups=${skills}></${SkillsSection}>
 			</${Sidebar}>
 			<${PrimaryContententElm}>
