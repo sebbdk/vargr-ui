@@ -99,12 +99,12 @@ primary.args = {
 			items: ['Javascript', 'Typescript', 'C#', 'Java', 'CSS', 'HTML']
 		},
 		{
-			title: 'Tools & tecknologies',
+			title: 'Tools & framworks',
 			items: [ 'Git', 'NodeJS', 'Unity3D', 'MySQL', 'MongoDB', 'Webpack', 'Angular', 'React' ]
 		},
 		{
-			title: 'Patterns & softskills',
-			items: [ 'CI/TD', 'Unit testing', 'project management', 'E2E testing', 'SEO', 'Backend developement', 'Frontend developement' ]
+			title: 'Patterns, softskills, roles',
+			items: [ 'CI/TD', 'Unit testing', 'project management', 'E2E testing', 'SEO', 'Backend developement', 'Frontend developement', 'Teamlead' ]
 		}
 	]
 };
