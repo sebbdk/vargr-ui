@@ -60,10 +60,8 @@ primary.args = {
 			React/Preact (what this page is build on), game-development,
 			14kb performance-budgets, web-assembly, and so on.
 		</p>
-
-		<br />
-		<h1 className="--line">My History</h1>
 	`,
+	experienceTitle: 'My History',
 	experiences: [
 		{
 			label: '2020',
