@@ -1,5 +1,6 @@
 import { html } from "htm/preact";
 import styled from "styled-components";
+import { Richtext } from "../richtext";
 
 const SkillsElm = styled.div`
 `;
@@ -20,7 +21,7 @@ const SkillsSectionHeaderElm = styled.h3`
 `;
 
 const SkillElm = styled.span`
-	background-color: var(--link-color);
+	background-color: var(--main-bg-color);
     color: #fff;
     display: block;
     border-radius: 5px;
@@ -37,10 +38,10 @@ export const SkillsSection = ({ groups }) => {
 		const skills = group.items.map(i => html`<${SkillElm}>${i}</${SkillElm}>`)
 
 		return html`
-			<${SkillsSectionElm}>
-				<${SkillsSectionHeaderElm}>${group.title}</${SkillsSectionHeaderElm}>
-				${skills}
-			</${SkillsSectionElm}>
+			<${Richtext}>
+				<h3 className="--line">${group.title}</h3>
+				<${SkillsSectionElm}>${skills}</${SkillsSectionElm}>
+			</${Richtext}>
 		`;
 	})
 
