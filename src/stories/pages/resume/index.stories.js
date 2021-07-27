@@ -17,22 +17,27 @@ const Template = (args) => html`
 export const primary= Template.bind({});
 primary.args = {
 	profile: html`
-	<h2>
-		Sebastian Vargr <br />
-		<small>Developing' Developer</small>
-	</h2>
+		<h2>
+			Sebastian Vargr <br />
+			<small>Developing' Developer</small>
+		</h2>
 
-	<img className="--framed" src="https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png" />
-	<p>
-		<b>Contact me here:</b><br />
-		E-mail: sebb@sebb.dk<br />
-		Tlf: +45 28491314<br />
-		<a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a>
-	</p>
-	<br />
+		<img className="--framed" src="https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png" />
+		
+		<br />
+		<br />
+		<h3 className="--line">Contact info & links</h3>
+		<p>
+			E-mail: <b>sebb@sebb.dk</b><br />
+			Tlf: <b>+45 28491314</b><br />
+			<br />
+			<a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a><br />
+			<a target="_blank" href="https://www.linkedin.com/in/sebbdk/">Github</a>
+		</p>
+		<br />
 	`,
 	introduction: html`
-		<h2 className="--line">Hi there!</h2>
+		<h1 className="--line">Hi there!</h1>
 		<p>
 			My name is Sebastian Vargr, a mostly' autodidact developer from Copenhagen, Denmark.
 			I enjoy jogging, making games, building more physical things like e-boards,
@@ -59,7 +64,7 @@ primary.args = {
 		</p>
 
 		<br />
-		<h2 className="--line">My History</h2>
+		<h1 className="--line">My History</h1>
 	`,
 	experiences: [
 		{
@@ -91,19 +96,19 @@ primary.args = {
 	],
 	skills: [
 		{
-			title: 'Languages',
+			title: html`Languages <small>The human ones</small>`,
 			items: ['English', 'Danish']
 		},
 		{
-			title: 'Programming languages',
+			title: html`Programming languages <small>Abriviated</small>`,
 			items: ['Javascript', 'Typescript', 'C#', 'Java', 'CSS', 'HTML']
 		},
 		{
-			title: 'Tools & framworks',
+			title: html`Tools & framworks <small>Abriviated</small>`,
 			items: [ 'Git', 'NodeJS', 'Unity3D', 'MySQL', 'MongoDB', 'Webpack', 'Angular', 'React' ]
 		},
 		{
-			title: 'Patterns, softskills, roles',
+			title: html`Patterns, softskills, roles <small>Abriviated</small>`,
 			items: [ 'CI/TD', 'Unit testing', 'project management', 'E2E testing', 'SEO', 'Backend developement', 'Frontend developement', 'Teamlead' ]
 		}
 	]
