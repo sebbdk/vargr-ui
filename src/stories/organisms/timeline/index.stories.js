@@ -14,19 +14,30 @@ export const primary = Template.bind({});
 primary.args = {
   items: [
     {
-      title: 'Frontend Tech/Team-lead',
-      subTitle: 'Feb 2019 - Current',
-      content: 'I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.'
+      label: '2019',
+      content: html`
+        <h3>Frontend Tech/Team-lead <br /> <small>Feb 2019 - Current</small></h3>
+        <p>
+          I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.
+        </p>
+      `
     },
     {
-      title: 'Frontend Tech/Team-lead',
-      subTitle: 'Feb 2019 - Current',
-      content: 'I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.'
+      content: html`
+        <h3>Frontend Tech/Team-lead <br /></h3>
+        <p>
+          I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.
+        </p>
+      `
     },
     {
-      title: 'Frontend Tech/Team-lead',
-      subTitle: 'Feb 2019 - Current',
-      content: 'I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.'
+      label: '2017',
+      content: html`
+        <h3>Frontend Tech/Team-lead <br /> <small>Feb 2019 - Current</small></h3>
+        <p>
+          I joined SimpleSite in the middle of a growth spurt as a Senior developer, so i had the privilidge of helping to implement Scrum practices, training/mentoring junior/intermediate developers, designing & implementing deployment and automated testing strategies, and then ofc. upgrading performance, migrating and developing new features.
+        </p>
+      `
     }
   ]
 };
