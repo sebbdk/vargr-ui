@@ -20,10 +20,9 @@ const SkillsSectionHeaderElm = styled.h3`
 	flex-shrink: 0;
 `;
 
-const SkillElm = styled.span`
+export const SkillElm = styled.span`
 	background-color: var(--main-bg-color);
     color: #fff;
-    display: block;
     border-radius: 5px;
     text-align: center;
     font-size: 0.75em;
