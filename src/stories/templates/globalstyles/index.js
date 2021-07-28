@@ -10,6 +10,12 @@ export const GlobalStyles = createGlobalStyle`
         src: url(https://fonts.gstatic.com/s/materialicons/v85/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
     }
 
+    @media print {
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
     body {
         /* Fonts */
         --primary-color: #fff;
