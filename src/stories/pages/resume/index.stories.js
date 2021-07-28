@@ -148,7 +148,7 @@ primary.args = {
 		{
 			label: '2013',
 			content: html`
-				<h3>Business owner<small><b>Owner</b>, October 2013 - present</small></h3>
+				<h3>Business owner<br /><small><b>Owner</b>, October 2013 - present</small></h3>
 				<p>
 					Work consists mostly of subcontracts to make social media SPA's, campaign and Cordova based mobile applications. More interestingly i helped a few startups get going technically and also coded a few mobile games in collaboration with independent game designers.
 				</p>
