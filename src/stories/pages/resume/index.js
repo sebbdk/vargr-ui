@@ -9,6 +9,7 @@ import { RichtextElm } from "../../molecules/richtext";
 const ResumeElm = styled.div`
 	display: grid;
 	grid-template-columns: auto auto;
+	min-width: 230mm;
 `;
 
 const PrimaryContententElm = styled.div`
