@@ -21,7 +21,6 @@ const ContentWrapper = styled.div`
     width: 100%;
     margin: auto;
     margin-top: 0;
-    padding-top: 2rem;
     max-height: 100%;
 `;
 

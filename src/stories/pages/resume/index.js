@@ -10,6 +10,12 @@ const ResumeElm = styled.div`
 	display: grid;
 	grid-template-columns: auto auto;
 	min-width: 230mm;
+
+    @media print {
+        ::-webkit-scrollbar {
+            min-width: initial;
+        }
+    }
 `;
 
 const PrimaryContententElm = styled.div`
