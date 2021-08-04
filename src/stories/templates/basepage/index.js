@@ -7,7 +7,6 @@ const BasepageElm = styled.div`
     min-height: 100vh;
     max-height: 100%;
     display: flex;
-    overflow: auto;
 
     background-image: url(${({backgroundImage}) => backgroundImage ? backgroundImage : ''});
     background-size: ${({backgroundSize}) => backgroundSize ? backgroundSize : 'cover'};
