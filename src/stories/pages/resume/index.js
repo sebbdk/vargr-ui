@@ -41,6 +41,7 @@ const ResumeElm = styled.div`
 			background-color: rgba(255, 255, 255, 0.5);
 			max-height: 12rem;
 			object-fit: cover;
+			border: 1px solid rgba(0, 0, 0, 0.5);
 		}
 	}
 
