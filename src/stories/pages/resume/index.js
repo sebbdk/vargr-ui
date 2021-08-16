@@ -23,7 +23,7 @@ const ResumeElm = styled.div`
             min-width: initial;
         }
 
-		margin-top: 0;
+		margin: 0;
     }
 
 	${SidebarElm} {
