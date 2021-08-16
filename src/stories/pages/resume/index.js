@@ -1,21 +1,56 @@
 import { html } from "htm/preact";
 import styled from "styled-components";
 import { SkillsSection } from "stories/molecules/skills-list";
-import { Sidebar } from "stories/organisms/sidebar";
+import { Sidebar, SidebarElm } from "stories/organisms/sidebar";
 import { Timeline, TimelineElm } from "stories/organisms/timeline";
 import { Richtext } from "stories/molecules/richtext";
 import { RichtextElm } from "../../molecules/richtext";
 
 const ResumeElm = styled.div`
+	margin-top: 2.5rem;
+
 	display: grid;
-	grid-template-columns: auto auto;
-	min-width: 230mm;
+	grid-template-columns: auto;
 
     @media print {
+		min-width: 230mm;
         ::-webkit-scrollbar {
             min-width: initial;
         }
+
+		margin-top: 0;
     }
+
+	${SidebarElm} {
+		max-width: initial;
+	}
+
+	${SidebarElm} > ${RichtextElm} {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-gap: 1rem;
+		img {
+			width: 100%;
+			max-height: 12rem;
+			object-fit: cover;
+		}
+	}
+
+	@media (min-width: 900px) {
+		grid-template-columns: auto auto;
+
+		${SidebarElm} {
+			max-width: 18rem;
+		}
+
+		${SidebarElm} > ${RichtextElm} {
+			display: block;
+			img {
+				max-height: initial;
+				margin-bottom: 1rem;
+			}
+		}
+	}
 `;
 
 const PrimaryContententElm = styled.div`
@@ -24,11 +59,12 @@ const PrimaryContententElm = styled.div`
 
 	background-color: rgba(255,255,255, 0.1);
 	height: 100%;
-	flex-shrink: 0;
+	flex-shrink: 1;
 
 	> ${RichtextElm} {
 		padding: 1em;
 	}
+
 	${TimelineElm} {
 		margin-top: 1em;
 		padding: 1em;

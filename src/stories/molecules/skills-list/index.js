@@ -2,9 +2,6 @@ import { html } from "htm/preact";
 import styled from "styled-components";
 import { Richtext } from "../richtext";
 
-const SkillsElm = styled.div`
-`;
-
 const SkillsSectionElm = styled.div`
 	display: flex;
 	flex-wrap: wrap;
@@ -30,6 +27,7 @@ export const SkillElm = styled.span`
     padding: 2px 0.5em;
     line-height: 1.5em;
 	margin-bottom: 1em;
+	display: inline-block;
 `;
 
 export const SkillsSection = ({ groups }) => {
@@ -45,8 +43,6 @@ export const SkillsSection = ({ groups }) => {
 	})
 
 	return html`
-		<${SkillsElm}>
-			${groupElms}
-		</${SkillsElm}>
+		${groupElms}
 	`;
   };

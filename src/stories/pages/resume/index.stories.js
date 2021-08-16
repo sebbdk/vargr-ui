@@ -18,18 +18,21 @@ const Template = (args) => html`
 export const primary= Template.bind({});
 primary.args = {
 	profile: html`
-		<img className="--framed" src="https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png" />
-		<br />
-		<br />
-		<h3 className="--line">Contact info & links</h3>
-		<p>
-			E-mail: <b>sebb@sebb.dk</b><br />
-			Tlf: <b>+45 28491314</b><br />
-			<br />
-			<a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a><br />
-			<a target="_blank" href="https://github.com/sebbdk/">Github</a>
-		</p>
-		<br />
+		<div>
+			<img className="--framed" src="https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png" />
+		</div>
+		<div>
+			<h3 className="--line">Sebastian Vargr</h3>
+			<p>
+				E-mail: <b>sebb@sebb.dk</b><br />
+				Tlf: <b>+45 28491314</b><br />
+				<br />
+				<a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a><br />
+				<a target="_blank" href="https://github.com/sebbdk/">Github</a>
+				<br />
+				<br />
+			</p>
+		</div>
 	`,
 	introduction: html`
 		<h1 className="--line">
@@ -49,9 +52,9 @@ primary.args = {
 
 		<p>I am driven by the pride i get from making maintainable systems that succeed in their business case, and user stories.</p>
 
-		<p>In my spare time, i enjoy hobby engineering, playing really badly on my guitar, and petting my adorable cats. :)</p>
+		<p>In my spare time, i enjoy hobby engineering, playing really badly on my guitar, and petting my adorable cats.</p>
 	`,
-	experienceTitle: 'My History',
+	experienceTitle: 'History',
 	experiences: [
 		{
 			label: '2021',
