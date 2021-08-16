@@ -37,7 +37,7 @@ const ResumeElm = styled.div`
 
 		img {
 			width: 100%;
-			height: 18rem;
+			height: 17rem;
 			background-color: rgba(255, 255, 255, 0.5);
 			max-height: 12rem;
 			object-fit: cover;
