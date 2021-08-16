@@ -8,15 +8,6 @@ const SkillsSectionElm = styled.div`
 
 `;
 
-const SkillsSectionHeaderElm = styled.h3`
-	border-bottom: 1px solid #333;
-	margin-top: 0;
-	margin-bottom: 0.25em;
-	font-size: 1em;
-	width: 100%;
-	flex-shrink: 0;
-`;
-
 export const SkillElm = styled.span`
 	background-color: var(--main-bg-color);
     color: #fff;

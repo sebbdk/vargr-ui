@@ -228,6 +228,46 @@ primary.args = {
 			title: html`Patterns, softskills, roles <small>Abriviated</small>`,
 			items: [ 'CI/TD', 'Unit testing', 'project management', 'E2E testing', 'SEO', 'Backend developement', 'Frontend developement', 'Teamlead' ]
 		}
+	],
+	projects: [
+		{
+			description: html`
+				<h2 class="--line">Sofus & Månemaskinen</h2>
+				As a consultant i refactored their build solution for simplicity and performance and helped implement their SPA to none SPA migration plan to improve load metrics,
+				I also established code guidelines, as well as documented their frontend components and process.
+			`,
+			images: [
+				'http://sebbdk.github.io/Curriculum-Vitae/1.8887af35.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/2.14431877.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+			],
+			tags: [
+				'Load optimization',
+				'Sitecore'
+			]
+		},
+		{
+			description: html`
+				<h2 class="--line">Sofus & Månemaskinen</h2>
+				As a consultant i refactored their build solution for simplicity and performance and helped implement their SPA to none SPA migration plan to improve load metrics,
+				I also established code guidelines, as well as documented their frontend components and process.
+			`,
+			images: [
+				'http://sebbdk.github.io/Curriculum-Vitae/1.8887af35.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/2.14431877.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+				'http://sebbdk.github.io/Curriculum-Vitae/3.437a0227.jpg',
+			],
+			tags: [
+				'Load optimization',
+				'Sitecore'
+			]
+		}
 	]
 };
 

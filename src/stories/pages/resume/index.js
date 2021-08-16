@@ -5,6 +5,7 @@ import { Sidebar, SidebarElm } from "stories/organisms/sidebar";
 import { Timeline, TimelineElm } from "stories/organisms/timeline";
 import { Richtext } from "stories/molecules/richtext";
 import { RichtextElm } from "../../molecules/richtext";
+import { Project } from "../../molecules/project";
 
 const ResumeElm = styled.div`
 	margin-top: 2.5rem;
@@ -63,8 +64,8 @@ const ResumeElm = styled.div`
 `;
 
 const PrimaryContententElm = styled.div`
-	display: flex;
-	flex-direction: column;
+	display: grid;
+    grid-template-columns: minmax(0, 1fr);
 
 	background-color: rgba(255,255,255, 0.1);
 	height: 100%;
@@ -81,7 +82,19 @@ const PrimaryContententElm = styled.div`
 	}
 `;
 
-export const ResumePage = ({ profile, introduction, experiences, skills, experienceTitle }) => {
+const ProjectsGroupElm = styled.div`
+	grid-column: 1 / span 2;
+    grid-row: 2;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+	padding: 1rem;
+	background-color: rgba(255,255,255,0.1);
+`;
+
+export const ResumePage = ({ profile, introduction, experiences, skills, experienceTitle, projects }) => {
+	const projectElms = projects.map(p => html`<${Project} images=${p.images} tags=${p.tags}>${p.description}</${Project}>`);
+
 	return html`
 		<${ResumeElm}>
 			<${Sidebar} ...${profile}>
@@ -92,6 +105,14 @@ export const ResumePage = ({ profile, introduction, experiences, skills, experie
 				<${Richtext}>${introduction}</${Richtext}>
 				<${Timeline} items=${experiences} title=${experienceTitle}></${Timeline}>
 			</${PrimaryContententElm}>
+			<!--
+			<${ProjectsGroupElm}>
+				<${Richtext}>
+					<h1 class="--line">Projects</h1>
+				</${Richtext}>
+				${projectElms}
+			</${ProjectsGroupElm}>
+			-->
 		</${ResumeElm}>
 	`;
   };
