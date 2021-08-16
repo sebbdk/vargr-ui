@@ -8,9 +8,14 @@ import { RichtextElm } from "../../molecules/richtext";
 
 const ResumeElm = styled.div`
 	margin-top: 2.5rem;
-
 	display: grid;
 	grid-template-columns: auto;
+
+	box-shadow: 0px 0px 2rem rgb(0 0 0 / 20%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
 
     @media print {
 		min-width: 230mm;
@@ -29,8 +34,11 @@ const ResumeElm = styled.div`
 		display: grid;
 		grid-template-columns: auto auto;
 		grid-gap: 1rem;
+
 		img {
 			width: 100%;
+			height: 18rem;
+			background-color: rgba(255, 255, 255, 0.5);
 			max-height: 12rem;
 			object-fit: cover;
 		}
