@@ -26,6 +26,7 @@ primary.args = {
 			<p>
 				E-mail: <b>sebb@sebb.dk</b><br />
 				Tlf: <b>+45 28491314</b><br />
+				Location: <b>Copenhagen</b><br />
 				<br />
 				<a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a><br />
 				<a target="_blank" href="https://github.com/sebbdk/">Github</a>
