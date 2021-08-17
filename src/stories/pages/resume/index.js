@@ -105,14 +105,12 @@ export const ResumePage = ({ profile, introduction, experiences, skills, experie
 				<${Richtext}>${introduction}</${Richtext}>
 				<${Timeline} items=${experiences} title=${experienceTitle}></${Timeline}>
 			</${PrimaryContententElm}>
-			<!--
 			<${ProjectsGroupElm}>
 				<${Richtext}>
 					<h1 class="--line">Projects</h1>
 				</${Richtext}>
 				${projectElms}
 			</${ProjectsGroupElm}>
-			-->
 		</${ResumeElm}>
 	`;
   };

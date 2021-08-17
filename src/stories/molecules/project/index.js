@@ -20,12 +20,13 @@ const imageContainerElm = styled.div`
 	padding: 1rem;
 	background-color: rgba(255, 255, 255, 0.25);
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 	box-shadow: inset 0px 0px 1rem rgb(0 0 0 / 50%);
 
 	img {
 		margin: 0 0.5rem;
+		max-height: 21rem;
 
 		&:first-child {
 			margin-left: 0;
