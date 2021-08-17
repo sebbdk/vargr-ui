@@ -285,7 +285,7 @@ primary.args = {
 				where the child and their parent has to help the protagonist Sofus solve puzzles to fix the moon.
 			`,
 			images: [],
-			iframe: '<iframe width="1196" height="383" src="https://www.youtube.com/embed/bDZd9An-jAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+			iframe: html`<iframe width="1196" height="383" src="https://www.youtube.com/embed/bDZd9An-jAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
 			tags: [
 				'Tablet',
 				'iOS',

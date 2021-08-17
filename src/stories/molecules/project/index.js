@@ -43,9 +43,24 @@ const tagsContainerElm = styled.div`
 	margin-top: 0.5rem;
 `;
 
-export const Project = ({ children, images, tags }) => {
+const iframeContainerElm = styled.div`
+	margin: 0 -1rem;
+	margin-bottom: -1rem;
+	background-color: rgba(255, 255, 255, 0.25);
+	display: flex;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	box-shadow: inset 0px 0px 1rem rgb(0 0 0 / 50%);
+
+	iframe {
+		height: 21rem;
+		width: 100%;
+	}
+`;
+
+export const Project = ({ children, images, tags, iframe }) => {
 	let imageContainer = '';
-	if (images.length > 0) {
+	if (images && images.length > 0) {
 		const imageElms = images.map(i => html`<img src=${i} />`);
 
 		imageContainer = html`
@@ -56,7 +71,7 @@ export const Project = ({ children, images, tags }) => {
 	}
 
 	let tagsContainer = '';
-	if (tags.length > 0) {
+	if (tags && tags.length > 0) {
 		const tagElms = tags.map(i => html`<${SkillElm}>${i}</${SkillElm}>`);
 
 		tagsContainer = html`
@@ -66,13 +81,19 @@ export const Project = ({ children, images, tags }) => {
 		`;
 	}
 
+	let iframeContainer = '';
+	if (iframe) {
+		iframeContainer = html`<${iframeContainerElm}>${iframe}</${iframeContainerElm}>`;
+	}
+
 	return html`
 		<${ProjectElm}>
 			<${Richtext}>
 				${children}
 				${tagsContainer}
 			</${Richtext}>
-			<div>${imageContainer}</div>
+			${imageContainer}
+			${iframeContainer}
 		</${ProjectElm}>
 	`;
 };

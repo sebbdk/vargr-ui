@@ -93,7 +93,7 @@ const ProjectsGroupElm = styled.div`
 `;
 
 export const ResumePage = ({ profile, introduction, experiences, skills, experienceTitle, projects }) => {
-	const projectElms = projects.map(p => html`<${Project} images=${p.images} tags=${p.tags}>${p.description}</${Project}>`);
+	const projectElms = projects.map(p => html`<${Project} ...${p}>${p.description}</${Project}>`);
 
 	return html`
 		<${ResumeElm}>
