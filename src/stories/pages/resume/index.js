@@ -109,7 +109,7 @@ export const ResumePage = ({ profile, introduction, experiences, skills, experie
 				<${Richtext}>
 					<h1 class="--line">Projects</h1>
 					<p>
-						This is an outtake of some of my projects, in my career i have been involved in hundreds of projects.
+						This is an outtake of some of the project i have been involved in, in my career i have been involved in hundreds of projects.
 					</p>
 				</${Richtext}>
 				${projectElms}
