@@ -83,13 +83,16 @@ const PrimaryContententElm = styled.div`
 `;
 
 const ProjectsGroupElm = styled.div`
-	grid-column: 1 / span 2;
-    grid-row: 2;
+	grid-column: 1 / span 1;
     max-width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
 	padding: 1rem;
 	background-color: rgba(255,255,255,0.1);
+
+	@media (min-width: 900px) {
+		grid-column: 1 / span 2;
+	}
 `;
 
 export const ResumePage = ({ profile, introduction, experiences, skills, experienceTitle, projects }) => {
