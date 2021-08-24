@@ -6,7 +6,7 @@ const DemoPages1 = settings.examples.DemoPages1;
 const DemoPages2 = settings.examples.DemoPages2;
 
 export default {
-  title: 'Common/Pages/Gallery',
+  title: 'Pages/Gallery',
   component: GalleryPage,
   argTypes: {}
 };
