@@ -101,7 +101,7 @@ primary.args = {
 			content: html`
 				<h3>Senior frontend developer <br /> <small><b>SimpleSite</b>, February 2019</small></h3>
 				<p>
-					I joined SimpleSite in the middle of as a Senior developer as they needed someone with experience to improve & develop for their their Angular solution.
+					I joined SimpleSite as a Senior developer as they needed someone with experience to improve & develop for their their Angular solution.
 				</p>
 				<p>
 					<${SkillElm}>Angular</${SkillElm}>
