@@ -1,0 +1,14 @@
+import { html } from 'htm/preact';
+import { LocalHub } from 'stories/common/organisms/local-hub';
+import { HubPage } from '.';
+
+export default {
+  title: 'Common/Pages/Hub',
+  component: LocalHub,
+  argTypes: {},
+};
+
+const Template = (args) => html`<${HubPage}></${HubPage}>`;
+
+export const RegularHub = Template.bind({});
+RegularHub.args = {};
