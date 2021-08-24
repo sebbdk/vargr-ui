@@ -4,7 +4,7 @@ import { BasePage } from 'stories/common/templates/basepage';
 import { SkillElm } from '../skills-list/index.js';
 
 export default {
-  title: 'Resume/Page',
+  title: 'pages/resume',
   component: ResumePage,
   argTypes: {},
 };
