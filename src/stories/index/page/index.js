@@ -3,6 +3,8 @@ import { html } from "htm/preact"
 import { LocalHub } from "stories/common/organisms/local-hub";
 import { FullPage } from "stories/common/templates/fullpage";
 import styled from "styled-components"
+import { HubCard } from "../cards/hubcard";
+import { IndexCard } from "../common/indexcard";
 
 const IndexElm = styled.div`
 	padding: 0.5rem;
@@ -12,35 +14,21 @@ const IndexElm = styled.div`
 	flex-direction: column;
 `;
 
-const CardElm = styled.div`
-	background-color: rgba(255, 0, 0, 0.25);
-	box-sizing: border-box;
-	margin: 0 0.5rem;
-
-	&:first-child {
-		margin-left: 0;
-	}
-
-	&:last-child {
-		margin-right: 0;
-	}
-
-	width: calc(50% - 0.5rem);
-	flex-shrink: 0;
-	overflow: auto;
-`;
-
 const CardContainerElm = styled.div`
 	box-sizing: border-box;
-	margin: 0.5rem;
-	padding-bottom: 1rem;
-	flex-grow: 1;
+
+	padding-bottom: 0.5rem;
 	position: relative;
 	z-index: 10;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	flex-grow: 1;
 
-	display: flex;
-	overflow: auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 0.5rem;
+	grid-row-gap: 0.5rem;
+
 `;
 
 const ChatterBox = styled.div`
@@ -51,28 +39,12 @@ const ChatterBox = styled.div`
 
 const TerminalOutputElm = styled.div`
 	color: #fff;
-	position: absolute;
-	bottom: 1rem;
-	left: 1rem;
+	position: relative;
 	height: 9rem;
-	width: calc(100% - 2rem);
 	overflow: hidden;
-	display: flex;
-	align-items: flex-end;
 	z-index: 9;
-	padding-bottom: 1.5rem;
-
-	&:after {
-		content: " ";
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		pointer-events: none;
-		background: linear-gradient(rgb(51, 51, 51), rgba(51, 51, 51, 0.9),  transparent);
-	}
+	padding: 0.5rem;
+	padding-bottom: 3rem;
 
 	input {
 		display: block;
@@ -82,9 +54,10 @@ const TerminalOutputElm = styled.div`
 		bottom: 0;
 		left: 0;
 		height: 1rem;
-		padding: 0;
-		background-color: transparent;
+		padding: 0.5rem;
+		background-color: rgba(0,0,0, 0.75);
 		border: 0;
+		border-top: 1px solid #fff;
 		&:focus, &:focus-visible {
 			outline: none;
 		}
@@ -93,30 +66,41 @@ const TerminalOutputElm = styled.div`
 	}
 `;
 
+const TerminalLine = styled.div`
+	padding: 0 0.5rem;
+`;
+
+const TerminalLineContainer = styled.div`
+	height: 100%;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column-reverse;
+`;
+
 export const IndexPage = (props) => {
 	return html`
-		<${FullPage}>
+		<${FullPage} ...${appSettings.intra.hub.page}>
 			<${IndexElm}>
 				<${CardContainerElm}>
-					<${CardElm}></${CardElm}>
-					<${CardElm}>
-						<${LocalHub} services=${appSettings.intra.hub.serviceList} />
-					</${CardElm}>
+					<${IndexCard} />
+					<${HubCard} />
 				</${CardContainerElm}>
-				<${ChatterBox}>
-				</${ChatterBox}>
 
-				<${TerminalOutputElm}>
-					> this is a test<br />
-					> this is a test<br />
-					> this is a test<br />
-					> this is a test<br />
-					> this is a test<br />
-					> this is a test<br />
-					> this is a test<br />
-					> this is a test<br />
-					<input type="text" />
-				</${TerminalOutputElm}>
+				<${IndexCard}>
+					<${TerminalOutputElm}>
+						<${TerminalLineContainer}>
+							<${TerminalLine}> # echo "Hello 4"</${TerminalLine}>
+							<${TerminalLine}> "Hello 4"</${TerminalLine}>
+							<${TerminalLine}> # echo "Hello 3"</${TerminalLine}>
+							<${TerminalLine}> "Hello 3"</${TerminalLine}>
+							<${TerminalLine}> # echo "Hello 2"</${TerminalLine}>
+							<${TerminalLine}> "Hello 2"</${TerminalLine}>
+							<${TerminalLine}> # echo "Hello 1 "</${TerminalLine}>
+							<${TerminalLine}> "Hello 1"</${TerminalLine}>
+						</${TerminalLineContainer}>
+						<input type="text" />
+					</${TerminalOutputElm}>
+					</${IndexCard}>
 			</${IndexElm}>
 		</${FullPage}>
 	`

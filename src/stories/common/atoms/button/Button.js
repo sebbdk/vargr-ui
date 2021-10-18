@@ -1,51 +1,62 @@
 /** @jsx h */
-import { h } from 'preact';
-import PropTypes from 'prop-types';
-import './button.css';
+import { html } from 'htm/preact';
+import styled from "styled-components"
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
+
+const styles = `
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+
+  &.--primary {
+    color: white;
+    background-color: #1ea7fd;
+  }
+
+  &.--secondary {
+    color: #333;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  }
+
+  &.--small {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  &.--medium {
+    font-size: 14px;
+    padding: 11px 20px;
+  }
+
+  &.--large {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+`;
+
+const ButtonElm = styled.button`${styles}`;
+const ButtonLinkElm = styled.a`${styles}`;
+
+export const Button = ({ primary, backgroundColor, size = 'medium', label, ...props }) => {
+  const mode = primary ? '--primary' : '--secondary';
+  return html`
+    <${ButtonElm} className=${[`--${size}`, mode].join(' ')} style=${backgroundColor && { backgroundColor }} ...${props}>
+      ${label}
+    </${ButtonElm}>
+  `;
 };
 
-Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
+export const LinkButton = ({ primary, backgroundColor, size = 'medium', label, ...props }) => {
+  const mode = primary ? '--primary' : '--secondary';
+  return html`
+    <${ButtonLinkElm} className=${[`--${size}`, mode].join(' ')} style=${backgroundColor && { backgroundColor }} ...${props}>
+      ${label}
+    </${ButtonLinkElm}>
+  `;
 };

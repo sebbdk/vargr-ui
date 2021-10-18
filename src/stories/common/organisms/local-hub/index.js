@@ -24,7 +24,7 @@ const MainWrapper = styled.div`
   margin: auto;
 `;
 
-export const LocalHub = ({ services = serviceList, ...props }) => {
+export const LocalHub = ({ services, ...props }) => {
   const imgElms = services.map((item, index) => {
     const props = {
       primaryText: item.name,

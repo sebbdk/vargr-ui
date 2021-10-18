@@ -1,4 +1,4 @@
-import { Button } from './Button';
+import { Button } from './button';
 import { html } from 'htm/preact';
 import { CenterPreview } from 'stories/common/templates/centerpreview';
 
