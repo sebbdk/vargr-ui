@@ -61,8 +61,6 @@ const TerminalOutputElm = styled.div`
 		&:focus, &:focus-visible {
 			outline: none;
 		}
-
-		border-bottom: 1px solid white;
 	}
 `;
 
