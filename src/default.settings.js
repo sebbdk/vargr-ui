@@ -5,6 +5,7 @@ import nginxLogo from './stories/assets/icons/nginx.svg';
 import octoprintLogo from './stories/assets/icons/octoprint.png';
 import parseLogo from './stories/assets/icons/parse.svg';
 import portainerLogo from './stories/assets/icons/portainer.svg';
+import piHoleLogo from './stories/assets/icons/pihole.svg';
 import storybookLogo from './stories/assets/icons/storybook.svg';
 import backgroundImage from './stories/assets/resizeme_hori.jpg';
 import { AtomicWar1, AtomicWar2 } from './stories/assets/atomic_war';
@@ -31,7 +32,8 @@ export default {
                 { "name": "Parse", "link": "http://parse.hopper.local", "logo": parseLogo },
                 { "name": "Portainer", "link": "http://Portainer.hopper.local", "logo": portainerLogo },
                 { "name": "Nginx", "link": "http://hopper.local:81", "logo": nginxLogo },
-                { "name": "3D printer", "link": "http://octo.local", "logo": octoprintLogo }
+                { "name": "3D printer", "link": "http://octo.local", "logo": octoprintLogo },
+                { "name": "PiHole", "link": "http://pi.hopper.local/admin", "logo": piHoleLogo },
             ]
         }
     }
