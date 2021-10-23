@@ -34,6 +34,7 @@ export default {
                 { "name": "Nginx", "link": "http://hopper.local:81", "logo": nginxLogo },
                 { "name": "3D printer", "link": "http://octo.local", "logo": octoprintLogo },
                 { "name": "PiHole", "link": "http://pi.hopper.local/admin", "logo": piHoleLogo },
+                { "name": "Router", "link": "http://192.168.1.1/" },
             ]
         }
     }
