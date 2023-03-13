@@ -9,6 +9,8 @@ export default {
   argTypes: {},
 };
 
+const profilePicture = require(`stories/assets/profile_picture.jpg`);
+
 const Template = (args) => html`
 	<${BasePage}>
 		<${ResumePage} ...${args}></${ResumePage}>
@@ -19,7 +21,7 @@ export const primary= Template.bind({});
 primary.args = {
 	profile: html`
 		<div>
-			<img className="--framed" src="https://sebbdk.github.io/Curriculum-Vitae/profile_img.60f577df.png" />
+			<img className="--framed" src="${profilePicture}" />
 		</div>
 		<div>
 			<h3 className="--line">Sebastian Vargr</h3>
@@ -40,17 +42,47 @@ primary.args = {
 			Sebastian Vargr <small>Developing' Developer</small>
 		</h1>
 		<p>
-			My name is Sebastian Vargr, web and application developer from Copenhagen, Denmark.
+			My name is Sebastian Vargr, and I am an application developer from Copenhagen, Denmark.
 		</p>
 
-		<p>I am a full stack developer with a nose for business value. I bring value by teaching, mentoring, organizing developers, by solving problems in code, or creating by new features. </p>
+		<p>I am a full stack developer with a nose for business value. I bring value by building, teaching, mentoring, organizing, and solving problems in code or application design.</p>
 
-		<p>I am driven not only by my passion for all things code, but also by seeing my employer succeed as i enjoy taking ownership of the parts that i am responsible for. Because of this, when appropriate, i am vocal when i see issues, and proactive about solving & optimizing both processes and code.</p>
+		<p>I am driven by my passion for all things code and by seeing my projects succeed because success is the best proof that I am good at my craft. Because of this, when appropriate, I am vocal when I see issues, non-disruptive when I integrate myself into existing projects and proactive about solving & optimizing both productivity and technical issues.</p>
 
-		<p>In my sparetime i take care of my lazy cats, work on hobby electronics like my home-build CNC cutter & 3D printer and then some occasional gaming.</p>
+		<p>In my spare time, I take care of my lazy cats, like to run, work on hobby electronics (like my CNC cutter & 3D printer) and game when I find can find the time.</p>
 	`,
 	experienceTitle: 'History',
 	experiences: [
+		{
+			label: '2021',
+			content: html`
+				<h3>Web SDK lead developer  <br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
+				<p>I was hired to prototype their web payment orchestration client SDK meant to simplify implementation for vendors and later replace the existing client SDK.</p>
+				<p>
+					<${SkillElm}>React</${SkillElm}>
+					<${SkillElm}>Typescript</${SkillElm}>
+					<${SkillElm}>Redux</${SkillElm}>
+					<${SkillElm}>Kubernetes</${SkillElm}>
+				</p>
+			`
+		},
+		{
+			label: '2021',
+			content: html`
+				<h3>Senior fullstack consultant  <br /> <small><b>DSV - Global Transport and Logistics</b>, October 2021 - April 2022</small></h3>
+				<p>I was responsible for implementation and UX of a GUI meant to handle the invoices our machine learning models could not handle confidently.</p>
+				<p>The GUI was made in a way were the Invoices could easily/quickly be verified manually in bulk.</p>
+				<p>The corrected invoice data then fed back into the machine learning models.</p>
+				<p>
+					<${SkillElm}>React</${SkillElm}>
+					<${SkillElm}>Typescript</${SkillElm}>
+					<${SkillElm}>Redux</${SkillElm}>
+					<${SkillElm}>C#</${SkillElm}>
+					<${SkillElm}>Java with Java Spring</${SkillElm}>
+					<${SkillElm}>Kubernetes</${SkillElm}>
+				</p>
+			`
+		},
 		{
 			label: '2021',
 			content: html`
@@ -212,16 +244,16 @@ primary.args = {
 			items: ['English', 'Danish']
 		},
 		{
-			title: html`Programming languages <small>Abriviated</small>`,
+			title: html`Programming languages <small>Abbreviated</small>`,
 			items: ['Javascript', 'Typescript', 'C#', 'Java', 'CSS', 'HTML']
 		},
 		{
-			title: html`Tools & framworks <small>Abriviated</small>`,
+			title: html`Tools & frameworks <small>Abbreviated</small>`,
 			items: [ 'Git', 'NodeJS', 'Unity3D', 'MySQL', 'MongoDB', 'Webpack', 'Angular', 'React' ]
 		},
 		{
-			title: html`Patterns, softskills, roles <small>Abriviated</small>`,
-			items: [ 'CI/TD', 'Unit testing', 'project management', 'E2E testing', 'SEO', 'Backend developement', 'Frontend developement', 'Teamlead' ]
+			title: html`Patterns, soft-skills, roles <small>Abbreviated</small>`,
+			items: [ 'CI/TD', 'Unit testing', 'Project management', 'E2E testing', 'SEO', 'Backend development', 'Frontend development', 'Team-lead' ]
 		}
 	],
 	projects: [
