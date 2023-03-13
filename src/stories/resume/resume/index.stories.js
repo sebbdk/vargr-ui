@@ -54,10 +54,31 @@ primary.args = {
 	experienceTitle: 'History',
 	experiences: [
 		{
-			label: '2021',
+			label: 'Current',
 			content: html`
-				<h3>Web SDK lead developer  <br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
+				<h3>Entity51, my freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
+				<p>
+				My freelance business. Always running in the background when i'm not on a fulltime contract. The work consists mostly of consulting, web and mobile application development/maintenence.
+				</p>
+				<p>
+					<${SkillElm}>AngularJS</${SkillElm}>
+					<${SkillElm}>Javascript</${SkillElm}>
+					<${SkillElm}>Facebook</${SkillElm}>
+					<${SkillElm}>Cordova</${SkillElm}>
+					<${SkillElm}>PHP</${SkillElm}>
+					<${SkillElm}>Unity3D</${SkillElm}>
+					<${SkillElm}>C#</${SkillElm}>
+					<${SkillElm}>iOS</${SkillElm}>
+					<${SkillElm}>Android</${SkillElm}>
+				</p>
+			`
+		},
+		{
+			label: '2022',
+			content: html`
+				<h3>Web SDK lead<br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
 				<p>I was hired to prototype their web payment orchestration client SDK meant to simplify implementation for vendors and later replace the existing client SDK.</p>
+				<p>The work involved being part-time onsite with the clients' team in Pune, India.</p>
 				<p>
 					<${SkillElm}>React</${SkillElm}>
 					<${SkillElm}>Typescript</${SkillElm}>
@@ -179,8 +200,9 @@ primary.args = {
 			label: '2013',
 			content: html`
 				<h3>Business owner<br /><small><b>Owner</b>, October 2013 - present</small></h3>
+				<p>I started my freelance business.</p>
 				<p>
-					Work consists mostly of subcontracts to make social media SPA's, campaign and Cordova based mobile applications. More interestingly i helped a few startups get going technically and also coded a few mobile games in collaboration with independent game designers.
+					The work consists mostly of subcontracts to make social media SPA's, campaign and Cordova based mobile applications. More interestingly i helped a few startups get going technically and also coded a few mobile games in collaboration with independent game designers.
 				</p>
 				<p>
 					<${SkillElm}>AngularJS</${SkillElm}>
