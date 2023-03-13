@@ -76,6 +76,13 @@ primary.args = {
 		{
 			label: '2022',
 			content: html`
+				<h3>ADHD mentor, Volunteer<br /> <small><b>ADHD foreningen</b>, March 2022 - present</small></h3>
+				<p>As an ADHD mentor, I share my experience living with ADHD and mentor people diagnosed with ADHD on how to cope. With the goal of getting or maintaining a job or starting an education.</p>
+			`
+		},
+		{
+			label: '2022',
+			content: html`
 				<h3>Web SDK lead<br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
 				<p>I was hired to prototype their web payment orchestration client SDK meant to simplify implementation for vendors and later replace the existing client SDK.</p>
 				<p>The work involved being part-time onsite with the clients' team in Pune, India.</p>
