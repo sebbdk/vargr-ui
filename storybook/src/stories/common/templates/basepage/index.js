@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { GlobalStyles } from '../globalstyles/index';
 
 const BasepageElm = styled.div`
-    min-width: 100vw;
-    min-height: 100vh;
+    min-width: max-content;
+    min-height: max-content;
     max-height: 100%;
     display: flex;
 

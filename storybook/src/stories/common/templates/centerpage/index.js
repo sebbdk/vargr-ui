@@ -4,8 +4,8 @@ import { GlobalStyles } from '../globalstyles/index';
 import { MediaQuerySize } from "stories/vars";
 
 const BasepageElm = styled.div`
-    min-width: 100vw;
-    min-height: 100vh;
+    min-width: max-content;
+    min-height: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
