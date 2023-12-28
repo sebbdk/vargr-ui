@@ -1,0 +1,77 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Preact functional htm component":  {
+		"scope": "javascript",
+		"prefix": ["pfc", "preact-functional-component"],
+		"body": [
+			"import { html } from \"htm/preact\"",
+			"import styled from \"styled-components\"",
+			"",
+			"const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Elm = styled.div`",
+				"\tborder: 1px solid red;",
+				"\tpadding: 0.5rem;",
+			"`;",
+			"",
+			"export const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} = (props) => {",
+				"\treturn html`<${${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Elm}>Hello ${TM_FILENAME_BASE}</${${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Elm}>`",
+			"}"
+		]
+	},
+
+	"Preact class htm component":  {
+		"scope": "javascript",
+		"prefix": ["pcc", "preact-class-component"],
+		"body": [
+			"import { Component } from \"preact\"",
+			"import { html } from \"htm/preact\"",
+			"import styled from \"styled-components\"",
+			"",
+			"const ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Elm = styled.div`",
+				"\tborder: 1px solid red;",
+				"\tpadding: 0.5rem;",
+			"`;",
+			"",
+			"export class ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/} extends Component {",
+				"\trender() {",
+					"\t\treturn html`<${${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Elm}>Hello ${TM_FILENAME_BASE}</${${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Elm}>`",
+				"\t}",
+			"}"
+		]
+	},
+
+	"Preact storybook": {
+		"prefix": ["pcs", "preact-storybook-setup"],
+		"body": [
+		  "import { ${1} } from './index.js';",
+		  "import { html } from 'htm/preact';",
+		  "",
+		  "export default {",
+		  "  title: '${TM_DIRECTORY/.*stories[\\/\\\\](([^\\/\\\\]*)([\\/\\\\])?)|([\\/\\\\])([^\\/\\\\]*)/$2${3:+/}${5:+/}$5/g}',",
+		  "  component: ${1},",
+		  "  argTypes: {},",
+		  "};",
+		  "",
+		  "const Template = (args) => html`<${${1}} ...${args} />`;",
+		  "",
+		  "export const primary= Template.bind({});",
+		  "primary.args = {};"
+		],
+		"description": "Preact storybook"
+	  }
+}
