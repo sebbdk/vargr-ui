@@ -9,6 +9,7 @@ export default {
 		cards: [],
 		onPick: { action: 'picked' }
 	},
+	layout: 'fullscreen'
 };
 
 const Template = (args) => html`

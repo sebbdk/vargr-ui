@@ -33,6 +33,7 @@ export const GlobalStyles = createGlobalStyle`
         --primary-info: #e07ea0;
         --primary-info-contrast: #73092b;
         --secondary-info: #E07EA0;
+        --primary-borders: rgba(255, 255, 255, 0.1);
 
         --button-primary: var(--focused-interaction-color);
 
@@ -58,6 +59,13 @@ export const GlobalStyles = createGlobalStyle`
         background-color: var(--main-bg-color);
         height: 100vh;
         overflow-x: hidden;
+
+
+        @media print  {
+            --main-bg-color: #fff;
+            --primary-color: #333;
+            --primary-borders: rgba(0, 0, 0, 0.3);
+        }
     }
 
     a {
