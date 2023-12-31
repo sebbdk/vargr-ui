@@ -173,40 +173,40 @@ export function Daily({ ...props }) {
 	];
 
 	return html`
-			<${LayoutElm}>
-				<${TodoColumn}>
-					<${TopComment}>Day:</${TopComment}>
+		<${LayoutElm}>
+			<${TodoColumn}>
+				<${TopComment}>Day:</${TopComment}>
 
-					<${TodoGroupElm}>
-						<${TodoGroupTitleElm}>Have to-do</${TodoGroupTitleElm}>
-						${group1.map(i => html`<${TodoRow}>${i.label}</${TodoRow}>`)}
-					</${TodoGroupElm}>
+				<${TodoGroupElm}>
+					<${TodoGroupTitleElm}>Have to-do</${TodoGroupTitleElm}>
+					${group1.map(i => html`<${TodoRow}>${i.label}</${TodoRow}>`)}
+				</${TodoGroupElm}>
 
-					<${HaikuDiary}>
-						<input type="text" />
-						<input type="text" />
-						<input type="text" />
-						<input type="text" />
-					</${HaikuDiary}>
-				</${TodoColumn}>
+				<${HaikuDiary}>
+					<input type="text" />
+					<input type="text" />
+					<input type="text" />
+					<input type="text" />
+				</${HaikuDiary}>
+			</${TodoColumn}>
 
-				<${TodoColumn}>
-					<${TopComment}>Up/Bed:</${TopComment}>
+			<${TodoColumn}>
+				<${TopComment}>Up/Bed:</${TopComment}>
 
-					<${TodoGroupElm}>
-						<${TodoGroupTitleElm}>Dailies</${TodoGroupTitleElm}>
-						${group2.map(i => html`<${TodoRow}>${i.label}</${TodoRow}>`)}
-					</${TodoGroupElm}>
-				</${TodoColumn}>
+				<${TodoGroupElm}>
+					<${TodoGroupTitleElm}>Dailies</${TodoGroupTitleElm}>
+					${group2.map(i => html`<${TodoRow}>${i.label}</${TodoRow}>`)}
+				</${TodoGroupElm}>
+			</${TodoColumn}>
 
-				<${TodoColumn}>
-					<${TopComment}></${TopComment}>
+			<${TodoColumn}>
+				<${TopComment}></${TopComment}>
 
-					<${TodoGroupElm}>
-						<${TodoGroupTitleElm}>Nice to-do</${TodoGroupTitleElm}>
-						${group3.map(i => html`<${TodoRow}>${i.label}</${TodoRow}>`)}
-					</${TodoGroupElm}>
-				</${TodoColumn}>
-			</${LayoutElm}>
+				<${TodoGroupElm}>
+					<${TodoGroupTitleElm}>Nice to-do</${TodoGroupTitleElm}>
+					${group3.map(i => html`<${TodoRow}>${i.label}</${TodoRow}>`)}
+				</${TodoGroupElm}>
+			</${TodoColumn}>
+		</${LayoutElm}>
 	`
 }
