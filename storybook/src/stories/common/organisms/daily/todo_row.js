@@ -90,7 +90,6 @@ const MultiCheck = styled.div`
 `;
 
 export function TodoRow({ children, multiCheck = 2 }) {
-	const child = children ? children : html`<input type="text" />`
 	let multiCheckElms = '';
 
 	if(multiCheck > 0) {
