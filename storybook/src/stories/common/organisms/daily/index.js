@@ -1,101 +1,6 @@
 import { html } from "htm/preact"
 import styled from "styled-components";
-
-const TodoRowElm = styled.div`
-	display: flex;
-	height: var(--line-height);
-	line-height: var(--line-height);
-	position: relative;
-	padding: 0 0.5rem;
-	text-overflow: ellipsis;
-
-	label {
-		display: block;
-		width: -webkit-fill-available;
-	}
-
-	input[type=text] {
-		display: block;
-		width: -webkit-fill-available;
-		padding-left: 0.75rem;
-		background-color: transparent;
-		border: 0;
-		line-height: var(--line-height);
-		color: var(--primary-color)
-	}
-
-	input[type=checkbox] {
-		margin-right: calc(var(--size-multiplier)*1.5rem);
-
-		&:after {
-			display: block;
-			content: " ";
-			border: 1px solid var(--primary-borders);
-			background-color: var(--checkbox-background-color);
-			border-radius: 2px;
-
-			width: calc(var(--size-multiplier)*1.75rem - 2*0.25rem);
-			height: calc(var(--size-multiplier)*1.75rem - 2*0.25rem);
-			position: absolute;
-			left: var(--size-multiplier)*0.75rem;
-			top: 0.3rem;
-		}
-
-		&:checked {
-			&:after {
-				background-color: var(--checkbox-background-color-active);
-				border: 1px solid rgba(0, 0, 0, 0.2);
-			}
-
-			&:before {
-				display: block;
-				content: " ";
-				border: solid rgba(0,0,0, 0.5);
-				border-width: 0 3px 3px 0;
-				-webkit-transform: rotate(45deg);
-				-ms-transform: rotate(45deg);
-				transform: rotate(45deg);
-
-				width: 7px;
-				height: 12px;
-
-				position: absolute;
-				left: 1.10rem;
-
-				top: 0.35rem;
-				z-index: 200;
-
-				@media print  {
-					top: 0.55rem;
-					left: 1.4rem;
-				}
-			}
-		}
-	}
-`
-
-function TodoRow({ children }) {
-	const child = children ? children : html`<input type="text" />`
-
-
-	if(!children) {
-		return html`
-			<${TodoRowElm}>
-				<input type="checkbox" />
-				<input type="text" />
-			</${TodoRowElm}>
-		`;
-	}
-
-	return html`
-		<${TodoRowElm}>
-			<label>
-				<input type="checkbox" />
-				${children}
-			</label>
-		</${TodoRowElm}>
-	`;
-}
+import { TodoRow, TodoRowElm } from './todo_row';
 
 const TodoGroupElm = styled.div`
 	border: 1px solid var(--primary-borders);
@@ -155,7 +60,7 @@ const LayoutElm = styled.div`
 	--title-color: var(--primary-color);
 
 	@media print  {
-		margin: 3rem;
+		margin: 0 4rem;
 		margin-top: 5rem;
 		--title-color: rgba(0,0,0, 0.5);
 		--size-multiplier: 1.25;
