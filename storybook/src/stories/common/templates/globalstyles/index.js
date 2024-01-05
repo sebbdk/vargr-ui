@@ -34,6 +34,8 @@ export const GlobalStyles = createGlobalStyle`
         --primary-info-contrast: #73092b;
         --secondary-info: #E07EA0;
         --primary-borders: rgba(255, 255, 255, 0.1);
+        --muted-borders: rgba(255, 255, 255, 0.05);
+        --highlighted-borders: rgba(255, 255, 255, 0.3);
 
         --button-primary: var(--focused-interaction-color);
 
@@ -64,7 +66,13 @@ export const GlobalStyles = createGlobalStyle`
         @media print  {
             --main-bg-color: #fff;
             --primary-color: #333;
-            --primary-borders: rgba(0, 0, 0, 0.3);
+            --primary-borders: rgba(0, 0, 0, 0.8);
+            --muted-borders: rgba(0, 0, 0, 0.5);
+            --highlighted-borders: rgba(0, 0, 0, 0.5);
+
+            @page {
+                 size: 11in 8.5in;
+            }
         }
     }
 

@@ -22,7 +22,7 @@ const TodoGroupElm = styled.div`
 		}
 
 		${TodoRowElm} {
-			border-bottom: 2px dotted var(--primary-borders);
+			border-bottom: 2px dotted var(--muted-borders);
 		}
 	}
 `;
@@ -31,15 +31,16 @@ const TodoColumn = styled.div`
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	width: 33.3%;
 `;
 
 const TodoGroupTitleElm = styled.div`
 	border-bottom: 1px solid var(--primary-borders);
-	padding: 0.5rem 0.75rem;
+	padding: 0.5rem 0rem;
 	font-size: calc(1.25em * var(--size-multiplier));
 
 	@media print  {
-		border-width: 2px;
+		border-width: var(--primary-line-thicc);
 	}
 `;
 
@@ -54,16 +55,17 @@ const LayoutElm = styled.div`
     height: fit-content;
 
 	--size-multiplier: 1;
-	--line-height: calc(2rem * var(--size-multiplier));
+	--line-height: 2rem;
 	--checkbox-background-color: rgba(177,177,177);
 	--checkbox-background-color-active: rgba(230, 230, 230);
 	--title-color: var(--primary-color);
+	--primary-line-thicc: 1px;
 
 	@media print  {
-		margin: 0 4rem;
-		margin-top: 5rem;
+		--primary-line-thicc: 2px;
 		--title-color: rgba(0,0,0, 0.5);
 		--size-multiplier: 1.25;
+		--line-height: 2rem;
 		--checkbox-background-color: #fff;
 		--checkbox-background-color-active: rgba(230, 230, 230);
 	}
@@ -84,12 +86,16 @@ const HaikuDiaryElm = styled.div`
 	input {
 		display: block;
 		width: -webkit-fill-available;
-		padding-left: 0.75rem;
 		background-color: transparent;
 		border: 0;
-		border-bottom: 2px dotted var(--primary-borders);
+		border-bottom: var(--primary-line-thicc) dotted var(--primary-borders);
 		line-height: var(--line-height);
 		color: var(--primary-color)
+
+		height: var(--line-height);
+		padding: 0;
+		box-sizing: border-box;
+		padding-left: 0.75rem;
 	}
 
 	input:last-of-type {
@@ -100,7 +106,7 @@ const HaikuDiaryElm = styled.div`
 		border: 0;
 
 		input:last-of-type {
-			border-bottom: 2px dotted var(--primary-borders);
+			border-bottom: var(--primary-line-thicc) dotted var(--primary-borders);
 		}
 	}
 `;
@@ -116,9 +122,9 @@ const TopCommentElm = styled.div`
 	}
 
 	.text {
-		font-size: calc(1.25em * var(--size-multiplier));
+		font-size: 1.5em;
 		color: var(--title-color);
-		padding-left: 0.75rem;
+		flex-shrink: 0;
 	}
 
 	input {
@@ -152,13 +158,11 @@ function HaikuDiary({ children }) {
 
 export function Daily({ ...props }) {
 	const group1 = Array.apply(null, Array(5)).map(i => { return ({ label: '' }) })
-	const group3 = Array.apply(null, Array(13)).map(i => { return ({ label: '' }) })
-
-	console.log(group1)
+	const group3 = Array.apply(null, Array(16)).map(i => { return ({ label: '' }) })
 
 	const group2 = [
-		{ label: 'Food' },
-		{ label: 'Meds' },
+		{ label: 'Food', multiCheck: 3 },
+		{ label: 'Meds', multiCheck: 2},
 		{ label: 'Vita + Husk + Nail' },
 		{ label: 'Sleep test' },
 		{ label: 'Read' },
@@ -170,12 +174,15 @@ export function Daily({ ...props }) {
 		{ label: 'Plant care' },
 		{ label: 'Review notes' },
 		{ label: 'Notes' },
+		{ label: '' },
+		{ label: '' },
+		{ label: '' },
 	];
 
 	return html`
 		<${LayoutElm}>
 			<${TodoColumn}>
-				<${TopComment}>Day:</${TopComment}>
+				<${TopComment}>Day (2024):</${TopComment}>
 
 				<${TodoGroupElm}>
 					<${TodoGroupTitleElm}>Have to-do</${TodoGroupTitleElm}>
@@ -195,7 +202,7 @@ export function Daily({ ...props }) {
 
 				<${TodoGroupElm}>
 					<${TodoGroupTitleElm}>Dailies</${TodoGroupTitleElm}>
-					${group2.map(i => html`<${TodoRow}>${i.label}</${TodoRow}>`)}
+					${group2.map(i => html`<${TodoRow} multiCheck=${i.multiCheck}>${i.label}</${TodoRow}>`)}
 				</${TodoGroupElm}>
 			</${TodoColumn}>
 

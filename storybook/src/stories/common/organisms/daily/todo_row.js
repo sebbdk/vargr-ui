@@ -2,16 +2,27 @@ import { html } from "htm/preact"
 import styled from "styled-components";
 
 export const TodoRowElm = styled.div`
+	--mheight: calc(var(--line-height) - 0.2rem);
+
 	display: flex;
-	height: var(--line-height);
-	line-height: var(--line-height);
+	height: var(--mheight);
+	padding: 0.25rem;
+	line-height: var(--mheight);
 	position: relative;
-	padding: 0 0.5rem;
 	text-overflow: ellipsis;
+	box-sizing: content-box;
+
+	@media print  {
+		padding: 0.1rem 0;
+	}
 
 	label {
 		display: flex;
 		width: -webkit-fill-available;
+	}
+
+	.text {
+		margin-left: 0.5rem;
 	}
 
 	input[type=text] {
@@ -20,33 +31,41 @@ export const TodoRowElm = styled.div`
 		padding-left: 0.75rem;
 		background-color: transparent;
 		border: 0;
-		line-height: var(--line-height);
+		line-height: var(--mheight);
 		color: var(--primary-color)
 	}
 
 	input[type=checkbox] {
-		margin-right: calc(var(--size-multiplier)*1.5rem);
+		--width: var(--mheight);
+		--height: var(--mheight);
+		--padd: 0.2rem;
+		--halfWidth: calc(var(--width)/2);
+
+		width: 0;
+		/*margin-right: calc(var(--size-multiplier)*1.5rem);*/
 		position: relative;
 		display: inline-block;
+		margin: 0rem var(--halfWidth);
 
 		&:after {
 			display: block;
+			box-sizing: border-box;
 			content: " ";
-			border: 1px solid var(--primary-borders);
+			border: 2px solid var(--primary-borders);
 			background-color: var(--checkbox-background-color);
 			border-radius: 2px;
 
-			width: calc(var(--size-multiplier)*1.75rem - 2*0.25rem);
-			height: calc(var(--size-multiplier)*1.75rem - 2*0.25rem);
+			width: calc(var(--width));
+			height: calc(var(--height));
 			position: absolute;
-			left: -0.25rem;
-			top: 0.1rem;
+			left: calc(var(--halfWidth)*(-1));
+			top: 0;
 		}
 
 		&:checked {
 			&:after {
 				background-color: var(--checkbox-background-color-active);
-				border: 1px solid rgba(0, 0, 0, 0.2);
+				border-color: var(--highlighted-borders);
 			}
 
 			&:before {
@@ -62,14 +81,11 @@ export const TodoRowElm = styled.div`
 				height: 12px;
 
 				position: absolute;
-				left: 0.10rem;
-
-				top: 0.2rem;
+				top: calc(var(--height) * 0.15);
+				left: calc(var(--width) * -0.2);
 				z-index: 200;
 
 				@media print  {
-					top: 0.4rem;
-					left: 0.3rem;
 				}
 			}
 		}
@@ -78,18 +94,14 @@ export const TodoRowElm = styled.div`
 
 const MultiCheck = styled.div`
 	display: flex;
+	gap: 0.25rem;
 
 	input[type=checkbox] {
 		flex-grow: 0;
-		margin-right: .75rem;
-
-		@media print  {
-			margin-right: 1rem;
-		}
 	}
 `;
 
-export function TodoRow({ children, multiCheck = 2 }) {
+export function TodoRow({ children, multiCheck = 0 }) {
 	let multiCheckElms = '';
 
 	if(multiCheck > 0) {
@@ -114,7 +126,7 @@ export function TodoRow({ children, multiCheck = 2 }) {
 		<${TodoRowElm}>
 			<label>
 				<input type="checkbox" />
-				${children}
+				<span class="text">${children}</span>
 			</label>
 			${multiCheckElms}
 		</${TodoRowElm}>
