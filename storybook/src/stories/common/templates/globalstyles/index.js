@@ -66,7 +66,7 @@ export const GlobalStyles = createGlobalStyle`
         @media print  {
             --main-bg-color: #fff;
             --primary-color: #333;
-            --primary-borders: rgba(0, 0, 0, 0.8);
+            --primary-borders: rgba(0, 0, 0, 0.7);
             --muted-borders: rgba(0, 0, 0, 0.5);
             --highlighted-borders: rgba(0, 0, 0, 0.5);
 

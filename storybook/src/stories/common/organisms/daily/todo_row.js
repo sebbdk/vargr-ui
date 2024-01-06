@@ -2,7 +2,7 @@ import { html } from "htm/preact"
 import styled from "styled-components";
 
 export const TodoRowElm = styled.div`
-	--mheight: calc(var(--line-height) - 0.2rem);
+	--mheight: calc(var(--line-height) - 0.1rem);
 
 	display: flex;
 	height: var(--mheight);
@@ -38,7 +38,6 @@ export const TodoRowElm = styled.div`
 	input[type=checkbox] {
 		--width: var(--mheight);
 		--height: var(--mheight);
-		--padd: 0.2rem;
 		--halfWidth: calc(var(--width)/2);
 
 		width: 0;
