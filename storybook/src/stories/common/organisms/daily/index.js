@@ -184,18 +184,21 @@ export function Daily({ ...props }) {
 		{ label: 'Meds', multiCheck: 2},
 		{ label: 'Vita + Husk + Nail' },
 		{ label: 'Sleep test' },
-		{ label: 'Read' },
+
 		{ label: 'Plan tomorrow' },
 		{ label: 'Note bedtime' },
+
+		{ label: 'Read' },
 		{ label: 'Study' },
-		{ label: 'Flash cards' },
-		{ label: 'Haiku diary' },
-		{ label: 'Plant care' },
-		{ label: 'Review notes' },
 		{ label: 'Notes' },
+		{ label: 'Flash cards' },
+		{ label: 'Plant care' },
+		{ label: 'Haiku diary' },
+
 		{ label: '' },
 		{ label: '' },
 		{ label: '' },
+		{ label: 'Reset', multiCheck: 3 },
 	];
 
 	return html`
