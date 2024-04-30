@@ -183,7 +183,7 @@ export function Daily({ ...props }) {
 		{ label: 'Food', multiCheck: 3 },
 		{ label: 'Meds', multiCheck: 2},
 		{ label: 'Vita + Husk + Nail' },
-		{ label: 'Sleep test' },
+		{ label: 'Sleep test', multiCheck: 2 },
 
 		{ label: 'Plan tomorrow' },
 		{ label: 'Note bedtime' },
@@ -196,9 +196,9 @@ export function Daily({ ...props }) {
 		{ label: 'Haiku diary' },
 
 		{ label: '' },
-		{ label: '' },
-		{ label: '' },
-		{ label: 'Reset', multiCheck: 3 },
+		{ label: 'Motivation (0-9)', multiCheck: 1 },
+		{ label: 'Mood 0-9', multiCheck: 1 },
+		{ label: 'Clarity (0-9):', multiCheck: 1 },
 	];
 
 	return html`
