@@ -21,6 +21,9 @@
   "resolutions": {
     "jackspeak": "2.1.1"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.1"
+  },
   "devDependencies": {
     "@preact/preset-vite": "^2.7.0",
     "@storybook/addon-essentials": "^7.6.5",
