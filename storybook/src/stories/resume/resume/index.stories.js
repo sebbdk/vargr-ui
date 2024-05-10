@@ -2,14 +2,13 @@ import { ResumePage } from './index.js';
 import { html } from 'htm/preact';
 import { BasePage } from 'stories/common/templates/basepage';
 import { SkillElm } from '../skills-list/index.js';
+import profilePicture from 'stories/assets/profile_picture.jpg';
 
 export default {
   title: 'pages/resume',
   component: ResumePage,
   argTypes: {},
 };
-
-const profilePicture = require(`stories/assets/profile_picture.jpg`);
 
 const Template = (args) => html`
 	<${BasePage}>
