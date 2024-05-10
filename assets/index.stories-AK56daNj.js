@@ -1,4 +1,4 @@
-import{u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as r,R as o}from"./index--AYBjp3E.js";import{a as p,S as e}from"./index-m0Ua8zuR.js";import{a as n,S as c}from"./index-AZaKf3-e.js";import{a as M,T as b}from"./index-WZRkmI0K.js";import{P as m}from"./index-mcJ7xES8.js";import{B as h}from"./index-dEpx--bd.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-zxhsOKIp.js";const u=l.div`
+import{u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as r,R as o}from"./index--AYBjp3E.js";import{a as p,S as e}from"./index-m0Ua8zuR.js";import{a as n,S as c}from"./index-AZaKf3-e.js";import{a as j,T as b}from"./index-WZRkmI0K.js";import{P as m}from"./index-mcJ7xES8.js";import{B as h}from"./index-dEpx--bd.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-zxhsOKIp.js";const u=l.div`
 	margin-top: 2.5rem;
 	display: grid;
 	grid-template-columns: auto;
@@ -64,7 +64,7 @@ import{u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a 
 		padding: 1em;
 	}
 
-	${M} {
+	${j} {
 		margin-top: 1em;
 		padding: 1em;
 		background-color: rgba(0, 0, 0, 0.25);
@@ -100,13 +100,13 @@ import{u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a 
 				${C}
 			</${$}>
 		</${u}>
-	`},E={title:"pages/resume",component:s,argTypes:{}},j=require("stories/assets/profile_picture.jpg"),T=t=>i`
+	`},M=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,E={title:"pages/resume",component:s,argTypes:{}},T=t=>i`
     <${h}>
         <${s} ...${t}></${s}>
     </${h}>
 `,a=T.bind({});a.args={profile:i`
         <div>
-            <img className="--framed" src="${j}" />
+            <img className="--framed" src="${M}" />
         </div>
         <div>
             <h3 className="--line">Sebastian Vargr</h3>
