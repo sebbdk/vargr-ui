@@ -11,7 +11,13 @@ export function createShader(gl, type, source) {
 	gl.deleteShader(shader);
 }
 
-export function createProgram(gl, vertexShader, fragmentShader) {
+export function createProgram(gl, vertexShaderRaw, fragmentShaderRaw) {
+	// @TODO, prepare shader strings here
+
+	// create shaders
+	const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderRaw)
+	const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderRaw)
+
 	var program = gl.createProgram();
 	gl.attachShader(program, vertexShader);
 	gl.attachShader(program, fragmentShader);
