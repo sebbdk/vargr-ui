@@ -122,6 +122,9 @@ export function startWebGLDemo(canvas) {
 
 	draw();
 
+	// use requestAnimationFrame
+	// https://webglfundamentals.org/webgl/lessons/webgl-qna-recording-fps-in-webgl.html
+
 	setInterval(() => {
 		draw();
 	}, 1000/30)
