@@ -5,7 +5,7 @@ import { SkillElm } from '../skills-list/index.js';
 import profilePicture from 'stories/assets/profile_picture.jpg';
 
 export default {
-  title: 'resume',
+  title: 'pages/resume',
   component: ResumePage,
   argTypes: {},
 };
@@ -16,8 +16,8 @@ const Template = (args) => html`
 	</${BasePage}>
 `;
 
-export const Page= Template.bind({});
-Page.args = {
+export const Primary= Template.bind({});
+Primary.args = {
 	profile: html`
 		<div>
 			<img className="--framed" src="${profilePicture}" />
@@ -38,7 +38,7 @@ Page.args = {
 	`,
 	introduction: html`
 		<h1 className="--line">
-			Sebastian Vargr <small>Developing' Developer</small>
+			Sebastian Vargr <small>Developing developer</small>
 		</h1>
 		<p>
 			My name is Sebastian Vargr, and I am an application developer from Copenhagen, Denmark.
