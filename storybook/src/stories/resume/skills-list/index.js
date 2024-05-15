@@ -19,6 +19,11 @@ export const SkillElm = styled.span`
     line-height: 1.5em;
 	margin-bottom: 1em;
 	display: inline-block;
+
+    @media print {
+		color: #333;
+		border: 1px solid #ddd;
+    }
 `;
 
 export const SkillsSection = ({ groups }) => {

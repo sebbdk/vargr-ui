@@ -22,6 +22,15 @@ function getVGL(config = {}) {
 		vertexShader: (string) => { return string; },
 		fragmentShader: (string) => { return string; },
 		loadProgram: () => {
+			// think about scene graph and rendeting order
+			// the code neds to auto sort scene objects etc.
+			// look at how three.js does things maybe
+			// it seems to be what people
+
+			// https://webgl2fundamentals.org/webgl/lessons/webgl2-whats-new.html
+			// https://webgl2fundamentals.org/webgl/lessons/webgl1-to-webgl2.html
+			// https://stackoverflow.com/questions/9755158/is-it-more-performant-to-write-one-complicated-shader-or-several-different-shade
+
 			// three 2d points
 			var data = [
 				0, 0,

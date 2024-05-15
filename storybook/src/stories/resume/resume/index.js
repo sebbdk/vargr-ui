@@ -1,11 +1,24 @@
 import { html } from "htm/preact";
 import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { Richtext, RichtextElm } from "stories/common/molecules/richtext";
 
 import { SkillsSection } from "../skills-list";
 import { Sidebar, SidebarElm } from "../sidebar";
 import { Timeline, TimelineElm } from "../timeline";
 import { Project } from "../project";
+
+const globalStyles = createGlobalStyle`
+	body {
+		@media print  {
+			font-size: 12px;
+
+			@page {
+				size: 8.5in 11in;
+			}
+		}
+	}
+`;
 
 const ResumeElm = styled.div`
 	margin-top: 2.5rem;
@@ -17,15 +30,6 @@ const ResumeElm = styled.div`
     margin-bottom: 2rem;
     border-radius: 0.25rem;
     overflow: hidden;
-
-    @media print {
-		min-width: 230mm;
-        ::-webkit-scrollbar {
-            min-width: initial;
-        }
-
-		margin: 0;
-    }
 
 	${SidebarElm} {
 		max-width: initial;
@@ -46,7 +50,7 @@ const ResumeElm = styled.div`
 		}
 	}
 
-	@media (min-width: 900px) {
+	@media (min-width: 900px), print {
 		grid-template-columns: auto auto;
 
 		${SidebarElm} {
@@ -61,6 +65,33 @@ const ResumeElm = styled.div`
 			}
 		}
 	}
+
+    @media print {
+		min-width: 230mm;
+        ::-webkit-scrollbar {
+            min-width: initial;
+        }
+
+		${SidebarElm} {
+			max-width: 12rem;
+		}
+
+		margin: 0;
+
+		color: #333;
+		box-shadow: none;
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+		border-radius: 0rem;
+
+		p, b {
+			color: #333;
+		}
+
+		p {
+			margin: 0.75rem 0;
+		}
+    }
 `;
 
 const PrimaryContententElm = styled.div`
@@ -71,6 +102,10 @@ const PrimaryContententElm = styled.div`
 	height: 100%;
 	flex-shrink: 1;
 
+	@media print {
+		background-color: #fff;
+	}
+
 	> ${RichtextElm} {
 		padding: 1em;
 	}
@@ -79,6 +114,11 @@ const PrimaryContententElm = styled.div`
 		margin-top: 1em;
 		padding: 1em;
 		background-color: rgba(0, 0, 0, 0.25);
+
+		@media print {
+			background-color: #fff;
+			margin-top: 0;
+		}
 	}
 `;
 
@@ -90,7 +130,12 @@ const ProjectsGroupElm = styled.div`
 	padding: 1rem;
 	background-color: rgba(255,255,255,0.1);
 
-	@media (min-width: 900px) {
+	@media print {
+		background-color: #fff;
+		border-top: 1px solid #ddd;
+	}
+
+	@media (min-width: 900px), print {
 		grid-column: 1 / span 2;
 	}
 `;
@@ -100,6 +145,7 @@ export const ResumePage = ({ profile, introduction, experiences, skills, experie
 
 	return html`
 		<${ResumeElm}>
+			<${globalStyles} />
 			<${Sidebar} ...${profile}>
 				${profile}
 				<${SkillsSection} groups=${skills}></${SkillsSection}>

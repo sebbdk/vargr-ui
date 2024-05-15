@@ -5,7 +5,7 @@ import { SkillElm } from '../skills-list/index.js';
 import profilePicture from 'stories/assets/profile_picture.jpg';
 
 export default {
-  title: 'pages/resume',
+  title: 'resume',
   component: ResumePage,
   argTypes: {},
 };
@@ -16,8 +16,8 @@ const Template = (args) => html`
 	</${BasePage}>
 `;
 
-export const primary= Template.bind({});
-primary.args = {
+export const Page= Template.bind({});
+Page.args = {
 	profile: html`
 		<div>
 			<img className="--framed" src="${profilePicture}" />

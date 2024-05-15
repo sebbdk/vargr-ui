@@ -8,7 +8,6 @@ export const RichtextElm = styled.div`
 		line-height: 1em;
 		margin-bottom: 1rem;
 		font-weight: 700;
-		color: rgba(255, 255, 255, 1);
 
 		&:last-child {
 			margin-bottom: 0;

@@ -5,6 +5,10 @@ import { Richtext, RichtextElm } from "stories/common/molecules/richtext";
 export const TimeLineContentElm = styled.div`
   display: grid;
   grid-template-columns: auto auto;
+
+	@media print {
+		grid-template-columns: auto;
+	}
 `;
 
 export const TimeLineItemElm = styled.div`
@@ -18,6 +22,12 @@ export const TimeLineItemElm = styled.div`
   box-shadow: 0 0 15px rgb(0 0 0 / 10%);
   border-radius: 3px;
 
+  @media print {
+    box-shadow: none;
+    padding: 0.5rem;
+    border: 1px solid #DDD;
+  }
+
   &:after {
     content: " ";
     display: block;
@@ -27,12 +37,20 @@ export const TimeLineItemElm = styled.div`
     background-color: #fff;
     position: absolute;
     bottom: calc(-1em - 2px);
+
+    @media print {
+      background-color: #ddd;
+    }
   }
 
   &:last-of-type {
     &:after {
       display: none;
     }
+  }
+
+  h3 {
+    margin-bottom: 0;
   }
 `;
 
@@ -51,6 +69,10 @@ const EventLabelElm = styled.div`
   &:empty {
     padding: 0;
   }
+
+	@media print {
+		display: none;
+	}
 `;
 
 /**

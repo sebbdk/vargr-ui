@@ -12,6 +12,11 @@ const ProjectElm = styled.div`
     box-shadow: 0 0 15px rgb(0 0 0 / 10%);
     border-radius: 3px;
 	margin-top: 1rem;
+
+	@media print {
+		background-color: #fff;
+		box-shadow: none;
+	}
 `;
 
 const imageContainerElm = styled.div`
@@ -23,6 +28,11 @@ const imageContainerElm = styled.div`
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 	box-shadow: inset 0px 0px 1rem rgb(0 0 0 / 50%);
+
+	@media print {
+		background-color: #fff;
+		box-shadow: none;
+	}
 
 	img {
 		margin: 0 0.5rem;

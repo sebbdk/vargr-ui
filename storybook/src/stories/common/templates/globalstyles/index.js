@@ -69,10 +69,6 @@ export const GlobalStyles = createGlobalStyle`
             --primary-borders: rgba(0, 0, 0, 0.7);
             --muted-borders: rgba(0, 0, 0, 0.5);
             --highlighted-borders: rgba(0, 0, 0, 0.5);
-
-            @page {
-                 size: 11in 8.5in;
-            }
         }
     }
 

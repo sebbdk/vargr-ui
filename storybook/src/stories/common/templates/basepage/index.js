@@ -17,7 +17,7 @@ const BasepageElm = styled.div`
 
 const ContentWrapper = styled.div`
     max-width: 1280px;
-    width: 100%;
+    width: 100vw;
     margin: auto;
     margin-top: 0;
     max-height: 100%;

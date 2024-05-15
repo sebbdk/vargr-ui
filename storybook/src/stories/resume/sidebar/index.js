@@ -9,6 +9,11 @@ export const SidebarElm = styled.div`
 	padding: 1em;
 	text-align: left;
 	max-width: 18rem;
+
+	@media print {
+		background-color: #fff;
+		border-right: 1px solid #ddd;
+	}
 `;
 
 export const Sidebar = ({ children }) => {
