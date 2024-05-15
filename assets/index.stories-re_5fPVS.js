@@ -143,7 +143,7 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 				${C}
 			</${$}>
 		</${u}>
-	`},T=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,z={title:"resume",component:s,argTypes:{}},I=o=>i`
+	`},T=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,z={title:"pages/resume",component:s,argTypes:{}},I=o=>i`
     <${h}>
         <${s} ...${o}></${s}>
     </${h}>
@@ -166,7 +166,7 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
         </div>
     `,introduction:i`
         <h1 className="--line">
-            Sebastian Vargr <small>Developing' Developer</small>
+            Sebastian Vargr <small>Developing developer</small>
         </h1>
         <p>
             My name is Sebastian Vargr, and I am an application developer from Copenhagen, Denmark.
@@ -437,4 +437,4 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                 fitnessconsulting.dk needed a booking system for client to book times and for the trainers to except/deny bookings.<br />
                 <br />
                 Given the tight budget i designed and implemented minimally viable booking system for them.
-            `,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}]};var f,w,k;t.parameters={...t.parameters,docs:{...(f=t.parameters)==null?void 0:f.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(k=(w=t.parameters)==null?void 0:w.docs)==null?void 0:k.source}}};const N=["Page"];export{t as Page,N as __namedExportsOrder,z as default};
+            `,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}]};var f,w,k;t.parameters={...t.parameters,docs:{...(f=t.parameters)==null?void 0:f.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(k=(w=t.parameters)==null?void 0:w.docs)==null?void 0:k.source}}};const N=["Primary"];export{t as Primary,N as __namedExportsOrder,z as default};
