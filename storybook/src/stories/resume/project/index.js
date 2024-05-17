@@ -65,6 +65,10 @@ const iframeContainerElm = styled.div`
 	iframe {
 		height: 21rem;
 		width: 100%;
+
+		@media print {
+			display: none;
+		}
 	}
 `;
 

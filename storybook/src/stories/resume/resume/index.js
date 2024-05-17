@@ -143,6 +143,25 @@ const ProjectsGroupElm = styled.div`
 export const ResumePage = ({ profile, introduction, experiences, skills, experienceTitle, projects }) => {
 	const projectElms = projects.map(p => html`<${Project} ...${p}>${p.description}</${Project}>`);
 
+	const url = new URL(document.location.href)
+	const params = new URLSearchParams(url.search);
+	const hideProjects = params.get('hideProjects') != null;
+
+	console.info(`ResumePage settings:`)
+	console.info(`[get_param:boolean] hideProjects=${hideProjects}`)
+
+	const projectsElm = hideProjects ? '' : html`
+		<${ProjectsGroupElm}>
+			<${Richtext}>
+				<h1 class="--line">Projects</h1>
+				<p>
+				An outtake of some of the projects I have involved myself in, my career has involved hundreds of projects.
+				</p>
+			</${Richtext}>
+			${projectElms}
+		</${ProjectsGroupElm}>
+	`;
+
 	return html`
 		<${ResumeElm}>
 			<${globalStyles} />
@@ -154,15 +173,8 @@ export const ResumePage = ({ profile, introduction, experiences, skills, experie
 				<${Richtext}>${introduction}</${Richtext}>
 				<${Timeline} items=${experiences} title=${experienceTitle}></${Timeline}>
 			</${PrimaryContententElm}>
-			<${ProjectsGroupElm}>
-				<${Richtext}>
-					<h1 class="--line">Projects</h1>
-					<p>
-					An outtake of some of the projects I have involved myself in, my career has involved hundreds of projects.
-					</p>
-				</${Richtext}>
-				${projectElms}
-			</${ProjectsGroupElm}>
+
+			${projectsElm}
 		</${ResumeElm}>
 	`;
   };
