@@ -39,9 +39,9 @@ import{u as r,m as o}from"./styled-components.browser.esm-LOVPg310.js";import{R 
 			margin-right: 0;
 		}
 	}
-`,f=r.div`
-	margin-top: 0.5rem;
 `,p=r.div`
+	margin-top: 0.5rem;
+`,f=r.div`
 	margin: 0 -1rem;
 	margin-bottom: -1rem;
 	background-color: rgba(255, 255, 255, 0.25);
@@ -53,16 +53,20 @@ import{u as r,m as o}from"./styled-components.browser.esm-LOVPg310.js";import{R 
 	iframe {
 		height: 21rem;
 		width: 100%;
+
+		@media print {
+			display: none;
+		}
 	}
-`,w=({children:x,images:i,tags:e,iframe:n})=>{let m="";if(i&&i.length>0){const t=i.map(a=>o`<img src=${a} />`);m=o`
+`,w=({children:x,images:i,tags:e,iframe:a})=>{let m="";if(i&&i.length>0){const t=i.map(n=>o`<img src=${n} />`);m=o`
 			<${b}>
 				${t}
 			</${b}>
-		`}let l="";if(e&&e.length>0){const t=e.map(a=>o`<${s}>${a}</${s}>`);l=o`
-			<${f}>
+		`}let l="";if(e&&e.length>0){const t=e.map(n=>o`<${s}>${n}</${s}>`);l=o`
+			<${p}>
 				${t}
-			</${f}>
-		`}let g="";return n&&(g=o`<${p}>${n}</${p}>`),o`
+			</${p}>
+		`}let g="";return a&&(g=o`<${f}>${a}</${f}>`),o`
 		<${c}>
 			<${d}>
 				${x}

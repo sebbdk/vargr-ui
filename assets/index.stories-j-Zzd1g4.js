@@ -1,4 +1,4 @@
-import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as r,R as n}from"./index-i10x-FPT.js";import{a as p,S as e}from"./index-d3A5-BcP.js";import{a,S as c}from"./index-lHSqyosL.js";import{a as j,T as b}from"./index-Ns9fgDpF.js";import{P as m}from"./index-QbVdgFkE.js";import{B as h}from"./index-Wa5dPq5a.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const M=x`
+import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as r,R as n}from"./index-i10x-FPT.js";import{a as c,S as e}from"./index-d3A5-BcP.js";import{a,S as m}from"./index-lHSqyosL.js";import{a as I,T as b}from"./index-Ns9fgDpF.js";import{P as h}from"./index-RflmMuot.js";import{B as u}from"./index-Wa5dPq5a.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const D=T`
 	body {
 		@media print  {
 			font-size: 12px;
@@ -8,7 +8,7 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 			}
 		}
 	}
-`,u=l.div`
+`,g=l.div`
 	margin-top: 2.5rem;
 	display: grid;
 	grid-template-columns: auto;
@@ -80,7 +80,7 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 			margin: 0.75rem 0;
 		}
     }
-`,g=l.div`
+`,$=l.div`
 	display: grid;
     grid-template-columns: minmax(0, 1fr);
 
@@ -96,7 +96,7 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 		padding: 1em;
 	}
 
-	${j} {
+	${I} {
 		margin-top: 1em;
 		padding: 1em;
 		background-color: rgba(0, 0, 0, 0.25);
@@ -106,7 +106,7 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 			margin-top: 0;
 		}
 	}
-`,$=l.div`
+`,f=l.div`
 	grid-column: 1 / span 1;
     max-width: 100%;
     display: grid;
@@ -122,34 +122,37 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 	@media (min-width: 900px), print {
 		grid-column: 1 / span 2;
 	}
-`,s=({profile:o,introduction:v,experiences:y,skills:S,experienceTitle:A,projects:P})=>{const C=P.map(d=>i`<${m} ...${d}>${d.description}</${m}>`);return i`
-		<${u}>
-			<${M} />
-			<${c} ...${o}>
+`,s=({profile:o,introduction:y,experiences:S,skills:P,experienceTitle:A,projects:C})=>{const j=C.map(p=>i`<${h} ...${p}>${p.description}</${h}>`),M=new URL(document.location.href),d=new URLSearchParams(M.search).get("hideProjects")!=null;console.info("ResumePage settings:"),console.info(`[get_param:boolean] hideProjects=${d}`);const x=d?"":i`
+		<${f}>
+			<${n}>
+				<h1 class="--line">Projects</h1>
+				<p>
+				An outtake of some of the projects I have involved myself in, my career has involved hundreds of projects.
+				</p>
+			</${n}>
+			${j}
+		</${f}>
+	`;return i`
+		<${g}>
+			<${D} />
+			<${m} ...${o}>
 				${o}
-				<${p} groups=${S}></${p}>
-			</${c}>
-			<${g}>
-				<${n}>${v}</${n}>
-				<${b} items=${y} title=${A}></${b}>
-			</${g}>
+				<${c} groups=${P}></${c}>
+			</${m}>
 			<${$}>
-				<${n}>
-					<h1 class="--line">Projects</h1>
-					<p>
-					An outtake of some of the projects I have involved myself in, my career has involved hundreds of projects.
-					</p>
-				</${n}>
-				${C}
+				<${n}>${y}</${n}>
+				<${b} items=${S} title=${A}></${b}>
 			</${$}>
-		</${u}>
-	`},T=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,z={title:"pages/resume",component:s,argTypes:{}},I=o=>i`
-    <${h}>
+
+			${x}
+		</${g}>
+	`},R=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,G={title:"pages/resume",component:s,argTypes:{}},H=o=>i`
+    <${u}>
         <${s} ...${o}></${s}>
-    </${h}>
-`,t=I.bind({});t.args={profile:i`
+    </${u}>
+`,t=H.bind({});t.args={profile:i`
         <div>
-            <img className="--framed" src="${T}" />
+            <img className="--framed" src="${R}" />
         </div>
         <div>
             <h3 className="--line">Sebastian Vargr</h3>
@@ -205,9 +208,19 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>MySQL</${e}>
                     <${e}>Docker</${e}>
                 </p>
+            `},{label:"2023",content:i`
+                <h3>Software Engineer<br /> <small><b>Arcanic</b>, November 2023 - April 2024</small></h3>
+                <p>I was taking some courses at DTU, while doing that i worked part time as Arcanic on a UI for a new product using Blazor and .net</p>
             `},{label:"2022",content:i`
-                <h3>ADHD mentor - Volunteer<br /> <small><b>ADHD-foreningen</b>, March 2022 - present</small></h3>
+                <h3>ADHD mentor - Volunteer<br /> <small><b>ADHD-foreningen</b>, March 2022 - March 2024</small></h3>
                 <p>As an ADHD mentor, I share my experience living with ADHD and mentor people diagnosed with ADHD on how to cope. With the goal of getting or maintaining a job or starting an education.</p>
+                <p>
+                    <${e}>Blazor</${e}>
+                    <${e}>MudBlazor</${e}>
+                    <${e}>Javascript</${e}>
+                    <${e}>.net</${e}>
+                    <${e}>MSSQL</${e}>
+                </p>
             `},{label:"2022",content:i`
                 <h3>Web SDK lead<br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
                 <p>I was hired to prototype their web payment orchestration client SDK meant to simplify implementation for vendors and later replace the existing client SDK.</p>
@@ -437,4 +450,4 @@ import{d as x,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                 fitnessconsulting.dk needed a booking system for client to book times and for the trainers to except/deny bookings.<br />
                 <br />
                 Given the tight budget i designed and implemented minimally viable booking system for them.
-            `,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}]};var f,w,k;t.parameters={...t.parameters,docs:{...(f=t.parameters)==null?void 0:f.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(k=(w=t.parameters)==null?void 0:w.docs)==null?void 0:k.source}}};const N=["Primary"];export{t as Primary,N as __namedExportsOrder,z as default};
+            `,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}]};var w,k,v;t.parameters={...t.parameters,docs:{...(w=t.parameters)==null?void 0:w.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(v=(k=t.parameters)==null?void 0:k.docs)==null?void 0:v.source}}};const K=["Primary"];export{t as Primary,K as __namedExportsOrder,G as default};
