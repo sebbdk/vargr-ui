@@ -10,7 +10,5 @@ export default {
 
 
 export const primary= () => html`
-	<${BasePage}>
-		<${StroopGame} />
-	</${BasePage}>
+	<${StroopGame} />
 `;

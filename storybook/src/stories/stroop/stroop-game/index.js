@@ -1,6 +1,7 @@
 import { html } from "htm/preact"
 import { useState } from 'preact/hooks';
 import styled from "styled-components";
+import { GlobalStyles } from 'stories/common/templates/globalstyles';
 
 const LayoutElm = styled.div`
 	align-items: center;
@@ -10,6 +11,7 @@ const LayoutElm = styled.div`
     font-size: 4rem;
     justify-content: center;
 	height: 100vh;
+	font-size: 128px;
 
 	&:active, &:focus {
 		outline: none;
@@ -22,16 +24,20 @@ const StartBtn = styled.div`
 	border-radius: .5rem;
 	color: #fff;
 	cursor: pointer;
-	padding: 2rem;
+	padding: 4rem;
+`;
+
+const ActiveColor = styled.span`
+	text-transform:capitalize;
 `;
 
 function randChoice(arr) {
 	return arr[Math.floor(Math.random() * arr.length)]
-  }
+}
 
 export function StroopGame({}) {
 	const [currentColor, setColor] = useState('green');
-	const [currentWord, setWord] = useState('blue');
+	const [currentWord, setWord] = useState('green');
 	const [currentErrorcount, setErrorcount] = useState(0);
 	const [countdown, setCountdown] = useState(-2);
 	const [startTime, setStartTime] = useState(0);
@@ -45,8 +51,32 @@ export function StroopGame({}) {
 		white: "#fff"
 	}
 
+	function resetGame() {
+		setColor('green');
+		setWord('green');
+		setErrorcount(0);
+		setCountdown(-2);
+		setStartTime(0);
+	}
+
+	function start() {
+		setCountdown(wordCount)
+	}
+
 	const handleKeyDown = (event) => {
-		if(countdown < 0 || !['r', 'g', 'b', 'y'].includes(event.key)) {
+		if (event.key == ' ') {
+			event.preventDefault()
+
+			if(countdown == -2 ) {
+				start()
+				return;
+			}
+
+			resetGame();
+			return
+		}
+
+		if(countdown < 0 || !['r', 'g', 'b', 'y', ' '].includes(event.key)) {
 			return
 		}
 
@@ -84,7 +114,6 @@ export function StroopGame({}) {
 
 		// if we are done
 		if (countdown - 1 == -1) {
-			console.log(currentErrorcount)
 			const errorPct = Math.floor((wordCount/(wordCount+currentErrorcount))* 100)
 			const stopTime = window.performance.now()
 
@@ -92,7 +121,7 @@ export function StroopGame({}) {
 			const avrgReactionTime = Math.round(deltaTime / wordCount);
 
 			const daWord = html`
-				<div>
+				<div style="font-size: 32px;">
 					<div>Done: ${errorPct}% accuracy</div>
 					<div>Average reaction time: ${avrgReactionTime}ms</div>
 				</div<>
@@ -104,14 +133,12 @@ export function StroopGame({}) {
 		}
 	};
 
-	function start() {
-		setCountdown(wordCount)
-	}
-
 	const startBtn = html`<${StartBtn} onClick=${start}>Click to begin</${StartBtn}>`;
-	const content = countdown == -2 ? startBtn : currentWord;
+	const content = countdown == -2 ? startBtn : html`<${ActiveColor}>${currentWord}</${ActiveColor}>`;
 
 	return html`
+		<${GlobalStyles} />
+
 		<${LayoutElm}
 			tabIndex="0"
 			onKeyDown=${handleKeyDown}
