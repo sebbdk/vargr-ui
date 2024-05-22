@@ -1,0 +1,3 @@
+import{S as m}from"./index-fGgDkZsx.js";import{m as a}from"./styled-components.browser.esm-LOVPg310.js";import"./index-Wa5dPq5a.js";import"./compat.module-qtfPsa-n.js";import"./preact.module-0A_VdQ5M.js";import"./index-g-2SN6mO.js";const S={title:"Stroop/Game",component:m,argTypes:{}},r=()=>a`
+    <${m} />
+`;var o,t,e;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:"() => html`\n    <${StroopGame} />\n`",...(e=(t=r.parameters)==null?void 0:t.docs)==null?void 0:e.source}}};const l=["primary"];export{l as __namedExportsOrder,S as default,r as primary};
