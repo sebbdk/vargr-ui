@@ -89,6 +89,13 @@ Primary.args = {
 			content: html`
 				<h3>Software Engineer<br /> <small><b>Arcanic</b>, November 2023 - April 2024</small></h3>
 				<p>I was taking some courses at DTU, while doing that i worked part time as Arcanic on a UI for a new product using Blazor and .net</p>
+				<p>
+					<${SkillElm}>Blazor</${SkillElm}>
+					<${SkillElm}>MudBlazor</${SkillElm}>
+					<${SkillElm}>Javascript</${SkillElm}>
+					<${SkillElm}>.net</${SkillElm}>
+					<${SkillElm}>MSSQL</${SkillElm}>
+				</p>
 			`
 		},
 		{
@@ -97,11 +104,7 @@ Primary.args = {
 				<h3>ADHD mentor - Volunteer<br /> <small><b>ADHD-foreningen</b>, March 2022 - March 2024</small></h3>
 				<p>As an ADHD mentor, I share my experience living with ADHD and mentor people diagnosed with ADHD on how to cope. With the goal of getting or maintaining a job or starting an education.</p>
 				<p>
-					<${SkillElm}>Blazor</${SkillElm}>
-					<${SkillElm}>MudBlazor</${SkillElm}>
-					<${SkillElm}>Javascript</${SkillElm}>
-					<${SkillElm}>.net</${SkillElm}>
-					<${SkillElm}>MSSQL</${SkillElm}>
+					<${SkillElm}>Mentoring</${SkillElm}>
 				</p>
 			`
 		},
