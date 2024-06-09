@@ -211,15 +211,18 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
             `},{label:"2023",content:i`
                 <h3>Software Engineer<br /> <small><b>Arcanic</b>, November 2023 - April 2024</small></h3>
                 <p>I was taking some courses at DTU, while doing that i worked part time as Arcanic on a UI for a new product using Blazor and .net</p>
-            `},{label:"2022",content:i`
-                <h3>ADHD mentor - Volunteer<br /> <small><b>ADHD-foreningen</b>, March 2022 - March 2024</small></h3>
-                <p>As an ADHD mentor, I share my experience living with ADHD and mentor people diagnosed with ADHD on how to cope. With the goal of getting or maintaining a job or starting an education.</p>
                 <p>
                     <${e}>Blazor</${e}>
                     <${e}>MudBlazor</${e}>
                     <${e}>Javascript</${e}>
                     <${e}>.net</${e}>
                     <${e}>MSSQL</${e}>
+                </p>
+            `},{label:"2022",content:i`
+                <h3>ADHD mentor - Volunteer<br /> <small><b>ADHD-foreningen</b>, March 2022 - March 2024</small></h3>
+                <p>As an ADHD mentor, I share my experience living with ADHD and mentor people diagnosed with ADHD on how to cope. With the goal of getting or maintaining a job or starting an education.</p>
+                <p>
+                    <${e}>Mentoring</${e}>
                 </p>
             `},{label:"2022",content:i`
                 <h3>Web SDK lead<br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
