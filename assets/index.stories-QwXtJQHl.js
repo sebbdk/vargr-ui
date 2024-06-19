@@ -1,4 +1,4 @@
-import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as r,R as n}from"./index-i10x-FPT.js";import{a as c,S as e}from"./index-d3A5-BcP.js";import{a,S as m}from"./index-lHSqyosL.js";import{a as I,T as b}from"./index-Ns9fgDpF.js";import{P as h}from"./index-RflmMuot.js";import{B as u}from"./index-Wa5dPq5a.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const D=T`
+import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as n,R as r}from"./index-i10x-FPT.js";import{a as c,S as e}from"./index-d3A5-BcP.js";import{a,S as m}from"./index-lHSqyosL.js";import{a as I,T as b}from"./index-Ns9fgDpF.js";import{P as h}from"./index-RflmMuot.js";import{B as u}from"./index-Wa5dPq5a.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const R=T`
 	body {
 		@media print  {
 			font-size: 12px;
@@ -23,7 +23,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 		max-width: initial;
 	}
 
-	${a} > ${r} {
+	${a} > ${n} {
 		display: grid;
 		grid-template-columns: auto auto;
 		grid-gap: 1rem;
@@ -45,7 +45,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 			max-width: 18rem;
 		}
 
-		${a} > ${r} {
+		${a} > ${n} {
 			display: block;
 			img {
 				max-height: initial;
@@ -92,7 +92,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 		background-color: #fff;
 	}
 
-	> ${r} {
+	> ${n} {
 		padding: 1em;
 	}
 
@@ -122,37 +122,37 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 	@media (min-width: 900px), print {
 		grid-column: 1 / span 2;
 	}
-`,s=({profile:o,introduction:y,experiences:S,skills:P,experienceTitle:A,projects:C})=>{const j=C.map(p=>i`<${h} ...${p}>${p.description}</${h}>`),M=new URL(document.location.href),d=new URLSearchParams(M.search).get("hideProjects")!=null;console.info("ResumePage settings:"),console.info(`[get_param:boolean] hideProjects=${d}`);const x=d?"":i`
+`,s=({profile:o,introduction:y,experiences:S,skills:P,experienceTitle:A,projects:C})=>{const j=C.map(p=>i`<${h} ...${p}>${p.description}</${h}>`),x=new URL(document.location.href),d=new URLSearchParams(x.search).get("hideProjects")!=null;console.info("ResumePage settings:"),console.info(`[get_param:boolean] hideProjects=${d}`);const M=d?"":i`
 		<${f}>
-			<${n}>
+			<${r}>
 				<h1 class="--line">Projects</h1>
 				<p>
 				An outtake of some of the projects I have involved myself in, my career has involved hundreds of projects.
 				</p>
-			</${n}>
+			</${r}>
 			${j}
 		</${f}>
 	`;return i`
 		<${g}>
-			<${D} />
+			<${R} />
 			<${m} ...${o}>
 				${o}
 				<${c} groups=${P}></${c}>
 			</${m}>
 			<${$}>
-				<${n}>${y}</${n}>
+				<${r}>${y}</${r}>
 				<${b} items=${S} title=${A}></${b}>
 			</${$}>
 
-			${x}
+			${M}
 		</${g}>
-	`},R=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,G={title:"pages/resume",component:s,argTypes:{}},H=o=>i`
+	`},V=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,G={title:"pages/resume",component:s,argTypes:{}},H=o=>i`
     <${u}>
         <${s} ...${o}></${s}>
     </${u}>
 `,t=H.bind({});t.args={profile:i`
         <div>
-            <img className="--framed" src="${R}" />
+            <img className="--framed" src="${V}" />
         </div>
         <div>
             <h3 className="--line">Sebastian Vargr</h3>
@@ -217,12 +217,6 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Javascript</${e}>
                     <${e}>.net</${e}>
                     <${e}>MSSQL</${e}>
-                </p>
-            `},{label:"2022",content:i`
-                <h3>ADHD mentor - Volunteer<br /> <small><b>ADHD-foreningen</b>, March 2022 - March 2024</small></h3>
-                <p>As an ADHD mentor, I share my experience living with ADHD and mentor people diagnosed with ADHD on how to cope. With the goal of getting or maintaining a job or starting an education.</p>
-                <p>
-                    <${e}>Mentoring</${e}>
                 </p>
             `},{label:"2022",content:i`
                 <h3>Web SDK lead<br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
