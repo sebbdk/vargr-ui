@@ -98,7 +98,7 @@ Primary.args = {
 				</p>
 			`
 		},
-		{
+		/*{
 			label: '2022',
 			content: html`
 				<h3>ADHD mentor - Volunteer<br /> <small><b>ADHD-foreningen</b>, March 2022 - March 2024</small></h3>
@@ -107,7 +107,7 @@ Primary.args = {
 					<${SkillElm}>Mentoring</${SkillElm}>
 				</p>
 			`
-		},
+		},*/
 		{
 			label: '2022',
 			content: html`
