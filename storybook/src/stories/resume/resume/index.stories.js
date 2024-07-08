@@ -81,6 +81,8 @@ Primary.args = {
 					<${SkillElm}>MongoDB</${SkillElm}>
 					<${SkillElm}>MySQL</${SkillElm}>
 					<${SkillElm}>Docker</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
+					<${SkillElm}>XPath</${SkillElm}>
 				</p>
 			`
 		},
@@ -120,6 +122,7 @@ Primary.args = {
 					<${SkillElm}>Typescript</${SkillElm}>
 					<${SkillElm}>Redux</${SkillElm}>
 					<${SkillElm}>Kubernetes</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
 				</p>
 			`
 		},
@@ -128,6 +131,7 @@ Primary.args = {
 			content: html`
 				<h3>Senior fullstack consultant  <br /> <small><b>DSV - Global Transport and Logistics</b>, October 2021 - April 2022</small></h3>
 				<p>I was responsible for implementation and UX of a GUI meant to handle the invoices our machine learning models could not handle confidently.</p>
+				<p>This included creating an application that allowed users to visually generate XPath configurations for XML invoices.<p>
 				<p>The GUI was made in a way were the Invoices could easily/quickly be verified manually in bulk.</p>
 				<p>The corrected invoice data then fed back into the machine learning models.</p>
 				<p>
@@ -141,6 +145,8 @@ Primary.args = {
 					<${SkillElm}>Kubernetes</${SkillElm}>
 					<${SkillElm}>MongoDB</${SkillElm}>
 					<${SkillElm}>MySQL</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
+					<${SkillElm}>XPath</${SkillElm}>
 				</p>
 			`
 		},
@@ -156,6 +162,7 @@ Primary.args = {
 					<${SkillElm}>Typescript</${SkillElm}>
 					<${SkillElm}>Redux</${SkillElm}>
 					<${SkillElm}>C#</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
 				</p>
 			`
 		},
@@ -176,6 +183,7 @@ Primary.args = {
 					<li>Rallying the team when needed to avoid crunch</li>
 					<li>Planning knowledge sharing sessions & product demonstrations</li>
 					<li>Implementing new features as a developer</li>
+					<${SkillElm}>XML</${SkillElm}>
 				</ul>
 
 				<p>Apart from this i also orchestrated a new release and testing schedule which cut back on bugs in production significantly.</p>
@@ -186,6 +194,7 @@ Primary.args = {
 					<${SkillElm}>Typescript</${SkillElm}>
 					<${SkillElm}>Redux</${SkillElm}>
 					<${SkillElm}>C#</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
 				</p>
 			`
 		},
@@ -202,6 +211,7 @@ Primary.args = {
 					<${SkillElm}>Typescript</${SkillElm}>
 					<${SkillElm}>Redux</${SkillElm}>
 					<${SkillElm}>C#</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
 				</p>
 			`
 		},
@@ -217,6 +227,7 @@ Primary.args = {
 					<${SkillElm}>Javascript</${SkillElm}>
 					<${SkillElm}>C#</${SkillElm}>
 					<${SkillElm}>Sitecore</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
 				</p>
 			`
 		},
@@ -233,6 +244,7 @@ Primary.args = {
 					<${SkillElm}>Redux</${SkillElm}>
 					<${SkillElm}>Java</${SkillElm}>
 					<${SkillElm}>Springboot</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
 				</p>
 			`
 		},
@@ -272,6 +284,8 @@ Primary.args = {
 					<${SkillElm}>CakePHP</${SkillElm}>
 					<${SkillElm}>Flash</${SkillElm}>
 					<${SkillElm}>Actionscript</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
+					<${SkillElm}>SOAP</${SkillElm}>
 				</p>
 			`
 		},
@@ -286,6 +300,8 @@ Primary.args = {
 					<${SkillElm}>Joomla</${SkillElm}>
 					<${SkillElm}>Flash</${SkillElm}>
 					<${SkillElm}>Actionscript</${SkillElm}>
+					<${SkillElm}>SOAP</${SkillElm}>
+					<${SkillElm}>XML</${SkillElm}>
 				</p>
 			`
 		},
@@ -308,7 +324,7 @@ Primary.args = {
 		},
 		{
 			title: html`Tools & frameworks <small>Abbreviated</small>`,
-			items: [ 'Git', 'NodeJS', 'Unity3D', 'MySQL', 'MongoDB', 'Webpack', 'Angular', 'React' ]
+			items: [ 'Git', 'NodeJS', 'Unity3D', 'MySQL', 'MongoDB', 'Webpack', 'Angular', 'React', 'XML', 'XPAth', 'JSON' ]
 		},
 		{
 			title: html`Patterns, soft-skills, roles <small>Abbreviated</small>`,

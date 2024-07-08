@@ -27,7 +27,7 @@ primary.args = {
 		},
 		{
 			title: 'Tools & tecknologies',
-			items: [ 'Git', 'NodeJS', 'Unity3D', 'MySQL', 'MongoDB', 'Webpack', 'Angular', 'React' ]
+			items: [ 'Git', 'NodeJS', 'Unity3D', 'MySQL', 'MongoDB', 'Webpack', 'Angular', 'React', 'XML', 'XPAth', 'JSON' ]
 		},
 		{
 			title: 'Patterns & softskills',
