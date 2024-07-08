@@ -122,7 +122,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 	@media (min-width: 900px), print {
 		grid-column: 1 / span 2;
 	}
-`,s=({profile:o,introduction:y,experiences:S,skills:P,experienceTitle:A,projects:C})=>{const j=C.map(p=>i`<${h} ...${p}>${p.description}</${h}>`),x=new URL(document.location.href),d=new URLSearchParams(x.search).get("hideProjects")!=null;console.info("ResumePage settings:"),console.info(`[get_param:boolean] hideProjects=${d}`);const M=d?"":i`
+`,s=({profile:o,introduction:y,experiences:S,skills:P,experienceTitle:A,projects:M})=>{const C=M.map(p=>i`<${h} ...${p}>${p.description}</${h}>`),j=new URL(document.location.href),d=new URLSearchParams(j.search).get("hideProjects")!=null;console.info("ResumePage settings:"),console.info(`[get_param:boolean] hideProjects=${d}`);const x=d?"":i`
 		<${f}>
 			<${r}>
 				<h1 class="--line">Projects</h1>
@@ -130,7 +130,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 				An outtake of some of the projects I have involved myself in, my career has involved hundreds of projects.
 				</p>
 			</${r}>
-			${j}
+			${C}
 		</${f}>
 	`;return i`
 		<${g}>
@@ -144,9 +144,9 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 				<${b} items=${S} title=${A}></${b}>
 			</${$}>
 
-			${M}
+			${x}
 		</${g}>
-	`},V=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,G={title:"pages/resume",component:s,argTypes:{}},H=o=>i`
+	`},V=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,B={title:"pages/resume",component:s,argTypes:{}},H=o=>i`
     <${u}>
         <${s} ...${o}></${s}>
     </${u}>
@@ -207,6 +207,8 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>MongoDB</${e}>
                     <${e}>MySQL</${e}>
                     <${e}>Docker</${e}>
+                    <${e}>XML</${e}>
+                    <${e}>XPath</${e}>
                 </p>
             `},{label:"2023",content:i`
                 <h3>Software Engineer<br /> <small><b>Arcanic</b>, November 2023 - April 2024</small></h3>
@@ -228,10 +230,12 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Typescript</${e}>
                     <${e}>Redux</${e}>
                     <${e}>Kubernetes</${e}>
+                    <${e}>XML</${e}>
                 </p>
             `},{label:"2021",content:i`
                 <h3>Senior fullstack consultant  <br /> <small><b>DSV - Global Transport and Logistics</b>, October 2021 - April 2022</small></h3>
                 <p>I was responsible for implementation and UX of a GUI meant to handle the invoices our machine learning models could not handle confidently.</p>
+                <p>This included creating an application that allowed users to visually generate XPath configurations for XML invoices.<p>
                 <p>The GUI was made in a way were the Invoices could easily/quickly be verified manually in bulk.</p>
                 <p>The corrected invoice data then fed back into the machine learning models.</p>
                 <p>
@@ -245,6 +249,8 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Kubernetes</${e}>
                     <${e}>MongoDB</${e}>
                     <${e}>MySQL</${e}>
+                    <${e}>XML</${e}>
+                    <${e}>XPath</${e}>
                 </p>
             `},{label:"2021",content:i`
                 <h3>Domain lead  <br /> <small><b>SimpleSite</b>, March 2021 - October 2021</small></h3>
@@ -256,6 +262,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Typescript</${e}>
                     <${e}>Redux</${e}>
                     <${e}>C#</${e}>
+                    <${e}>XML</${e}>
                 </p>
             `},{label:"2020",content:i`
                 <h3>Team lead <br /> <small><b>SimpleSite</b>, April 2019</small></h3>
@@ -272,6 +279,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <li>Rallying the team when needed to avoid crunch</li>
                     <li>Planning knowledge sharing sessions & product demonstrations</li>
                     <li>Implementing new features as a developer</li>
+                    <${e}>XML</${e}>
                 </ul>
 
                 <p>Apart from this i also orchestrated a new release and testing schedule which cut back on bugs in production significantly.</p>
@@ -282,6 +290,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Typescript</${e}>
                     <${e}>Redux</${e}>
                     <${e}>C#</${e}>
+                    <${e}>XML</${e}>
                 </p>
             `},{label:"2019",content:i`
                 <h3>Senior frontend developer <br /> <small><b>SimpleSite</b>, February 2019</small></h3>
@@ -294,6 +303,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Typescript</${e}>
                     <${e}>Redux</${e}>
                     <${e}>C#</${e}>
+                    <${e}>XML</${e}>
                 </p>
             `},{label:"2018",content:i`
                 <h3>Senior frontend consultant <br /> <small><b>Saxo Bank</b>, January 2018 - December 2018</small></h3>
@@ -305,6 +315,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Javascript</${e}>
                     <${e}>C#</${e}>
                     <${e}>Sitecore</${e}>
+                    <${e}>XML</${e}>
                 </p>
             `},{label:"2016",content:i`
                 <h3>Senior frontend consultant <br /> <small><b>Nordea</b>, July 2016 - December 2018</small></h3>
@@ -317,6 +328,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Redux</${e}>
                     <${e}>Java</${e}>
                     <${e}>Springboot</${e}>
+                    <${e}>XML</${e}>
                 </p>
             `},{label:"2013",content:i`
                 <h3>Started freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
@@ -348,6 +360,8 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>CakePHP</${e}>
                     <${e}>Flash</${e}>
                     <${e}>Actionscript</${e}>
+                    <${e}>XML</${e}>
+                    <${e}>SOAP</${e}>
                 </p>
             `},{label:"2007",content:i`
                 <h3>Developer <br /> <small>Decaro</small></h3>
@@ -358,11 +372,13 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                     <${e}>Joomla</${e}>
                     <${e}>Flash</${e}>
                     <${e}>Actionscript</${e}>
+                    <${e}>SOAP</${e}>
+                    <${e}>XML</${e}>
                 </p>
             `},{label:"2006",content:i`
                 <h3>Webintegrator <br /> <small>Roskilde technical school</small></h3>
                 <p>Studied generic web development, not limited to but including coding, UI design, and project management.</p>
-            `}],skills:[{title:i`Languages <small>The human ones</small>`,items:["English","Danish"]},{title:i`Programming languages <small>Abbreviated</small>`,items:["Javascript","Typescript","C#","Java","CSS","HTML","PHP"]},{title:i`Tools & frameworks <small>Abbreviated</small>`,items:["Git","NodeJS","Unity3D","MySQL","MongoDB","Webpack","Angular","React"]},{title:i`Patterns, soft-skills, roles <small>Abbreviated</small>`,items:["CI/TD","Unit testing","Project management","E2E testing","SEO","Backend development","Frontend development","Team-lead"]}],projects:[{description:i`
+            `}],skills:[{title:i`Languages <small>The human ones</small>`,items:["English","Danish"]},{title:i`Programming languages <small>Abbreviated</small>`,items:["Javascript","Typescript","C#","Java","CSS","HTML","PHP"]},{title:i`Tools & frameworks <small>Abbreviated</small>`,items:["Git","NodeJS","Unity3D","MySQL","MongoDB","Webpack","Angular","React","XML","XPAth","JSON"]},{title:i`Patterns, soft-skills, roles <small>Abbreviated</small>`,items:["CI/TD","Unit testing","Project management","E2E testing","SEO","Backend development","Frontend development","Team-lead"]}],projects:[{description:i`
                 <h2 class="--line">Saxobank Website</h2>
                 As a consultant i refactored their build solution for simplicity and performance and helped implement their SPA to none SPA migration plan to improve load metrics,
                 I also established code guidelines, as well as documented their frontend components and process.
@@ -447,4 +463,4 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
                 fitnessconsulting.dk needed a booking system for client to book times and for the trainers to except/deny bookings.<br />
                 <br />
                 Given the tight budget i designed and implemented minimally viable booking system for them.
-            `,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}]};var w,k,v;t.parameters={...t.parameters,docs:{...(w=t.parameters)==null?void 0:w.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(v=(k=t.parameters)==null?void 0:k.docs)==null?void 0:v.source}}};const K=["Primary"];export{t as Primary,K as __namedExportsOrder,G as default};
+            `,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}]};var w,k,v;t.parameters={...t.parameters,docs:{...(w=t.parameters)==null?void 0:w.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(v=(k=t.parameters)==null?void 0:k.docs)==null?void 0:v.source}}};const G=["Primary"];export{t as Primary,G as __namedExportsOrder,B as default};
