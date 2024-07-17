@@ -7,7 +7,7 @@ export const experiences = [
 		content: html`
 			<h3>Entity51 - My freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
 			<p>
-			My freelance business. Always running in the background when i'm not on a fulltime contract. The work consists mostly of consulting, web and mobile application development/maintenence.
+			Always running in the background when I'm not on a fulltime contract. The work consists mostly of consulting, web and mobile application development/maintenence.
 			</p>
 			<p>
 				<${SkillElm}>Angular</${SkillElm}>
@@ -40,7 +40,7 @@ export const experiences = [
 		label: '2023',
 		content: html`
 			<h3>Software Engineer<br /> <small><b>Arcanic</b>, November 2023 - April 2024</small></h3>
-			<p>I was taking some courses at DTU, while doing that i worked part time as Arcanic on a UI for a new product using Blazor and .net</p>
+			<p>I was taking some courses at DTU, while doing that I worked part time in Arcanic on a UI for a new product using Blazor and .net</p>
 			<p>
 				<${SkillElm}>Blazor</${SkillElm}>
 				<${SkillElm}>MudBlazor</${SkillElm}>
@@ -90,7 +90,7 @@ export const experiences = [
 			</h3>
 			<p>I was responsible for implementation and UX of a GUI meant to handle the invoices our machine learning models could not handle confidently.</p>
 			<p>This included creating an application that allowed users to visually generate XPath configurations for XML invoices.</p>
-			<p>The GUI was made in a way were the Invoices could easily/quickly be verified manually in bulk.</p>
+			<p>The GUI was made in a way where the Invoices could easily/quickly be verified manually in bulk.</p>
 			<p>The corrected invoice data then fed back into the machine learning models.</p>
 			<p>
 				<${SkillElm}>React</${SkillElm}>
@@ -112,8 +112,10 @@ export const experiences = [
 		label: '2021',
 		content: html`
 			<h3>Domain lead  <br /> <small><b>SimpleSite</b>, March 2021 - October 2021</small></h3>
-			<p>I was one of two domain leads in charge of different parts of the frontend architecture.</p>
-			<p>My responsibilities as domain lead was similar to that of a team lead, but with the scrum master related tasks removed so i could focus more one the architecture & performance.</p>
+			<p>
+				I was one of two domain leads in charge of different parts of the frontend architecture.
+				Similar to the team lead role, but focused more on the architecture & performance, and less on scrum.
+			</p>
 			<p>
 				<${SkillElm}>Angular</${SkillElm}>
 				<${SkillElm}>React</${SkillElm}>
@@ -132,8 +134,8 @@ export const experiences = [
 			<h3>Team lead <br /> <small><b>SimpleSite</b>, April 2019</small></h3>
 
 			<p>
-				There was a demand for a team lead i stepped up.<br />
-				As a Team lead for one of the frontend teams and the most senior frontend developer, my responsibilities included:
+				When there was a demand for a frontend team lead, as the most senior frontend developer, I stepped up.<br />
+				My responsibilities included:
 			</p>
 			<ul>
 				<li>Mentoring & training developers</li>
@@ -145,7 +147,7 @@ export const experiences = [
 				<li>Implementing new features as a developer</li>
 			</ul>
 
-			<p>Apart from this i also orchestrated a new release and testing schedule which cut back on bugs in production significantly.</p>
+			<p>Apart from this I also orchestrated a new release and testing schedule which cut back on bugs in production significantly.</p>
 
 			<p>
 				<${SkillElm}>Angular</${SkillElm}>
@@ -163,7 +165,7 @@ export const experiences = [
 		content: html`
 			<h3>Senior frontend developer <br /> <small><b>SimpleSite</b>, February 2019</small></h3>
 			<p>
-				I joined SimpleSite as a Senior developer as they needed someone with experience to improve & develop for their their Angular solution.
+				I joined SimpleSite as a Senior developer as they needed someone with experience to improve & develop for their Angular solution.
 			</p>
 			<p>
 				<${SkillElm}>Angular</${SkillElm}>
@@ -181,7 +183,7 @@ export const experiences = [
 		content: html`
 			<h3>Senior frontend consultant <br /> <small><b>Saxo Bank</b>, January 2018 - December 2018</small></h3>
 			<p>
-				I refactored their build solution for simplicity and performance and helped migrate their old site from a bloated SPA solution to none SPA to improve load metrics, established code guidelines, as well as documented their frontend library.
+			I refactored their build solution for simplicity and performance, and helped migrate their old site from a bloated SPA solution to non-SPA, which improved load metrics. I also established code guidelines and documented their frontend library.
 			</p>
 			<p>
 				<${SkillElm}>AngularJS</${SkillElm}>
@@ -217,7 +219,7 @@ export const experiences = [
 			<h3>Started freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
 			<p>I started my freelance business.</p>
 			<p>
-				The work consists mostly of subcontracts to make social media SPA's, campaign and Cordova based mobile applications. More interestingly i helped a few startups get going technically and also coded a few mobile games in collaboration with independent game designers.
+				The work consists mostly of subcontracts to make social media SPA's, campaign and Cordova based mobile applications. More interestingly I helped a few startups get going technically and also coded a few mobile games in collaboration with independent game designers.
 			</p>
 			<p>
 				<${SkillElm}>AngularJS</${SkillElm}>
@@ -236,8 +238,8 @@ export const experiences = [
 		label: '2009',
 		content: html`
 			<h3>Developer <br /> <small><b>Nodes</b>, December 2009 - October 2013</small></h3>
-			<p>Worked as a developer pumping out Facebook applications, in the ~4 years i was there, i was involved in more than 250 applications and pages or varying size.</p>
-			<p>Probably the most varied place i have ever worked, one day i would be making a tool for people to record them self as two highpitched german nuts, complete with with facial tracking and southpark like animated mouths, and the next i would be placing a few million footballs in virtual space for an augmented reality application. Also got to make obscure flash games, applications where people could make their own sausage face designs etc etc.</p>
+			<p>Worked as a developer pumping out Facebook applications, in the ~4 years I was there, I was involved in more than 250 applications and pages or varying size.</p>
+			<p>Probably the most varied place I have ever worked, one day I would be making a tool for people to record them self as two highpitched german nuts, complete with with facial tracking and southpark like animated mouths, and the next I would be placing a few million footballs in virtual space for an augmented reality application. Also got to make obscure flash games, applications where people could make their own sausage face designs etc etc.</p>
 			<p>And most of it in a browser setting.</p>
 			<p>
 				<${SkillElm}>AngularJS</${SkillElm}>

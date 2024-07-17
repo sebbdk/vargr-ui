@@ -77,13 +77,15 @@ Primary.args = {
 						My name is Sebastian Vargr, and I am a very experienced web application developer from Copenhagen, Denmark.
 					</p>
 
-					<p>Profesionally i like to focus on architeture, best practices, culture and how to incorporate these into the teams i work with.</p>
-
-					<p>When appropriate I attempt to be vocal when I see issues, non-disruptive when I integrate myself into existing projects and proactive about solving & optimizing both productivity and technical issues.</p>
-
-					<p>Finally as someone who has been in the business in many years, i am largely driven by the bigger picture and have a lot of experience in translating technical costs to busines impact or risk.</p>
-
-					<p>In my spare time, I take care of my lazy cats, like to run, work on hobby electronics (like my CNC cutter & 3D printer) and game when I find can find the time.</p>
+					<p>
+						Professionally I like to focus on architecture, best practices, culture, and how to incorporate these into the teams I work with.
+						I speak up when I see issues, but also collaborate well when joining existing projects. I’m proactive about solving and optimizing productivity as well as technical issues.
+						As someone who has been in the business in many years, I’m driven by the bigger picture and have a lot of experience translating technical costs to busines impact or risk.
+					</p>
+					
+					<p>
+						In my spare time, I take care of my lazy cats, run, work on hobby electronics (like my CNC cutter & 3D printer), and game. 
+					</p>
 				</${Richtext}>
 			</div>
 		</${Profile}>
