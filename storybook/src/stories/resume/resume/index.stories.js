@@ -74,12 +74,14 @@ Primary.args = {
 			<div  class="profile_text">
 				<${Richtext}>
 					<p>
-						My name is Sebastian Vargr, and I am an application developer from Copenhagen, Denmark.
+						My name is Sebastian Vargr, and I am a very experienced web application developer from Copenhagen, Denmark.
 					</p>
 
-					<p>I am a full stack developer with a nose for business value. I bring value by building, teaching, mentoring, organizing, and solving problems in code or application design.</p>
+					<p>Profesionally i like to focus on architeture, best practices, culture and how to incorporate these into the teams i work with.</p>
 
-					<p>I am driven by my passion for all things code and by seeing my projects succeed because success is the best proof that I am good at my craft. Because of this, when appropriate, I am vocal when I see issues, non-disruptive when I integrate myself into existing projects and proactive about solving & optimizing both productivity and technical issues.</p>
+					<p>When appropriate I attempt to be vocal when I see issues, non-disruptive when I integrate myself into existing projects and proactive about solving & optimizing both productivity and technical issues.</p>
+
+					<p>Finally as someone who has been in the business in many years, i am largely driven by the bigger picture and have a lot of experience in translating technical costs to busines impact or risk.</p>
 
 					<p>In my spare time, I take care of my lazy cats, like to run, work on hobby electronics (like my CNC cutter & 3D printer) and game when I find can find the time.</p>
 				</${Richtext}>

@@ -47,6 +47,7 @@ export const experiences = [
 				<${SkillElm}>Javascript</${SkillElm}>
 				<${SkillElm}>.net</${SkillElm}>
 				<${SkillElm}>MSSQL</${SkillElm}>
+				<${SkillElm}>Visual studio</${SkillElm}>
 			</p>
 		`
 	},
@@ -65,7 +66,7 @@ export const experiences = [
 		content: html`
 			<h3>Web SDK lead<br /> <small><b>CellPoint Digital</b>, April 2022 - August 2022</small></h3>
 			<p>I was hired to prototype their web payment orchestration client SDK meant to simplify implementation for vendors and later replace the existing client SDK.</p>
-			<p>The work involved being part-time onsite with the clients' team in Pune, India.</p>
+			<p>The work involved being part-time onsite with the clients team in Pune, India.</p>
 			<p>
 				<${SkillElm}>React</${SkillElm}>
 				<${SkillElm}>UX</${SkillElm}>
@@ -73,12 +74,13 @@ export const experiences = [
 				<${SkillElm}>Redux</${SkillElm}>
 				<${SkillElm}>Kubernetes</${SkillElm}>
 				<${SkillElm}>XML</${SkillElm}>
+				<${SkillElm}>Architecture</${SkillElm}>
 			</p>
 		`
 	},
 	{
 		label: '2021',
-		pageBreakBefore: true,
+		//pageBreakBefore: true,
 		content: html`
 			<h3>
 				Senior fullstack consultant  <br />
@@ -118,7 +120,9 @@ export const experiences = [
 				<${SkillElm}>Typescript</${SkillElm}>
 				<${SkillElm}>Redux</${SkillElm}>
 				<${SkillElm}>C#</${SkillElm}>
-				<${SkillElm}>XML</${SkillElm}>
+				<${SkillElm}>MSSQL</${SkillElm}>
+				<${SkillElm}>Architecture</${SkillElm}>
+				<${SkillElm}>Visual studio</${SkillElm}>
 			</p>
 		`
 	},
@@ -139,7 +143,6 @@ export const experiences = [
 				<li>Rallying the team when needed to avoid crunch</li>
 				<li>Planning knowledge sharing sessions & product demonstrations</li>
 				<li>Implementing new features as a developer</li>
-				<${SkillElm}>XML</${SkillElm}>
 			</ul>
 
 			<p>Apart from this i also orchestrated a new release and testing schedule which cut back on bugs in production significantly.</p>
@@ -150,7 +153,8 @@ export const experiences = [
 				<${SkillElm}>Typescript</${SkillElm}>
 				<${SkillElm}>Redux</${SkillElm}>
 				<${SkillElm}>C#</${SkillElm}>
-				<${SkillElm}>XML</${SkillElm}>
+				<${SkillElm}>MSSQL</${SkillElm}>
+				<${SkillElm}>Visual studio</${SkillElm}>
 			</p>
 		`
 	},
@@ -167,7 +171,8 @@ export const experiences = [
 				<${SkillElm}>Typescript</${SkillElm}>
 				<${SkillElm}>Redux</${SkillElm}>
 				<${SkillElm}>C#</${SkillElm}>
-				<${SkillElm}>XML</${SkillElm}>
+				<${SkillElm}>MSSQL</${SkillElm}>
+				<${SkillElm}>Visual studio</${SkillElm}>
 			</p>
 		`
 	},
@@ -183,7 +188,8 @@ export const experiences = [
 				<${SkillElm}>Javascript</${SkillElm}>
 				<${SkillElm}>C#</${SkillElm}>
 				<${SkillElm}>Sitecore</${SkillElm}>
-				<${SkillElm}>XML</${SkillElm}>
+				<${SkillElm}>Architecture</${SkillElm}>
+				<${SkillElm}>Visual studio</${SkillElm}>
 			</p>
 		`
 	},
@@ -206,7 +212,7 @@ export const experiences = [
 	},
 	{
 		label: '2013',
-		pageBreakBefore: true,
+		//pageBreakBefore: true,
 		content: html`
 			<h3>Started freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
 			<p>I started my freelance business.</p>
@@ -267,6 +273,22 @@ export const experiences = [
 		content: html`
 			<h3>Webintegrator <br /> <small>Roskilde technical school</small></h3>
 			<p>Studied generic web development, not limited to but including coding, UI design, and project management.</p>
+		`
+	},
+	{
+		label: '2007',
+		content: html`
+			<h3>Developer <br /> <small>Decaro</small></h3>
+			<p>My first job as a web-developer, made Joomla based websites and Adobe Flex based flash applications.</p>
+			<p>
+				<${SkillElm}>Javascript</${SkillElm}>
+				<${SkillElm}>PHP</${SkillElm}>
+				<${SkillElm}>Joomla</${SkillElm}>
+				<${SkillElm}>Flash</${SkillElm}>
+				<${SkillElm}>Actionscript</${SkillElm}>
+				<${SkillElm}>SOAP</${SkillElm}>
+				<${SkillElm}>XML</${SkillElm}>
+			</p>
 		`
 	},
 ];
