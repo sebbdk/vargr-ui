@@ -1,4 +1,4 @@
-import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as n,R as r}from"./index-i10x-FPT.js";import{a as c,S as e}from"./index-d3A5-BcP.js";import{a,S as m}from"./index-lHSqyosL.js";import{a as I,T as b}from"./index-Ns9fgDpF.js";import{P as h}from"./index-RflmMuot.js";import{B as u}from"./index-Wa5dPq5a.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const R=T`
+import{d as I,u as o,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as y,R as a}from"./index-nz9l7Sh7.js";import{a as p,S as e}from"./index-1iTlzDmH.js";import{a as n,S as c}from"./index--bM7ksIO.js";import{a as R,T as b}from"./index-Xq5YgxHN.js";import{P as m}from"./index-d3UE2LUg.js";import{B as h}from"./index-Wa5dPq5a.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const V=I`
 	body {
 		@media print  {
 			font-size: 12px;
@@ -8,7 +8,11 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 			}
 		}
 	}
-`,g=l.div`
+
+	@media print {
+		.pagebreak { page-break-before: always; } /* page-break-after works, as well */
+	}
+`,u=o.div`
 	margin-top: 2.5rem;
 	display: grid;
 	grid-template-columns: auto;
@@ -19,11 +23,11 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
     border-radius: 0.25rem;
     overflow: hidden;
 
-	${a} {
+	${n} {
 		max-width: initial;
 	}
 
-	${a} > ${n} {
+	${n} > ${y} {
 		display: grid;
 		grid-template-columns: auto auto;
 		grid-gap: 1rem;
@@ -38,30 +42,14 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 		}
 	}
 
-	@media (min-width: 900px), print {
-		grid-template-columns: auto auto;
-
-		${a} {
-			max-width: 18rem;
-		}
-
-		${a} > ${n} {
-			display: block;
-			img {
-				max-height: initial;
-				margin-bottom: 1rem;
-			}
-		}
-	}
-
     @media print {
 		min-width: 230mm;
         ::-webkit-scrollbar {
             min-width: initial;
         }
 
-		${a} {
-			max-width: 12rem;
+		${n} {
+			//max-width: 12rem;
 		}
 
 		margin: 0;
@@ -80,7 +68,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 			margin: 0.75rem 0;
 		}
     }
-`,$=l.div`
+`,g=o.div`
 	display: grid;
     grid-template-columns: minmax(0, 1fr);
 
@@ -92,21 +80,19 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 		background-color: #fff;
 	}
 
-	> ${n} {
+	> ${y} {
 		padding: 1em;
 	}
 
-	${I} {
-		margin-top: 1em;
-		padding: 1em;
-		background-color: rgba(0, 0, 0, 0.25);
+	${R} {
+		//background-color: rgba(0, 0, 0, 0.25);
 
 		@media print {
 			background-color: #fff;
 			margin-top: 0;
 		}
 	}
-`,f=l.div`
+`,$=o.div`
 	grid-column: 1 / span 1;
     max-width: 100%;
     display: grid;
@@ -118,35 +104,34 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 		background-color: #fff;
 		border-top: 1px solid #ddd;
 	}
-
-	@media (min-width: 900px), print {
-		grid-column: 1 / span 2;
-	}
-`,s=({profile:o,introduction:y,experiences:S,skills:P,experienceTitle:A,projects:M})=>{const C=M.map(p=>i`<${h} ...${p}>${p.description}</${h}>`),j=new URL(document.location.href),d=new URLSearchParams(j.search).get("hideProjects")!=null;console.info("ResumePage settings:"),console.info(`[get_param:boolean] hideProjects=${d}`);const x=d?"":i`
-		<${f}>
-			<${r}>
+`,s=({profile:r,introduction:S,experiences:P,skills:A,experienceTitle:M,projects:C})=>{const j=C.map(d=>i`<${m} ...${d}>${d.description}</${m}>`),x=new URL(document.location.href),l=new URLSearchParams(x.search).get("hideProjects")!=null;console.info("ResumePage settings:"),console.info(`[get_param:boolean] hideProjects=${l}`);const T=l?"":i`
+		<${$}>
+			<${a}>
 				<h1 class="--line">Projects</h1>
 				<p>
 				An outtake of some of the projects I have involved myself in, my career has involved hundreds of projects.
 				</p>
-			</${r}>
-			${C}
-		</${f}>
+			</${a}>
+			${j}
+		</${$}>
 	`;return i`
-		<${g}>
-			<${R} />
-			<${m} ...${o}>
-				${o}
-				<${c} groups=${P}></${c}>
-			</${m}>
-			<${$}>
-				<${r}>${y}</${r}>
-				<${b} items=${S} title=${A}></${b}>
-			</${$}>
+		<${u}>
+			<${V} />
 
-			${x}
-		</${g}>
-	`},V=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,H=[{description:i`
+			<${g}>
+				${S}
+
+				<${c} ...${r}>
+					<${p} groups=${A}></${p}>
+				</${c}>
+
+
+				<${b} items=${P} title=${M}></${b}>
+			</${g}>
+
+			${T}
+		</${u}>
+	`},H=""+new URL("profile_picture-nvg94rKs.jpg",import.meta.url).href,D=[{description:i`
 			<h2 class="--line">Saxobank Website</h2>
 			As a consultant i refactored their build solution for simplicity and performance and helped implement their SPA to none SPA migration plan to improve load metrics,
 			I also established code guidelines, as well as documented their frontend components and process.
@@ -231,7 +216,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 			fitnessconsulting.dk needed a booking system for client to book times and for the trainers to except/deny bookings.<br />
 			<br />
 			Given the tight budget i designed and implemented minimally viable booking system for them.
-		`,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}],D=[{label:"Current",content:i`
+		`,images:["http://sebbdk.github.io/Curriculum-Vitae/1.cb63fed2.jpg","http://sebbdk.github.io/Curriculum-Vitae/2.e1f50e8b.jpg","http://sebbdk.github.io/Curriculum-Vitae/3.00d6f55e.jpg"],tags:["Website","PHP","Booking","Fitness"]}],L=[{label:"Current",content:i`
 			<h3>Entity51 - My freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
 			<p>
 			My freelance business. Always running in the background when i'm not on a fulltime contract. The work consists mostly of consulting, web and mobile application development/maintenence.
@@ -283,10 +268,15 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 				<${e}>Kubernetes</${e}>
 				<${e}>XML</${e}>
 			</p>
-		`},{label:"2021",content:i`
-			<h3>Senior fullstack consultant  <br /> <small><b>DSV - Global Transport and Logistics</b>, October 2021 - April 2022</small></h3>
+		`},{label:"2021",pageBreakBefore:!0,content:i`
+			<h3>
+				Senior fullstack consultant  <br />
+				<small>
+					<b>DSV - Global Transport and Logistics</b>, October 2021 - April 2022
+				</small>
+			</h3>
 			<p>I was responsible for implementation and UX of a GUI meant to handle the invoices our machine learning models could not handle confidently.</p>
-			<p>This included creating an application that allowed users to visually generate XPath configurations for XML invoices.<p>
+			<p>This included creating an application that allowed users to visually generate XPath configurations for XML invoices.</p>
 			<p>The GUI was made in a way were the Invoices could easily/quickly be verified manually in bulk.</p>
 			<p>The corrected invoice data then fed back into the machine learning models.</p>
 			<p>
@@ -381,7 +371,7 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 				<${e}>Springboot</${e}>
 				<${e}>XML</${e}>
 			</p>
-		`},{label:"2013",content:i`
+		`},{label:"2013",pageBreakBefore:!0,content:i`
 			<h3>Started freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
 			<p>I started my freelance business.</p>
 			<p>
@@ -429,38 +419,67 @@ import{d as T,u as l,m as i}from"./styled-components.browser.esm-LOVPg310.js";im
 		`},{label:"2006",content:i`
 			<h3>Webintegrator <br /> <small>Roskilde technical school</small></h3>
 			<p>Studied generic web development, not limited to but including coding, UI design, and project management.</p>
-		`}],L=[{title:i`Languages <small>The human ones</small>`,items:["English","Danish"]},{title:i`Programming languages <small>Abbreviated</small>`,items:["Javascript","Typescript","C#","Java","CSS","HTML","PHP"]},{title:i`Tools & frameworks <small>Abbreviated</small>`,items:["Git","NodeJS","Unity3D","MySQL","MongoDB","Webpack","Angular","React","XML","XPAth","JSON"]},{title:i`Patterns, soft-skills, roles <small>Abbreviated</small>`,items:["CI/TD","Unit testing","Project management","E2E testing","SEO","Backend development","Frontend development","Team-lead"]}],_={title:"pages/resume",component:s,argTypes:{}},J=o=>i`
-    <${u}>
-        <${s} ...${o}></${s}>
-    </${u}>
-`,t=J.bind({});t.args={profile:i`
-        <div>
-            <img className="--framed" src="${V}" />
-        </div>
-        <div>
-            <h3 className="--line">Sebastian Vargr</h3>
-            <p>
-                E-mail: <b>sebb@sebb.dk</b><br />
-                Tlf: <b>+45 28491314</b><br />
-                Location: <b>Copenhagen</b><br />
-                <br />
-                <a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a><br />
-                <a target="_blank" href="https://github.com/sebbdk/">Github</a>
-                <br />
-                <br />
-            </p>
-        </div>
+		`}],J=[{title:i`Languages <small>The human ones</small>`,items:["English","Danish"]},{title:i`Programming languages <small>Abbreviated</small>`,items:["Javascript","Typescript","C#","Java","CSS","HTML","PHP"]},{title:i`Tools & frameworks <small>Abbreviated</small>`,items:["Git","NodeJS","Unity3D","MySQL","MongoDB","Webpack","Angular","React","XML","XPAth","JSON"]},{title:i`Patterns, soft-skills, roles <small>Abbreviated</small>`,items:["CI/TD","Unit testing","Project management","E2E testing","SEO","Backend development","Frontend development","Team-lead"]}],q={title:"pages/resume",component:s,argTypes:{}},O=r=>i`
+    <${h}>
+        <${s} ...${r}></${s}>
+    </${h}>
+`,f=o.div`
+    padding: 0 1rem;
+
+    .profile-picture {
+        width: 200px;
+    }
+
+    .profile_details {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+        justify-content: start;
+        grid-gap: 1rem;
+    }
+
+    .profile_text {
+        margin-top: 1rem;
+    }
+`,t=O.bind({});t.args={profile:i`
+
     `,introduction:i`
-        <h1 className="--line">
-            Sebastian Vargr <small>Developing developer</small>
-        </h1>
-        <p>
-            My name is Sebastian Vargr, and I am an application developer from Copenhagen, Denmark.
-        </p>
+        <${a}>
+            <h1 className="--line">
+                Sebastian Vargr <small>Developing developer</small>
+            </h1>
+        </${a}>
 
-        <p>I am a full stack developer with a nose for business value. I bring value by building, teaching, mentoring, organizing, and solving problems in code or application design.</p>
+        <${f}>
+            <div class="profile_details">
+                <div>
+                    <img className="--framed profile-picture" src="${H}" />
+                </div>
+                <div>
+                        E-mail: <b>sebb@sebb.dk</b><br />
+                        Tlf: <b>+45 28491314</b><br />
+                        Location: <b>Copenhagen</b><br />
+                        <br />
+                        <a target="_blank" href="https://www.linkedin.com/in/sebbdk/">LinkedIn</a><br />
+                        <a target="_blank" href="https://github.com/sebbdk/">Github</a>
+                        <br />
+                        <br />
+                </div>
+            </div>
 
-        <p>I am driven by my passion for all things code and by seeing my projects succeed because success is the best proof that I am good at my craft. Because of this, when appropriate, I am vocal when I see issues, non-disruptive when I integrate myself into existing projects and proactive about solving & optimizing both productivity and technical issues.</p>
+            <div  class="profile_text">
+                <${a}>
+                    <p>
+                        My name is Sebastian Vargr, and I am an application developer from Copenhagen, Denmark.
+                    </p>
 
-        <p>In my spare time, I take care of my lazy cats, like to run, work on hobby electronics (like my CNC cutter & 3D printer) and game when I find can find the time.</p>
-    `,experienceTitle:"History",experiences:D,skills:L,projects:H};var w,k,v;t.parameters={...t.parameters,docs:{...(w=t.parameters)==null?void 0:w.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(v=(k=t.parameters)==null?void 0:k.docs)==null?void 0:v.source}}};const q=["Primary"];export{t as Primary,q as __namedExportsOrder,_ as default};
+                    <p>I am a full stack developer with a nose for business value. I bring value by building, teaching, mentoring, organizing, and solving problems in code or application design.</p>
+
+                    <p>I am driven by my passion for all things code and by seeing my projects succeed because success is the best proof that I am good at my craft. Because of this, when appropriate, I am vocal when I see issues, non-disruptive when I integrate myself into existing projects and proactive about solving & optimizing both productivity and technical issues.</p>
+
+                    <p>In my spare time, I take care of my lazy cats, like to run, work on hobby electronics (like my CNC cutter & 3D printer) and game when I find can find the time.</p>
+                </${a}>
+            </div>
+        </${f}>
+
+    `,experienceTitle:"History",experiences:L,skills:J,projects:D};var w,k,v;t.parameters={...t.parameters,docs:{...(w=t.parameters)==null?void 0:w.docs,source:{originalSource:"args => html`\n    <${BasePage}>\n        <${ResumePage} ...${args}></${ResumePage}>\n    </${BasePage}>\n`",...(v=(k=t.parameters)==null?void 0:k.docs)==null?void 0:v.source}}};const Q=["Primary"];export{t as Primary,Q as __namedExportsOrder,q as default};

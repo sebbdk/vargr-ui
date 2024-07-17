@@ -1,11 +1,11 @@
-import{u as o,m as a}from"./styled-components.browser.esm-LOVPg310.js";import{a as p,R as t}from"./index-i10x-FPT.js";const m=o.div`
+import{u as t,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{a as l,R as o}from"./index-nz9l7Sh7.js";const r=t.div`
   display: grid;
   grid-template-columns: auto auto;
 
 	@media print {
 		grid-template-columns: auto;
 	}
-`,n=o.div`
+`,m=t.div`
   position: relative;
   border: 2px solid #DDD;
   background-color: rgba(255, 255, 255, 0.05);
@@ -15,6 +15,8 @@ import{u as o,m as a}from"./styled-components.browser.esm-LOVPg310.js";import{a 
   flex-wrap: wrap;
   box-shadow: 0 0 15px rgb(0 0 0 / 10%);
   border-radius: 3px;
+
+  ${e=>e.pageBreakBefore==!0?"page-break-before: always; margin-top: 1rem;":""}
 
   @media print {
     box-shadow: none;
@@ -46,11 +48,14 @@ import{u as o,m as a}from"./styled-components.browser.esm-LOVPg310.js";import{a 
   h3 {
     margin-bottom: 0;
   }
-`,r=o.div`
-  ${p} h1 {
+`,n=t.div`
+  padding: 0 1rem;
+  page-break-after: always;
+  
+  ${l} h1 {
     margin-bottom: 1rem;
   }
-`,d=o.div`
+`,d=t.div`
   font-size: 1.25rem;
   line-height: 1.25rem;
   padding-right: 0.5em;
@@ -63,16 +68,16 @@ import{u as o,m as a}from"./styled-components.browser.esm-LOVPg310.js";import{a 
 	@media print {
 		display: none;
 	}
-`,b=e=>{const l=e.items.map(i=>a`
-    <${d}>${i.label}</${d}>
+`,b=e=>{const p=e.items.map(a=>i`
+    <${d}>${a.label}</${d}>
+    <${m} pageBreakBefore=${a.pageBreakBefore}>
+      <${o}>${a.content}</${o}>
+    </${m}>
+  `);return i`
     <${n}>
-      <${t}>${i.content}</${t}>
+      <${o}><h1 className="--line">${e.title}</h1></${o}>
+      <${r}>
+        ${p}
+      </${r}>
     </${n}>
-  `);return a`
-    <${r}>
-      <${t}><h1 className="--line">${e.title}</h1></${t}>
-      <${m}>
-        ${l}
-      </${m}>
-    </${r}>
-  `};export{b as T,r as a};
+  `};export{b as T,n as a};

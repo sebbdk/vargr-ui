@@ -1,4 +1,4 @@
-import{a as t}from"./index-d3A5-BcP.js";import{m as n}from"./styled-components.browser.esm-LOVPg310.js";import{B as s}from"./index-Wa5dPq5a.js";import"./index-i10x-FPT.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const u={title:"Resume/skills",component:t,argTypes:{}},m=i=>n`
+import{a as t}from"./index-1iTlzDmH.js";import{m as n}from"./styled-components.browser.esm-LOVPg310.js";import{B as s}from"./index-Wa5dPq5a.js";import"./index-nz9l7Sh7.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const u={title:"Resume/skills",component:t,argTypes:{}},m=i=>n`
     <${s}>
         <${t} ...${i}></${t}>
     </${s}>

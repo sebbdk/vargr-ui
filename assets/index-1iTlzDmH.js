@@ -1,4 +1,4 @@
-import{u as t,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{R as e}from"./index-i10x-FPT.js";const l=t.div`
+import{u as t,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{R as e}from"./index-nz9l7Sh7.js";const o=t.div`
 	display: flex;
 	flex-wrap: wrap;
 
@@ -11,18 +11,17 @@ import{u as t,m as i}from"./styled-components.browser.esm-LOVPg310.js";import{R 
     margin-right: 0.5em;
     padding: 2px 0.5em;
     line-height: 1.5em;
-	margin-bottom: 1em;
 	display: inline-block;
 
     @media print {
 		color: #333;
 		border: 1px solid #ddd;
     }
-`,d=({groups:a})=>{const n=a.map(o=>{const s=o.items.map(m=>i`<${r}>${m}</${r}>`);return i`
+`,d=({groups:s})=>{const a=s.map(l=>{const n=l.items.map(m=>i`<${r}>${m}</${r}>`);return i`
 			<${e}>
-				<h3 className="--line">${o.title}</h3>
-				<${l}>${s}</${l}>
+				<h3 className="--line">${l.title}</h3>
+				<${o}>${n}</${o}>
 			</${e}>
 		`});return i`
-		${n}
+		${a}
 	`};export{r as S,d as a};

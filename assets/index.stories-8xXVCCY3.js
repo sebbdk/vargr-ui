@@ -1,4 +1,4 @@
-import{S as r}from"./index-lHSqyosL.js";import{m}from"./styled-components.browser.esm-LOVPg310.js";import{B as a}from"./index-Wa5dPq5a.js";import"./index-i10x-FPT.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const h={title:"Resume/sidebar",component:r,argTypes:{}},b=t=>m`
+import{S as r}from"./index--bM7ksIO.js";import{m}from"./styled-components.browser.esm-LOVPg310.js";import{B as a}from"./index-Wa5dPq5a.js";import"./index-nz9l7Sh7.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const h={title:"Resume/sidebar",component:r,argTypes:{}},b=t=>m`
     <${a}>
         <${r} ...${t}>
             <h2>

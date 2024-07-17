@@ -1,4 +1,4 @@
-import{R as e}from"./index-i10x-FPT.js";import{m as r}from"./styled-components.browser.esm-LOVPg310.js";import{C as t}from"./index-cbCs0HPA.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const p={title:"Common/Molecules/Richtext",component:e,argTypes:{}},i=()=>r`
+import{R as e}from"./index-nz9l7Sh7.js";import{m as r}from"./styled-components.browser.esm-LOVPg310.js";import{C as t}from"./index-cbCs0HPA.js";import"./preact.module-0A_VdQ5M.js";import"./compat.module-qtfPsa-n.js";import"./index-g-2SN6mO.js";const p={title:"Common/Molecules/Richtext",component:e,argTypes:{}},i=()=>r`
         <${t}>
             <${e}>
                 <h1 className="--line">H1 Hello world with <i>--line</i></h1>
