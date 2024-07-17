@@ -78,10 +78,16 @@ export const experiences = [
 	},
 	{
 		label: '2021',
+		pageBreakBefore: true,
 		content: html`
-			<h3>Senior fullstack consultant  <br /> <small><b>DSV - Global Transport and Logistics</b>, October 2021 - April 2022</small></h3>
+			<h3>
+				Senior fullstack consultant  <br />
+				<small>
+					<b>DSV - Global Transport and Logistics</b>, October 2021 - April 2022
+				</small>
+			</h3>
 			<p>I was responsible for implementation and UX of a GUI meant to handle the invoices our machine learning models could not handle confidently.</p>
-			<p>This included creating an application that allowed users to visually generate XPath configurations for XML invoices.<p>
+			<p>This included creating an application that allowed users to visually generate XPath configurations for XML invoices.</p>
 			<p>The GUI was made in a way were the Invoices could easily/quickly be verified manually in bulk.</p>
 			<p>The corrected invoice data then fed back into the machine learning models.</p>
 			<p>
@@ -200,6 +206,7 @@ export const experiences = [
 	},
 	{
 		label: '2013',
+		pageBreakBefore: true,
 		content: html`
 			<h3>Started freelance business<br /><small><b>Owner</b>, October 2013 - present</small></h3>
 			<p>I started my freelance business.</p>

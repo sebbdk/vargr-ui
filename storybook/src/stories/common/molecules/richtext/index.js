@@ -64,6 +64,8 @@ export const RichtextElm = styled.div`
 	.--line {
 		border-bottom: 1px solid #999;
 	}
+
+
 `;
 
 export const Richtext = ({ children }) => {

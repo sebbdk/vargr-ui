@@ -17,7 +17,6 @@ export const SkillElm = styled.span`
     margin-right: 0.5em;
     padding: 2px 0.5em;
     line-height: 1.5em;
-	margin-bottom: 1em;
 	display: inline-block;
 
     @media print {

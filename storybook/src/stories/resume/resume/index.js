@@ -18,6 +18,10 @@ const globalStyles = createGlobalStyle`
 			}
 		}
 	}
+
+	@media print {
+		.pagebreak { page-break-before: always; } /* page-break-after works, as well */
+	}
 `;
 
 const ResumeElm = styled.div`
@@ -50,22 +54,6 @@ const ResumeElm = styled.div`
 		}
 	}
 
-	@media (min-width: 900px), print {
-		grid-template-columns: auto auto;
-
-		${SidebarElm} {
-			max-width: 18rem;
-		}
-
-		${SidebarElm} > ${RichtextElm} {
-			display: block;
-			img {
-				max-height: initial;
-				margin-bottom: 1rem;
-			}
-		}
-	}
-
     @media print {
 		min-width: 230mm;
         ::-webkit-scrollbar {
@@ -73,7 +61,7 @@ const ResumeElm = styled.div`
         }
 
 		${SidebarElm} {
-			max-width: 12rem;
+			//max-width: 12rem;
 		}
 
 		margin: 0;
@@ -111,9 +99,7 @@ const PrimaryContententElm = styled.div`
 	}
 
 	${TimelineElm} {
-		margin-top: 1em;
-		padding: 1em;
-		background-color: rgba(0, 0, 0, 0.25);
+		//background-color: rgba(0, 0, 0, 0.25);
 
 		@media print {
 			background-color: #fff;
@@ -134,11 +120,9 @@ const ProjectsGroupElm = styled.div`
 		background-color: #fff;
 		border-top: 1px solid #ddd;
 	}
-
-	@media (min-width: 900px), print {
-		grid-column: 1 / span 2;
-	}
 `;
+
+
 
 export const ResumePage = ({ profile, introduction, experiences, skills, experienceTitle, projects }) => {
 	const projectElms = projects.map(p => html`<${Project} ...${p}>${p.description}</${Project}>`);
@@ -165,12 +149,15 @@ export const ResumePage = ({ profile, introduction, experiences, skills, experie
 	return html`
 		<${ResumeElm}>
 			<${globalStyles} />
-			<${Sidebar} ...${profile}>
-				${profile}
-				<${SkillsSection} groups=${skills}></${SkillsSection}>
-			</${Sidebar}>
+
 			<${PrimaryContententElm}>
-				<${Richtext}>${introduction}</${Richtext}>
+				${introduction}
+
+				<${Sidebar} ...${profile}>
+					<${SkillsSection} groups=${skills}></${SkillsSection}>
+				</${Sidebar}>
+
+
 				<${Timeline} items=${experiences} title=${experienceTitle}></${Timeline}>
 			</${PrimaryContententElm}>
 

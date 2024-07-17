@@ -6,7 +6,15 @@ export const SidebarElm = styled.div`
 	display: grid;
 	grid-template-columns: auto;
 	background-color: rgba(0,0,0, 0.25);
-	padding: 1em;
+	border-top: 1px solid rgba(0,0,0, 0.25);
+	border-bottom: 1px solid rgba(0,0,0, 0.25);
+	padding: 1rem;
+	padding-top: 0.5rem;
+	margin-top: 0.5rem;
+
+	padding-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+
 	text-align: left;
 	max-width: 18rem;
 

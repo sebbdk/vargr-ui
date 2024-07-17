@@ -22,6 +22,8 @@ export const TimeLineItemElm = styled.div`
   box-shadow: 0 0 15px rgb(0 0 0 / 10%);
   border-radius: 3px;
 
+  ${props => props.pageBreakBefore == true ?  'page-break-before: always; margin-top: 1rem;' : ''}
+
   @media print {
     box-shadow: none;
     padding: 0.5rem;
@@ -55,6 +57,9 @@ export const TimeLineItemElm = styled.div`
 `;
 
 export const TimelineElm = styled.div`
+  padding: 0 1rem;
+  page-break-after: always;
+  
   ${RichtextElm} h1 {
     margin-bottom: 1rem;
   }
@@ -81,7 +86,7 @@ const EventLabelElm = styled.div`
 export const Timeline = (props) => {
   const itemElms = props.items.map(e => html`
     <${EventLabelElm}>${e.label}</${EventLabelElm}>
-    <${TimeLineItemElm}>
+    <${TimeLineItemElm} pageBreakBefore=${e.pageBreakBefore}>
       <${Richtext}>${e.content}</${Richtext}>
     </${TimeLineItemElm}>
   `);
